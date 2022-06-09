@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--ariel-taggedfields-id-GET" xml:lang="en-us">
+<title>GET /ariel/taggedfields/{id}</title>
+<shortdesc>Gets an individual tagged field.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/ariel/taggedfields/{id}</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Gets an individual tagged field.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /ariel/taggedfields/{id} resource details</title>
+<desc><p outputclass="summary">GET /ariel/taggedfields/{id} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /ariel/taggedfields/{id} request parameter details</title>
+<desc><p outputclass="summary">GET /ariel/taggedfields/{id} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>The ID of the tagged field that you want to get.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /ariel/taggedfields/{id} response codes</title>
+<desc><p outputclass="summary">GET /ariel/taggedfields/{id} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The tagged field with the specified ID.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>2000</p></entry>
+<entry colname="col3"><p>The specified ID does not exist.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1005</p></entry>
+<entry colname="col3"><p>A field request parameter is not valid.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1021</p></entry>
+<entry colname="col3"><p>An error occurred while retrieving the tagged field.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>The tagged field with the specified ID. A tagged field object contains the following fields:
+ <ul>
+ <li><b>id</b> - Long - The ID of the tagged field.</li>
+ <li><b>tag</b> - Integer - Unique number for this tagged field. This is a system-generated number produced from the private_enterprise_number and the element_id fields.</li>
+ <li><b>name</b> - String - The name of the tagged field.</li>
+ <li><b>category_id</b> - Integer - The ID of the logical group that this tagged field belongs to in the UI.</li>
+ <li><b>is_array</b> - Boolean - Specifies whether the tagged field is a list.</li>
+ <li><b>description</b> - String - (Optional) Description for the tagged field.</li>
+ <li><b>type</b> - String - The type of the tagged field. Possible values are: NULL, STRUCT, Byte, Short, Integer, Long, UnsignedByte, UnsignedShort, UnsignedInt, UnsignedLong, BigInteger, Double, Float, Port, Host, HostV4V6, HostV6, MACAddress, String, ByteArray, UnsignedIntHex, Boolean, Binary</li>
+ <li><b>uuid</b> - String - The ID for this tagged field, represented as a UUID.</li>
+ <li><b>modified_date</b> - Long - The time that the tagged field was last modified, specified in milliseconds since epoch.</li>
+ <li><b>creation_date</b> - Long - The time that the tagged field was created, specified in milliseconds since epoch.</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "category_id": 42,
+    "creation_date": 42,
+    "description": "String",
+    "id": 42,
+    "is_array": true,
+    "modified_date": 42,
+    "name": "String",
+    "tag": 42,
+    "type": "String",
+    "uuid": "String"
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

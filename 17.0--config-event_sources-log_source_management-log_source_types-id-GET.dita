@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--config-event_sources-log_source_management-log_source_types-id-GET" xml:lang="en-us">
+<title>GET /config/event_sources/log_source_management/log_source_types/{id}</title>
+<shortdesc>Retrieves a log source type by ID. If called by a user/authorized service with System Administrator, Security Admin, or Manage Log Source Types permissions, then all fields will be returned for the log source type. If called by a less privileged client, only name and ID are returned for the log source type.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/config/event_sources/log_source_management/log_source_types/{id}</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn/>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/event_sources/log_source_management/log_source_types/{id} resource details</title>
+<desc><p outputclass="summary">GET /config/event_sources/log_source_management/log_source_types/{id} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/event_sources/log_source_management/log_source_types/{id} request parameter details</title>
+<desc><p outputclass="summary">GET /config/event_sources/log_source_management/log_source_types/{id} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>The ID of the log source type to retrieve.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/event_sources/log_source_management/log_source_types/{id} response codes</title>
+<desc><p outputclass="summary">GET /config/event_sources/log_source_management/log_source_types/{id} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The log source type was retrieved successfully.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1002</p></entry>
+<entry colname="col3"><p>The log source type ID was not found.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>An error occurred during the attempt to retrieve the log source type.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>The log source type after it is retrieved. A log source type contains the following fields:
+ <ul>
+ <li><b>id</b> - Integer - The ID of the log source type.</li>
+ <li><b>name</b> - String - The unique name of the log source type. The name is not localized.</li>
+ <li><b>internal</b> - Boolean - The condition is set to 'true' if the log source type is an internal log source type (for example, System Notification, SIM Audit, Asset Profiler, and so on) for which log sources cannot be created, edited, or deleted. If this is a user configurable log source type, the condition is set to 'false'.</li>
+ <li><b>custom</b> - Boolean - The condition is set to 'true' if this is a custom log source type; otherwise, the condition is set to 'false'.</li>
+ <li><b>protocol_types</b> - Array - The full list of supported protocol types for the log source type. Ensure that every log source type links to at least one protocol type. Each item in this array is a ProtocolMapping structure, defining both the ID of the protocol type and a Boolean that indicates whether the protocol is documented/fully supported for this log source type.</li>
+ <li><b>default_protocol_id</b> - Long - The ID of the default protocol type for this log source type. The ID must correspond to an existing protocol type. See the Protocol Type API (/api/config/event_sources/log_source_management/protocol_types/).</li>
+ <li><b>log_source_extension_id</b> - Long - The log source extension that is associated with the log source type. The ID must correspond to an existing log source extension or be set to 'null'. See the Log Source Extension API (/api/config/event_sources/log_source_management/log_source_extensions/).</li>
+ <li><b>supported_language_ids</b> - Array - The IDs of the languages supported by this log source type. Each ID must correspond to an existing log source language. See the Log Source Language API (/api/config/event_sources/log_source_management/log_source_languages/). All non-custom log source types link to at least one language. Because languages are irrelevant for custom log source types, this field is 'null' for custom types.</li>
+ <li><b>version</b> - String - The log source type plugin version.</li>
+ <li><b>latest_version</b> - String - The latest available version of the log source type component.</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "custom": true,
+    "default_protocol_id": 42,
+    "id": 42,
+    "internal": true,
+    "latest_version": "String",
+    "log_source_extension_id": 42,
+    "name": "String",
+    "protocol_types": [
+        {
+            "documented": true,
+            "protocol_id": 42
+        }
+    ],
+    "supported_language_ids": [
+        42
+    ],
+    "uuid": "String",
+    "version": "String"
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--config-flow_sources-custom_properties-regex_properties-POST" xml:lang="en-us">
+<title>POST /config/flow_sources/custom_properties/regex_properties</title>
+<shortdesc>Creates a new flow regex property.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/config/flow_sources/custom_properties/regex_properties</apiname>
+<keyword>POST</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Creates a new flow regex property.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /config/flow_sources/custom_properties/regex_properties resource details</title>
+<desc><p outputclass="summary">POST /config/flow_sources/custom_properties/regex_properties resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /config/flow_sources/custom_properties/regex_properties request parameter details</title>
+<desc><p outputclass="summary">POST /config/flow_sources/custom_properties/regex_properties request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>header</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /config/flow_sources/custom_properties/regex_properties request body details</title>
+<desc><p outputclass="summary">POST /config/flow_sources/custom_properties/regex_properties request body details</p></desc>
+<tgroup cols="5">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="2*" />
+<colspec colname="col5" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Data Type</entry>
+<entry colname="col3">MIME Type</entry>
+<entry colname="col4">Description</entry>
+<entry colname="col5">Sample</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>data</p></entry>
+<entry colname="col2"><p>Object</p></entry>
+<entry colname="col3"><p>application/json</p></entry>
+<entry colname="col4"><p>Required - A JSON representation of the flow regex property object.
+         <ul>
+         <li><b>name</b> - Required - String - The name of the flow regex property.</li>
+         <li><b>description</b> - Optional - String - The description of the flow regex property. </li>
+         <li><b>property_type</b> - Required - String - The property type (string, numeric, ip, port, time) of flow regex property.</li>
+         <li><b>use_for_rule_engine</b> - Optional - Boolean - The flag that indicates if the flow regex property is parsed when the flow was captured.</li>
+         <li><b>datetime_format</b> - Optional - String - The date/time pattern that the flow regex property matches. It is required when property type is TIME.</li>
+         <li><b>locale</b> - Optional - String - The language tag of the locale that the property matches. The locale is required when property type is TIME.</li>
+         </ul></p></entry>
+<entry colname="col5"><p>{
+    "creation_date": 42,
+    "datetime_format": "String",
+    "description": "String",
+    "id": 42,
+    "identifier": "String",
+    "locale": "String",
+    "modification_date": 42,
+    "name": "String",
+    "property_type": "String &lt;one of: string, numeric, ip, port, time&gt;",
+    "use_for_rule_engine": true,
+    "username": "String"
+}</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /config/flow_sources/custom_properties/regex_properties response codes</title>
+<desc><p outputclass="summary">POST /config/flow_sources/custom_properties/regex_properties response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>201</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>A new flow regex property was created.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1005</p></entry>
+<entry colname="col3"><p>One or more request parameter are invalid in the request.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>An error occurred during the attempt to create a new flow regex property.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>The newly created flow regex property that contains the following fields:
+         <ul>
+         <li><b>id</b> - Integer - The sequence ID of the flow regex property.</li>
+         <li><b>identifier</b> - String - The ID of the flow regex property.</li>
+         <li><b>name</b> - String - The name of the flow regex property.</li>
+         <li><b>username</b> - String - The owner of the flow regex property.</li>
+         <li><b>description</b> - String - The description of the flow regex property. </li>
+         <li><b>property_type</b> - String - The property type (string, numeric, ip, port, time) of flow regex property.</li>
+         <li><b>use_for_rule_engine</b> - Boolean - The flag that indicates if the flow regex property is parsed when the flow was captured.</li>
+         <li><b>datetime_format</b> - String - The date/time pattern that the flow regex property matches.</li>
+         <li><b>locale</b> - String - The language tag of the locale that the property matches.</li>
+         </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "creation_date": 42,
+    "datetime_format": "String",
+    "description": "String",
+    "id": 42,
+    "identifier": "String",
+    "locale": "String",
+    "modification_date": 42,
+    "name": "String",
+    "property_type": "String &lt;one of: string, numeric, ip, port, time&gt;",
+    "use_for_rule_engine": true,
+    "username": "String"
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

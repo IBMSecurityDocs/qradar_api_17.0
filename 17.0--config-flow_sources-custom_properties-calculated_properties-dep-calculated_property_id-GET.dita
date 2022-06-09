@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--config-flow_sources-custom_properties-calculated_properties-dep-calculated_property_id-GET" xml:lang="en-us">
+<title>GET /config/flow_sources/custom_properties/calculated_properties/dep/{calculated_property_id}</title>
+<shortdesc>Retrieves a calculated flow property based on the supplied calculated property ID.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/config/flow_sources/custom_properties/calculated_properties/dep/{calculated_property_id}</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Retrieves a calculated flow property based on the supplied calculated property ID (String).</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/flow_sources/custom_properties/calculated_properties/dep/{calculated_property_id} resource details</title>
+<desc><p outputclass="summary">GET /config/flow_sources/custom_properties/calculated_properties/dep/{calculated_property_id} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/flow_sources/custom_properties/calculated_properties/dep/{calculated_property_id} request parameter details</title>
+<desc><p outputclass="summary">GET /config/flow_sources/custom_properties/calculated_properties/dep/{calculated_property_id} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>calculated_property_id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Required - String - The ID of the calculated flow property.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/flow_sources/custom_properties/calculated_properties/dep/{calculated_property_id} response codes</title>
+<desc><p outputclass="summary">GET /config/flow_sources/custom_properties/calculated_properties/dep/{calculated_property_id} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The requested calculated flow property was retrieved.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1002</p></entry>
+<entry colname="col3"><p>The requested calculated flow property cannot be found.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1005</p></entry>
+<entry colname="col3"><p>One or more parameters are invalid in the request.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>An error occurred during the attempt to retrieve the requested calculated flow property.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>A calculated flow property that contains the following fields:
+ <ul>
+ <li><b>id</b> - Number - A sequence id for the calculated flow property.</li>
+ <li><b>identifier</b> - String - A string that uniquely identifies the calculated flow property.</li>
+ <li><b>name</b> - String - The name of the calculated flow property.</li>
+ <li><b>description</b> - String - The description of the calculated flow property.</li>
+ <li><b>enabled</b> - Boolean - Whether the calculated flow property is enabled.</li>
+ <li><b>first_operand</b> - String - An <b>operand object</b> describing the first operand in the expression.</li>
+ <li><b>second_operand</b> - String - An <b>operand object</b> describing the second operand in the expression.</li>
+ <li><b>operator</b> - String - A string that represents one of the basic arithmetic operations in the expression.</li>
+ <li><b>username</b> - String - The username of the creator of the calculated flow property.</li> 
+ <li><b>creation_date</b> - Number - The time stamp for when the calculated flow property is created in milliseconds since epoch.</li>
+ <li><b>modification_date</b> - Number - The time stamp for when the calculated flow property is last modified in milliseconds since epoch.</li>
+ </ul>
+ 
+ An <b>operand object</b> contains the following fields: 
+ <ul> 
+ <li><b>type</b> - String - can be "STATIC" (for numeric operand) or "PROPERTY" (for operand that is a property).</li>
+ <li><b>numeric_value</b> - Number - when property_type is "STATIC", this is the value of the operand; otherwise, it is suppressed. </li>
+ <li><b>property_name</b> - String - when property_type is "PROPERTY", this is the name of the property that is being used as the operand; otherwise, it is suppressed.  </li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "creation_date": 42,
+    "description": "String",
+    "enabled": true,
+    "first_operand": {
+        "numeric_value": 42.5,
+        "property_name": "String",
+        "type": "String &lt;one of: STATIC, PROPERTY&gt;"
+    },
+    "id": 42,
+    "identifier": "String",
+    "modification_date": 42,
+    "name": "String",
+    "operator": "String &lt;one of: ADD, SUBTRACT, MULTIPLY, DIVIDE&gt;",
+    "second_operand": {
+        "numeric_value": 42.5,
+        "property_name": "String",
+        "type": "String &lt;one of: STATIC, PROPERTY&gt;"
+    },
+    "username": "String"
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

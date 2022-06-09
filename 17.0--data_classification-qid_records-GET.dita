@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--data_classification-qid_records-GET" xml:lang="en-us">
+<title>GET /data_classification/qid_records</title>
+<shortdesc>Retrieves a list of QID records.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/data_classification/qid_records</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Retrieves a list of QID records.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /data_classification/qid_records resource details</title>
+<desc><p outputclass="summary">GET /data_classification/qid_records resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /data_classification/qid_records request parameter details</title>
+<desc><p outputclass="summary">GET /data_classification/qid_records request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>Range</p></entry>
+<entry colname="col2"><p>header</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to restrict the number of elements that are returned in the list to a specified range. The list is indexed starting at zero.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>filter</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - This parameter is used to restrict the elements in a list base on the contents of various fields.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /data_classification/qid_records response codes</title>
+<desc><p outputclass="summary">GET /data_classification/qid_records response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The requested list of QID records was retrieved.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>An error occurred during the attempt to retrieve the list of QID records.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>A list of QID records. A QID record contains the following fields:
+ <ul>
+ <li><b>id</b> - Number - The ID of the QID record.</li>
+ <li><b>qid</b> - Number - The QID of the QID record.</li>
+ <li><b>name</b> - String - The name of the QID record.</li>
+ <li><b>description</b> - String - The description of the QID record.</li>
+ <li><b>severity</b> - Number - The severity of the QID record.</li>
+ <li><b>low_level_category_id</b> - Number - The low level category ID of the QID record.</li>
+ <li><b>log_source_type_id</b> - Number - A placeholder with null value to ensure data structure consistency among endpoints. </li> 
+ <li><b>uuid</b> - String - The uuid of the QID record.</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+[
+  {
+    "id": 64280,
+    "qid": 2500283, 
+    "name": "DELETED WEB-MISC O'Reilly args.bat access", 
+    "description": "DELETED WEB-MISC O'Reilly args.bat access",
+    "severity": 2 ,
+    "low_level_category_id": 1011,
+    "log_source_type_id": null
+  },
+  {
+    "id": 64297,
+    "qid": 2500300, 
+    "name": "DELETED WEB-MISC Cisco Web DOS attempt", 
+    "description": "DELETED WEB-MISC Cisco Web DOS attempt",
+    "severity": 8,
+    "low_level_category_id": 2009
+    "log_source_type_id": null
+  }
+]
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

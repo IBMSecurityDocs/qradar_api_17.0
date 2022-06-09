@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--health-metrics-qradar_metrics-id-POST" xml:lang="en-us">
+<title>POST /health/metrics/qradar_metrics/{id}</title>
+<shortdesc>Updates the time_resolution and enable field of a QRadar metric identified by metric ID.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/health/metrics/qradar_metrics/{id}</apiname>
+<keyword>POST</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Updates the time_resolution and enable field of a QRadar metric identified by metric ID.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /health/metrics/qradar_metrics/{id} resource details</title>
+<desc><p outputclass="summary">POST /health/metrics/qradar_metrics/{id} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /health/metrics/qradar_metrics/{id} request parameter details</title>
+<desc><p outputclass="summary">POST /health/metrics/qradar_metrics/{id} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>The metric_id of the metric to get.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>header</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /health/metrics/qradar_metrics/{id} request body details</title>
+<desc><p outputclass="summary">POST /health/metrics/qradar_metrics/{id} request body details</p></desc>
+<tgroup cols="5">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="2*" />
+<colspec colname="col5" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Data Type</entry>
+<entry colname="col3">MIME Type</entry>
+<entry colname="col4">Description</entry>
+<entry colname="col5">Sample</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>qradar_metric</p></entry>
+<entry colname="col2"><p>Object</p></entry>
+<entry colname="col3"><p>application/json</p></entry>
+<entry colname="col4"><p>The updated QRadar Metric DTO with time_resolution and enabled fields. Only the enabled and the time_resolution fields are modifiable. Rest of the fields are ignored. The enabled field must be a valid boolean and time_resolution must be a valid long value.</p></entry>
+<entry colname="col5"><p>{
+    "component_name": "String",
+    "component_type": "String",
+    "enabled": true,
+    "metric_id": "String",
+    "time_resolution": 42
+}</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /health/metrics/qradar_metrics/{id} response codes</title>
+<desc><p outputclass="summary">POST /health/metrics/qradar_metrics/{id} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The Metric was retrieved.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1013</p></entry>
+<entry colname="col3"><p>404  The metric identified by metric_id does not exist</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1010</p></entry>
+<entry colname="col3"><p>422 The time_resolution cannot be less than 5000.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>500 Internal Server Error.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>An Metric objects identified by the metric_id. A Metric object contains the following fields:
+ <ul>
+ <li><b>Id</b> - String - The ID of the metric to update.</li>
+ <li><b>qradar_metric</b> - QradarMetric DTO - The updated QRadar Metric DTO with time_resolution and enabled fields. Only the enabled and the time_resolution fields are modifiable. Rest of the fields are ignored. The enabled field must be a valid boolean and time_resolution must be a valid long value.</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "component_name": "String",
+    "component_type": "String &lt;one of: ACCUMULATOR, ARIEL_PROXY_SERVER, ARIEL_QUERY_SERVER, ARC_BUILDER, ASSETPROFILER, ECS_EP, ECS_EC, ECS_EC_INGRESS, HISTORICAL_CORRELATION_SERVER, HOSTCONTEXT, OFFLINE_FORWARDER, QVMPROCESSOR, REPORTING_EXECUTOR, TOMCAT, JAVA&gt;",
+    "enabled": true,
+    "metric_id": "String",
+    "time_resolution": 42
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

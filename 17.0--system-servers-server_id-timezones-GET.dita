@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--system-servers-server_id-timezones-GET" xml:lang="en-us">
+<title>GET /system/servers/{server_id}/timezones</title>
+<shortdesc>Retrieves all the available time zones that can be set for a server.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/system/servers/{server_id}/timezones</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Retrieves all the available time zones that can be set for a server.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /system/servers/{server_id}/timezones resource details</title>
+<desc><p outputclass="summary">GET /system/servers/{server_id}/timezones resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /system/servers/{server_id}/timezones request parameter details</title>
+<desc><p outputclass="summary">GET /system/servers/{server_id}/timezones request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>server_id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Required - The ID of the server</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /system/servers/{server_id}/timezones response codes</title>
+<desc><p outputclass="summary">GET /system/servers/{server_id}/timezones response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The requested timezone records were retrieved.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1002</p></entry>
+<entry colname="col3"><p>The requested timezone records with the given server ID cannot be found.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1005</p></entry>
+<entry colname="col3"><p>One or more parameters are invalid in the request.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>An error occurred during the attempt to retrieve the requested timezone records with the given server Id.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1022</p></entry>
+<entry colname="col3"><p>Timeout during the performance of the task.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>A list of timezones that contains the following fields: <ul>
+<li><b>id</b> - String - the ID of time zone</li>
+<li><b>timezone</b> - String - The formatted string representation of the timezone in the current
+locale. </li>
+<li><b>offset</b> - Interger - Number of milliseconds offset to UTC time at the moment.</li>
+</ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+[
+    {
+        "id": "String",
+        "offset": 42,
+        "timezone": "String"
+    }
+]
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

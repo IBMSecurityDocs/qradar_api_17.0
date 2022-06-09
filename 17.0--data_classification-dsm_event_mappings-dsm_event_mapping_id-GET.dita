@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--data_classification-dsm_event_mappings-dsm_event_mapping_id-GET" xml:lang="en-us">
+<title>GET /data_classification/dsm_event_mappings/{dsm_event_mapping_id}</title>
+<shortdesc>Retrieves a DSM event mapping based on the supplied DSM event mapping ID.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/data_classification/dsm_event_mappings/{dsm_event_mapping_id}</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Retrieves a DSM event mapping based on the supplied DSM event mapping ID.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /data_classification/dsm_event_mappings/{dsm_event_mapping_id} resource details</title>
+<desc><p outputclass="summary">GET /data_classification/dsm_event_mappings/{dsm_event_mapping_id} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /data_classification/dsm_event_mappings/{dsm_event_mapping_id} request parameter details</title>
+<desc><p outputclass="summary">GET /data_classification/dsm_event_mappings/{dsm_event_mapping_id} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>dsm_event_mapping_id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Required - The ID of the DSM event mapping.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /data_classification/dsm_event_mappings/{dsm_event_mapping_id} response codes</title>
+<desc><p outputclass="summary">GET /data_classification/dsm_event_mappings/{dsm_event_mapping_id} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The requested DSM event mapping was retrieved.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1002</p></entry>
+<entry colname="col3"><p>The requested DSM event mapping was not found.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>An error occurred during the attempt to retrieve the DSM event mapping.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>A DSM event mapping that contains the following fields:
+ <ul>
+  <li><b>id</b> - Number - The ID of the DSM event mapping.</li>
+  <li><b>log_source_type_id</b> - Number - The ID of the Log Source Type this DSM event mapping resource is associated with.</li>
+  <li><b>log_source_event_id</b> - String - The primary identifying value parsed from an event to be used to look up the corresponding QID record.</li>
+  <li><b>log_source_event_category</b> - String - The secondary identifying value parsed from an event to be used to look up the corresponding QID record.</li>
+  <li><b>custom_event</b> - Boolean - Flag to identify if the DSM event mapping is system provided (custom_event=false) or user-provided (custom_event=true).</li>
+  <li><b>qid_record_id</b> - Number - The ID of the QID record to which this DSM event mapping provides a mapping.</li>
+  <li><b>uuid</b> - String - The uuid of the DSM event mapping.</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "custom_event": true,
+    "id": 42,
+    "log_source_event_category": "String",
+    "log_source_event_id": "String",
+    "log_source_type_id": 42,
+    "qid_record_id": 42,
+    "uuid": "String"
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

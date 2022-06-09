@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--staged_config-deployment-hosts-id-tunnels-GET" xml:lang="en-us">
+<title>GET /staged_config/deployment/hosts/{id}/tunnels</title>
+<shortdesc>Gets the list of tunnels for the host.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/staged_config/deployment/hosts/{id}/tunnels</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Gets the list of staged tunnels for the staged host.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /staged_config/deployment/hosts/{id}/tunnels resource details</title>
+<desc><p outputclass="summary">GET /staged_config/deployment/hosts/{id}/tunnels resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /staged_config/deployment/hosts/{id}/tunnels request parameter details</title>
+<desc><p outputclass="summary">GET /staged_config/deployment/hosts/{id}/tunnels request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Required - The ID of the staged host.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>Range</p></entry>
+<entry colname="col2"><p>header</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to restrict the number of elements that are returned in the list to a specified range. The list is indexed starting at zero.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>filter</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - This parameter is used to restrict the elements in a list base on the contents of various fields.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /staged_config/deployment/hosts/{id}/tunnels response codes</title>
+<desc><p outputclass="summary">GET /staged_config/deployment/hosts/{id}/tunnels response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>A list of SSH tunnels. This will list all tunnels currently in the system for the staged host.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1009</p></entry>
+<entry colname="col3"><p>Host id provided is invalid.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1010</p></entry>
+<entry colname="col3"><p>Invalid host_id provided.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>A list of SSH tunnels. This will list all tunnels currently in the system for the deployed host. The Tunnel object has the following
+         fields:
+         <ul>
+         <li><b>name</b> - The name of the tunnel object.</li>
+         <li><b>remote_hostID</b> - The host ID of the remote host of the tunnel.</li>
+         <li><b>remote_port</b> - The port on the remote host that is used by the tunnel.</li>
+         <li><b>local_port</b> - The port on the originating host that is used by the tunnel.</li>
+         <li><b>reverse_source</b> - Set this value to true to initiate the tunnel on the remote host instead of the originating host. This has no effect if either the originating or the remote host is a console.</li>
+		   </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+[
+    {
+        "local_port": 42,
+        "name": "String",
+        "remote_host_id": 42,
+        "remote_port": 42,
+        "reverse_source": true
+    }
+]
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

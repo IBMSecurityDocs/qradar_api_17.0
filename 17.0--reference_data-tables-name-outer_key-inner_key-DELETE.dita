@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--reference_data-tables-name-outer_key-inner_key-DELETE" xml:lang="en-us">
+<title>DELETE /reference_data/tables/{name}/{outer_key}/{inner_key}</title>
+<shortdesc>Remove a value from a reference table.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/reference_data/tables/{name}/{outer_key}/{inner_key}</apiname>
+<keyword>DELETE</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Remove a value from a reference table.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>DELETE /reference_data/tables/{name}/{outer_key}/{inner_key} resource details</title>
+<desc><p outputclass="summary">DELETE /reference_data/tables/{name}/{outer_key}/{inner_key} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>DELETE /reference_data/tables/{name}/{outer_key}/{inner_key} request parameter details</title>
+<desc><p outputclass="summary">DELETE /reference_data/tables/{name}/{outer_key}/{inner_key} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>name</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Required - The name of the reference table to remove a value from</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>namespace</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>- Either SHARED or TENANT, default is SHARED.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>outer_key</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Required - The outer key of the value to remove</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>inner_key</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Required - The inner key of the value to remove</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>value</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Required - The value to remove from the reference table. Note: Date values must be represented in milliseconds since the Unix Epoch January 1st 1970.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>domain_id</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - This allows the domain id for the value to be specified. If null, the shared domain will be used.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>DELETE /reference_data/tables/{name}/{outer_key}/{inner_key} response codes</title>
+<desc><p outputclass="summary">DELETE /reference_data/tables/{name}/{outer_key}/{inner_key} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The reference table had had a value removed</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1002</p></entry>
+<entry colname="col3"><p>The reference table does not exist</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1003</p></entry>
+<entry colname="col3"><p>The record does not exist in the reference table</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1011</p></entry>
+<entry colname="col3"><p>Domain not found</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1005</p></entry>
+<entry colname="col3"><p>A request parameter is not valid</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1012</p></entry>
+<entry colname="col3"><p>The namespace value of SHARED was expected</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1014</p></entry>
+<entry colname="col3"><p>The domain_id parameter must be specified</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>An error occurred while attempting to remove the reference table value</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>Information about the reference table that had an element removed. This returns information about table but not the contained data.</p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "collection_id": 42,
+    "creation_time": 42,
+    "element_type": "String &lt;one of: ALN, NUM, IP, PORT, ALNIC, DATE&gt;",
+    "key_label": "String",
+    "key_name_types": {
+        "String": "String &lt;one of: ALN, NUM, IP, PORT, ALNIC, DATE&gt;"
+    },
+    "name": "String",
+    "namespace": "String &lt;one of: PRIVATE, SHARED, TENANT&gt;",
+    "number_of_elements": 42,
+    "time_to_live": "String",
+    "timeout_type": "String &lt;one of: UNKNOWN, FIRST_SEEN, LAST_SEEN&gt;"
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

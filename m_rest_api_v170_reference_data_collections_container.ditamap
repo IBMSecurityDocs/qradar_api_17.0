@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE map PUBLIC "-//IBM//DTD DITA IBM Map//EN"  "ibm-map.dtd">
+<map xml:lang="en-us">
+<title>reference_data_collections endpoints</title>
+<topicref href="c_rest_api_version170_reference_data_collections_intro.dita" scope="local" format="dita" type="concept">
+<topicref href="17.0--reference_data_collections-set_bulk_update_tasks-task_status_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data_collections-set_bulk_update_tasks-task_status_id-results-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data_collections-set_delete_tasks-task_status_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data_collections-set_dependents_tasks-task_status_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data_collections-set_dependents_tasks-task_status_id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data_collections-set_dependents_tasks-task_status_id-results-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data_collections-set_entries-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data_collections-set_entries-PATCH.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data_collections-set_entries-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data_collections-set_entries-id-DELETE.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data_collections-set_entries-id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data_collections-set_entries-id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data_collections-sets-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data_collections-sets-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data_collections-sets-id-DELETE.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data_collections-sets-id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data_collections-sets-id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data_collections-sets-id-dependents-GET.dita" scope="local" format="dita" type="reference"/>
+</topicref>
+</map>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE map PUBLIC "-//IBM//DTD DITA IBM Map//EN"  "ibm-map.dtd">
+<map xml:lang="en-us">
+<title>health_data endpoints</title>
+<topicref href="c_rest_api_version170_health_data_intro.dita" scope="local" format="dita" type="concept">
+<topicref href="17.0--health_data-security_data_count-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--health_data-top_offenses-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--health_data-top_rules-GET.dita" scope="local" format="dita" type="reference"/>
+</topicref>
+</map>

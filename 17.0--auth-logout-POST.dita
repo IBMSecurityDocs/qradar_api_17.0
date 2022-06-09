@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--auth-logout-POST" xml:lang="en-us">
+<title>POST /auth/logout</title>
+<shortdesc>Invoke this method as an authorized user and your session will be invalidated.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/auth/logout</apiname>
+<keyword>POST</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn/>
+<refsyn>
+<table pgwide="0">
+<title>POST /auth/logout resource details</title>
+<desc><p outputclass="summary">POST /auth/logout resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>text/plain
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<p>There are no parameters for this endpoint.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /auth/logout response codes</title>
+<desc><p outputclass="summary">POST /auth/logout response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The session was invalidated.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>Returns true. Throws exception upon failure.</p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+true
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

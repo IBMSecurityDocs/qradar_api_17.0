@@ -1,0 +1,310 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--qni-hosts-host_id-configs-id-POST" xml:lang="en-us">
+<title>POST /qni/hosts/{host_id}/configs/{id}</title>
+<shortdesc>Updates the configuration of a QNI host. You cannot use this endpoint to update a host that is a part of a QNI stack. Use the QNI Stacking API instead.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/qni/hosts/{host_id}/configs/{id}</apiname>
+<keyword>POST</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Updates the configuration of a QNI host. You cannot use this endpoint to update a host that is a part of a QNI stack. Use the QNI Stacking API instead.
+ Configuration should contain the following fields:
+ <ul>
+ 		<li><b>id</b> - <i>Required</i> - Number - The ID of the QNI configuration. Always equals 1 because QNI host has only one configuration.</li>
+ 		<li><b>host_id</b> - <i>Required</i> - Number - The ID of the QNI host.</li>
+ 		<li><b>inspection_level</b> - <i>Optional</i> - Enumeration - Depth of content inspection. The
+possible values are:<ul>
+<li><i>BASIC</i> - Lowest level of inspection. Flows are detected by 5-tuple, and the number of
+bytes and packets that are flowing in each direction are counted.</li>
+<li><i>ENRICHED</i> - Each flow is identified and inspected by one of the protocol or domain
+inspectors. The inspection can generate many kinds of attributes.</li>
+<li><i>ADVANCED</i> - The highest level of inspection. It does everything that the Enriched Flows
+levels does, but it also scans and inspects the content of the files that it finds.</li>
+<li><i>DEFAULT</i> - The QNI host uses the globally-set inspection level setting.</li>
+</ul></li>
+ 		<li><b>raw_payload</b> - <i>Optional</i> - Long - The maximum amount of data (bytes) that the
+QFlow Collector is set to capture and retain in the flow payload. Possible values are:<ul>
+<li>-1: The QNI host is set to use the globally-set raw payload setting.</li>
+<li>0: Turn the payload off.</li>
+<li>1 - 32768: The number of bytes.</li>
+</ul></li>
+ 		<li><b>ports</b> - <i>Optional</i> - Array - The updated port configuration. Each port has the following fields:
+ 			<ul>
+ 				<li><b>port_id</b> - <i>Required</i> - Number - The ID of the port.</li>
+ 				<li><b>type</b> - <i>Required</i> - Enumeration - The mode that the port is used in. The possible values are <i>RECEIVE</i>, <i>TRANSMIT</i>.</li>
+ 				<li><b>source_port_id</b> - <i>Optional</i> - Number - The ID of the port that re-transmits the traffic. Required only if the port type is <i>TRANSMIT</i>.</li>
+ 			</ul>
+ 		</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /qni/hosts/{host_id}/configs/{id} resource details</title>
+<desc><p outputclass="summary">POST /qni/hosts/{host_id}/configs/{id} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /qni/hosts/{host_id}/configs/{id} request parameter details</title>
+<desc><p outputclass="summary">POST /qni/hosts/{host_id}/configs/{id} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>host_id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Long The ID of the QNI host.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>The ID of the QNI Configuration.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>header</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /qni/hosts/{host_id}/configs/{id} request body details</title>
+<desc><p outputclass="summary">POST /qni/hosts/{host_id}/configs/{id} request body details</p></desc>
+<tgroup cols="5">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="2*" />
+<colspec colname="col5" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Data Type</entry>
+<entry colname="col3">MIME Type</entry>
+<entry colname="col4">Description</entry>
+<entry colname="col5">Sample</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>qni_configuration</p></entry>
+<entry colname="col2"><p>Object</p></entry>
+<entry colname="col3"><p>application/json</p></entry>
+<entry colname="col4"><p>The updated QNI Configuration (see above for more details).</p></entry>
+<entry colname="col5"><p>{
+    "host_id": 42,
+    "id": 42,
+    "inspection_level": "String &lt;one of: BASIC, ADVANCED, ENRICHED, DEFAULT&gt;",
+    "ports": [
+        {
+            "id": 42,
+            "source_port_id": 42,
+            "type": "String &lt;one of: RECEIVE, TRANSMIT&gt;"
+        }
+    ],
+    "raw_payload": 42
+}</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /qni/hosts/{host_id}/configs/{id} response codes</title>
+<desc><p outputclass="summary">POST /qni/hosts/{host_id}/configs/{id} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>QNI Configuration has been successfully updated.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>44101</p></entry>
+<entry colname="col3"><p>The QNI host ID does not exist.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>44102</p></entry>
+<entry colname="col3"><p>QNI Configuration ID does not exist.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>44120</p></entry>
+<entry colname="col3"><p>The QNI host ID is less than or equal to 0.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>44122</p></entry>
+<entry colname="col3"><p>Invalid number of ports listed.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>44123</p></entry>
+<entry colname="col3"><p>Port ID field is missing.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>44124</p></entry>
+<entry colname="col3"><p>Port ID is invalid.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>44125</p></entry>
+<entry colname="col3"><p>Two or more ports have the same ID.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>44126</p></entry>
+<entry colname="col3"><p>Source port ID field is missing.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>44127</p></entry>
+<entry colname="col3"><p>Source port ID is invalid.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>44128</p></entry>
+<entry colname="col3"><p>Source port is invalid. The type for the selected source port must be RECEIVE.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>44129</p></entry>
+<entry colname="col3"><p>Port type is invalid.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>44130</p></entry>
+<entry colname="col3"><p>The QNI host is part of a QNI Stack. You cannot configure the host individually.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>44131</p></entry>
+<entry colname="col3"><p>Inspection level is invalid.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>44132</p></entry>
+<entry colname="col3"><p>Raw payload value is invalid.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>44110</p></entry>
+<entry colname="col3"><p>An internal server error occurred while processing a request.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>The updated QNI configuration object representing a staged configuration of a QNI host.
+ <ul>
+ 		<li><b>id</b> - Number - ID of the QNI Configuration. Always equals 1 because QNI host has only one configuration.</li>
+ 		<li><b>host_id</b> - Number - ID of the QNI host.</li>
+ 		<li><b>inspection_level</b> - Enumeration - Depth of content inspection. The possible values are:<ul>
+<li><i>BASIC</i> - Lowest level of inspection. Flows are detected by 5-tuple, and the number of
+bytes and packets that are flowing in each direction are counted.</li>
+<li><i>ENRICHED</i> - Each flow is identified and inspected by one of the protocol or domain
+inspectors. The inspection can generate many kinds of attributes.</li>
+<li><i>ADVANCED</i> - The highest level of inspection. It does everything that the Enriched Flows
+levels does, but it also scans and inspects the content of the files that it finds.</li>
+<li><i>DEFAULT</i> - The QNI host uses the globally-set inspection level setting.</li>
+</ul></li>
+ 		<li><b>raw_payload</b> - Long - The maximum amount of data (bytes) that the QFlow Collector is
+set to capture and retain in the flow payload. Possible values are:<ul>
+<li>-1: The QNI host is set to use the globally-set raw payload setting.</li>
+<li>0: Turn the payload off.</li>
+<li>1 - 32768: The number of bytes.</li>
+</ul></li>
+ 		<li><b>ports</b> - Array - Array of configured network card ports. Each port has the following fields:
+ 			<ul>
+ 				<li><b>port_id</b> - Number - The ID of the port.</li>
+ 				<li><b>type</b> - Enumeration - The mode that the port is used in. The possible values are <i>RECEIVE</i>, <i>TRANSMIT</i>. <i>RECEIVE</i> type indicates the port is configured to receive traffic. <i>TRANSMIT</i> type indicates the port is transmitting traffic duplicated from another port.</li>
+ 				<li><b>source_port_id</b> - Number - The ID of the port the that re-transmits the traffic. Only populated if the port type is <i>TRANSMIT</i>.</li>
+ 			</ul>
+ 		</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "host_id": 42,
+    "id": 42,
+    "inspection_level": "String &lt;one of: BASIC, ADVANCED, ENRICHED, DEFAULT&gt;",
+    "ports": [
+        {
+            "id": 42,
+            "source_port_id": 42,
+            "type": "String &lt;one of: RECEIVE, TRANSMIT&gt;"
+        }
+    ],
+    "raw_payload": 42
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

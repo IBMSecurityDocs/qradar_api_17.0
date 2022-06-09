@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--ariel-processors-aql_metadata-POST" xml:lang="en-us">
+<title>POST /ariel/processors/aql_metadata</title>
+<shortdesc>Parses the AQL query expression and returns metadata for this query</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/ariel/processors/aql_metadata</apiname>
+<keyword>POST</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Parses the Ariel Query Language (AQL)
+ query expression and returns expected metadata without execution of the query</p>
+  
+ <p>This endpoint only accepts SELECT query expressions.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /ariel/processors/aql_metadata resource details</title>
+<desc><p outputclass="summary">POST /ariel/processors/aql_metadata resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /ariel/processors/aql_metadata request parameter details</title>
+<desc><p outputclass="summary">POST /ariel/processors/aql_metadata request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>query_expression</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Required - The AQL query for metadata.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /ariel/processors/aql_metadata response codes</title>
+<desc><p outputclass="summary">POST /ariel/processors/aql_metadata response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>An AQL query expression was successfully validated.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>2000</p></entry>
+<entry colname="col3"><p>The query_expression contains invalid AQL syntax.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>An error occurred during the attempt to validate AQL.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>503</p></entry>
+<entry colname="col2"><p>1010</p></entry>
+<entry colname="col3"><p>The Ariel server might be temporarily unavailable or offline. Please try again later.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>A list of columns that are defined for the specified AQL query. Multiple properties of each column 
+ are returned. For example, the column name or an indication that the column is indexable.</p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "columns": [
+        {
+            "argument_type": "String",
+            "indexable": true,
+            "name": "String",
+            "nullable": true,
+            "object_value_type": "String &lt;one of: NULL, STRUCT, Byte, Short, Integer, Long, UnsignedByte, UnsignedShort, UnsignedInt, UnsignedLong, BigInteger, Double, Float, Port, Host, HostV4V6, HostV6, MACAddress, String, ByteArray, UnsignedIntHex, Boolean, Binary&gt;",
+            "provider_name": "String"
+        }
+    ]
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

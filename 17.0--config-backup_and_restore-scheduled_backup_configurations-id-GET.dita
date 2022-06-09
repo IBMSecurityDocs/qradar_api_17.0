@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--config-backup_and_restore-scheduled_backup_configurations-id-GET" xml:lang="en-us">
+<title>GET /config/backup_and_restore/scheduled_backup_configurations/{id}</title>
+<shortdesc>Retrieves a Backup Configuration by ID.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/config/backup_and_restore/scheduled_backup_configurations/{id}</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Retrieves a Backup Configuration by ID.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/backup_and_restore/scheduled_backup_configurations/{id} resource details</title>
+<desc><p outputclass="summary">GET /config/backup_and_restore/scheduled_backup_configurations/{id} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/backup_and_restore/scheduled_backup_configurations/{id} request parameter details</title>
+<desc><p outputclass="summary">GET /config/backup_and_restore/scheduled_backup_configurations/{id} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Required. The ID for the Backup Configuration to get.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/backup_and_restore/scheduled_backup_configurations/{id} response codes</title>
+<desc><p outputclass="summary">GET /config/backup_and_restore/scheduled_backup_configurations/{id} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>A Backup Configuration was retrieved.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1001</p></entry>
+<entry colname="col3"><p>The Resource that was requested by the provided ID does not exist.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1000</p></entry>
+<entry colname="col3"><p>An error occurred during the attempt to retrieve the Backup Configuration.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>The Configuration object containing the following fields:
+ <ul>
+ <li><b>configuration_id</b> - Long - The ID for the backup configuration.</li>
+ <li><b>backup_directory_path</b> - String - The file path for the backup archives folder. The default location is /store/backup. This path must exist before the backup process is initiated. If this path does not exist, the backup process aborts.</li>
+ <li><b>backup_retention_period</b> - Long - The backup retention period in milliseconds. This value will only have a granularity of days, and will be truncated.</li>
+ <li><b>data_backup_host_configuration</b> - Array[DataBackupHostConfiguration] - The hosts in the deployment that are configured for data backup. Each host can be configured to enable data backups for events, flows or both. The information for each host is as follows:
+ host_id: The Id for the host.
+ event_data_backup_enabled: Indicates whether event data backup is enabled for this host.
+ flow_data_backup_enabled: Indicates whether flow data backup is enabled for this host.</li>
+ <li><b>configuration_backup_enabled</b> - Boolean - Indicates whether configuration backups are enabled. Setting this field false will keep the deployment configuration from being backed up.</li>
+ <li><b>data_backup_priority</b> - Enum - The priority (LOW, MEDIUM, HIGH) for the data backup process. Medium and high priorities have a greater negative effect on the performance of the server that is running the backup.</li>
+ <li><b>configuration_backup_priority</b> - Enum - The priority (LOW, MEDIUM, HIGH) for the config backup process. Medium and high priorities have a greater negative effect on the performance of the server that is running the backup.</li>
+ <li><b>data_backup_time_limit</b> - Long - The time limit for the data backup process. The value that you enter is converted to minutes. Minutes are converted to milliseconds by using milliseconds = minutes / 60000.</li>
+ <li><b>configuration_backup_time_limit</b> - Long - The time limit for the configuration backup process. The value that you enter is converted to minutes. Minutes are converted to milliseconds by using milliseconds = minutes / 60000.</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "backup_directory_path": "String",
+    "backup_retention_period": 42,
+    "configuration_backup_enabled": true,
+    "configuration_backup_priority": "String &lt;one of: LOW, MEDIUM, HIGH&gt;",
+    "configuration_backup_time_limit": 42,
+    "configuration_id": 42,
+    "data_backup_host_configuration": [
+        {
+            "event_data_backup_enabled": true,
+            "flow_data_backup_enabled": true,
+            "host_id": 42
+        }
+    ],
+    "data_backup_priority": "String &lt;one of: LOW, MEDIUM, HIGH&gt;",
+    "data_backup_time_limit": 42
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//IBM//DTD DITA IBM Topic//EN" "ibm-topic.dtd">
+<?Pub Sty _display FontColor="red"?><?Pub Inc?><topic id="variables_general" xml:lang="en-us">
+<title>Project Level Variables - Introduction template blurbs</title><?Pub Caret -2?>
+<body>
+<section><title>Product Names</title><p><ph id="ibm_security_qradar"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm></ph></p><p><ph id="qradar_short_name"><tm tmtype="reg" trademark="QRadar">QRadar</tm></ph></p><p><ph id="ibm_secrurity_qradar_siem"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm>
+SIEM</ph></p><!--Use the admin_menu variable for 7.3.2 core docs.--><p><ph id="admin_menu">On the
+navigation menu ( <image href="icon_hamburger_12.png" scope="local" placement="inline">
+<alt>Navigation menu icon</alt>
+</image> ), click
+<uicontrol>Admin</uicontrol>.</ph></p><!--The 'admin_page' variable will be removed so that we just use the 'admin_menu' variable in 7.3.2 core docs.--><p><ph id="admin_page">On the navigation menu ( <image href="icon_hamburger_12.png" id="image_cby_brx_4cb" scope="local" placement="inline">
+<alt>Navigation menu icon</alt>
+</image> ), click
+<uicontrol>Admin</uicontrol>.</ph></p><!--If the apps plugins and DSM plugin are version independent from QRadar, use these variables.--><p><ph id="open_admin_settings">Open the <uicontrol>Admin</uicontrol> settings:</ph></p><ph><ph id="admin_menu_730_earlier">In <ph conref="#variables_general/ibm_security_qradar" />
+<ph conref="#variables_general/V7.3.0" /> or earlier, click the <uicontrol>Admin</uicontrol>
+tab.</ph></ph><p><ph id="admin_menu_731">In <ph conref="#variables_general/ibm_security_qradar" />
+<ph conref="#variables_general/V7.3.1" /> or later, click the navigation menu ( <image href="icon_hamburger_12.png" placement="inline">
+<alt>Icon for main navigation menu</alt>
+</image> ), and then click <uicontrol>Admin</uicontrol>.</ph></p><p><ph id="company_name"><tm tmtype="reg" trademark="IBM">IBM</tm></ph></p><p><ph id="ibm_security_qradar_log_manager"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager</ph></p><p><ph id="ibm_security_qradar_network_anomaly"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Anomaly Detection</ph></p><p><ph id="qradar_ver_short"><tm tmtype="reg" trademark="QRadar">QRadar</tm> V7.2.2</ph></p><p><ph id="qradar_long_ver"><tm tmtype="reg" trademark="IBM">IBM</tm>
+<tm tmtype="reg" trademark="QRadar">QRadar</tm> V7.2.2</ph></p><p><ph id="SaaS_Long"><tm tmtype="reg" trademark="IBM">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> on Cloud</ph></p><p><ph id="SaaS_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> on Cloud</ph></p></section>
+<section> <p><ph id="qradar_log_manager_short_name"><tm tmtype="reg" trademark="QRadar">QRadar</tm> Log Manager</ph></p> <p><ph id="ibm_security_qradar_risk_manager"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Risk Manager</ph></p>
+<p><ph id="IBM_Security_QRadar_Risk_Manager"><tm tmtype="reg" trademark="QRadar">IBM QRadar</tm>
+Risk Manager</ph></p> <p><ph id="qradar_risk_manager_short_name"><tm tmtype="reg" trademark="QRadar">QRadar</tm> Risk
+Manager</ph></p> <p><ph id="qrm_prod_name_version"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Risk Manager V7.2.2</ph></p>
+<p><ph id="tuning_long_name"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Use Case Manager</ph></p>
+<p><ph id="tuning_short_name"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Use Case
+Manager</ph></p> <p><ph id="qradar_sec_platform_long_name"><tm tmtype="reg" trademark="IBM">IBM</tm>
+<tm tmtype="reg" trademark="QRadar">QRadar</tm> Security Intelligence Platform</ph></p> <p><ph id="qrm_short_name_version"><tm tmtype="reg" trademark="QRadar">QRadar</tm> Risk Manager V7.2.2</ph></p> <p><ph id="ibm_security_qradar_siem_console"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> SIEM Console</ph></p> <p><ph id="qradar_siem_console"><tm tmtype="reg" trademark="QRadar">QRadar</tm> SIEM
+Console</ph></p> <p><ph id="qradar_siem_ver_longname"><tm tmtype="reg" trademark="IBM">IBM</tm> <tm tmtype="reg" trademark="QRadar">QRadar</tm> SIEM
+V7.2.2</ph></p> <p><ph id="qradar_siem_ver_shortname"><tm tmtype="reg" trademark="QRadar">QRadar</tm> SIEM V7.2.2</ph></p> </section>
+<section><p><ph id="aradar_siem_shortname"><tm tmtype="reg" trademark="QRadar">QRadar</tm>
+SIEM</ph></p><draft-comment translate="no">Added another ID for short name to resolve IC
+errors</draft-comment><p><ph id="qradar_siem_shortname"><tm tmtype="reg" trademark="QRadar"
+>QRadar</tm> SIEM</ph></p><p><ph id="qflow_collector_longname"><tm trademark="IBM" tmtype="reg"
+>IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> QFlow Collector</ph></p><p><ph
+id="qradar_qflow_collector_short_name"><tm tmtype="reg" trademark="QRadar">QRadar</tm> QFlow
+Collector</ph></p><p><ph id="flow_processor">Flow Processor</ph></p><p><ph id="flow_processors">Flow
+Processors</ph></p><p><ph id="Ariel_short">Ariel</ph></p><p><ph id="Incident_Forensics_long_name"
+><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Incident Forensics</ph></p><p><ph
+id="Incident_Forensics_short_name"><tm tmtype="reg" trademark="QRadar">QRadar</tm> Incident
+Forensics</ph></p><p><ph id="Incident_Forensics_short_namec"><tm tmtype="reg" trademark="QRadar"
+>QRadar</tm> Incident Forensics-C</ph></p><p><ph id="packet_capture_long_name"><tm tmtype="reg"
+trademark="IBM">IBM</tm>
+<tm tmtype="reg" trademark="QRadar">QRadar</tm> Packet Capture</ph></p><p><ph
+id="packet_capture_short_name"><tm tmtype="reg" trademark="QRadar">QRadar</tm> Packet
+Capture</ph></p><p><ph id="nw_packet_capture_long_name"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Packet Capture</ph></p><p><ph
+id="nw_packet_capture_short_name"><tm tmtype="reg" trademark="QRadar">QRadar</tm> Network Packet
+Capture</ph></p><p><ph id="qni_short_name"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Network
+Insights</ph></p><p><ph id="qni_long_name"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights</ph></p><p><ph
+id="qif_console_short"><tm tmtype="reg" trademark="QRadar">QRadar</tm> Incident Forensics
+Standalone</ph></p><p><ph id="qif_console_long"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Incident Forensics Standalone</ph></p><p><ph
+id="qif_processor"><tm tmtype="reg" trademark="QRadar">QRadar</tm> Incident Forensics
+Processor</ph></p><p><ph id="qif_processor_long"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Incident Forensics
+Processor</ph></p><!--We probably can't use Console to mean console. We should be using QRadar in front of it.--><p><ph
+id="qradar_console"><tm tmtype="reg" trademark="QRadar">QRadar</tm>
+Console</ph></p><!--Investigate use of NATed.--><p><ph id="NATed">NAT-enabled</ph></p><p><ph
+id="host_context">Host Context</ph></p><p><ph id="accunulator">accumulator</ph></p><p><ph
+id="qlm_8090"><tm tmtype="reg" trademark="QRadar">QRadar</tm> Log Manager 8090</ph></p><p><ph
+id="ALE">Adaptive Log Exporter</ph></p><p><ph id="WinCollect">WinCollect</ph></p><p><ph
+id="qnad_short_name"><tm tmtype="reg" trademark="QRadar">QRadar</tm> Network Anomaly
+Detection</ph></p><p><ph id="qnad_console"><tm tmtype="reg" trademark="QRadar">QRadar</tm> Network
+Anomaly Detection Console</ph></p><ph id="qnad_console_long_name"><tm trademark="IBM" tmtype="reg"
+>IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Anomaly Detection
+Console</ph><p><!--Check trademark and how to reference and then update. In this reference, it applies to appliance as documented in the Upgrade Guide--><ph
+id="qflow_shortname_legacy">QFlow</ph></p><p><ph id="flow_collector">Flow Collector</ph></p><p><ph
+id="flow_collectors">Flow Collectors</ph></p><p><ph id="qflow_collectors"><tm tmtype="reg"
+trademark="QRadar">QRadar</tm> QFlow
+Collectors</ph></p><!--I think that we have to at least insert QRadar in front of the component --><p><ph
+id="event_collector_short_name">Event Collector</ph></p><p><ph id="event_collectors_short_name"
+>Event Collectors</ph></p><p><ph id="magistrate_shortname">Magistrate</ph></p><p><ph
+id="qradar_id_component"><tm tmtype="reg" trademark="QRadar">QRadar</tm>
+Identifier</ph></p><!--Trademark term..need a modifier..at least QRadar?--><p><ph
+id="event_processor">Event Processor</ph></p><p><ph id="event_processors">Event
+Processors</ph></p><p><ph id="cloudcollector">event collector, flow collector, or data
+gateway</ph></p><p><ph id="cloudcollectorscap">Event collectors, flow collectors, and data
+gateways</ph></p><p><ph id="cloudcollectorevcap">Event collector or data gateway</ph></p><p><ph
+id="cloudcollectorev">event collector or data gateway</ph></p><p><ph id="cloudcollectorsevcap">Event
+collectors and data gateways</ph></p><p><ph id="cloudcollectorflo">flow collector or data
+gateway</ph></p><p><ph id="cloudcollectorflocap">Flow collector or data gateway</ph></p><p><ph
+id="cloudcollectorfloscap">Flow collectors and data gateways</ph></p><p><ph id="cloudcollectors"
+>data gateways</ph></p><p><ph id="qradar_vulnerability_mgr_shortname"><tm tmtype="reg"
+trademark="QRadar">QRadar</tm> Vulnerability Manager</ph></p><p><ph
+id="qradar_vulnerability_mgr_ver_shortname"><tm tmtype="reg" trademark="QRadar">QRadar</tm>
+Vulnerability Manager V7.2.2</ph></p><p><ph id="qradar_vulnerability_mgr_longname"><tm
+trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Vulnerability Manager</ph></p><p><ph
+id="qradar_vulnerability_mgr_ver_longname"><tm tmtype="reg" trademark="IBM">IBM</tm>
+<tm tmtype="reg" trademark="QRadar">QRadar</tm> Vulnerability Manager V7.2.2</ph></p><p><ph
+id="integrated_mngmt_module">Integrated Management
+Module</ph></p><!--Not sure whether this acronym is standard.--><p><ph id="imm_shortname_abrev"
+>IMM</ph></p><p><uicontrol id="deployment_editor_icon">Deployment Editor</uicontrol></p><p><ph
+id="QVM_shortname"><tm tmtype="reg" trademark="QRadar">QRadar</tm> Vulnerability
+Manager</ph></p><p><ph id="QVM_longtname"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Vulnerability Manager</ph></p><p><ph
+id="vm_qradar_3190"><tm tmtype="reg" trademark="QRadar">QRadar</tm> SIEM All-in-One Virtual
+3199</ph></p><p><ph id="VIS_shortname">VIS</ph></p><p><ph id="vm_qradar_1690"><tm tmtype="reg"
+trademark="QRadar">QRadar</tm> SIEM Event Processor Virtual 1699 </ph></p><p><ph id="vm_qradar_1790"
+><tm tmtype="reg" trademark="QRadar">QRadar</tm> SIEM Flow Processor Virtual 1799 </ph></p><p><ph
+id="vm_qradar_1899"><tm trademark="QRadar" tmtype="reg">QRadar</tm> SIEM Event and Flow Processor
+Virtual 1899</ph></p><p><ph id="vm_qradar_3105"><tm tmtype="reg" trademark="QRadar">QRadar</tm> SIEM
+3105</ph></p><p><ph id="vm_qradar_3124"><tm tmtype="reg" trademark="QRadar">QRadar</tm> SIEM
+3124</ph></p><p><ph id="event_collector_1501">Event Collector 1501</ph></p><p><ph
+id="event_collector_1590">Event Collector 1590</ph></p><p><ph id="event_collectors"><tm tmtype="reg"
+trademark="QRadar">QRadar</tm> Event Collectors</ph></p><p><ph id="qradar_vflow_collector"><tm
+tmtype="reg" trademark="QRadar">QRadar</tm> VFlow Collector</ph></p><p><ph
+id="qradar_vflow_collector_1290"><tm tmtype="reg" trademark="QRadar">QRadar</tm> QFlow Virtual
+1299</ph></p><p><ph id="qradar_data_node_1400"><tm tmtype="reg" trademark="QRadar">QRadar</tm> Data
+Node Virtual 1400</ph></p><p><ph id="qradar_data_node_1400_appl"><tm tmtype="reg" trademark="QRadar"
+>QRadar</tm> Data Node Virtual 1400 appliance</ph></p><p><ph id="data_node">Data Node</ph></p><p><ph
+id="data_node_1405">QRadar Data Node 1405</ph></p><p><ph id="data_node-1429">QRadar Data Node
+1429</ph></p><p><ph id="data_nodes">Data Nodes</ph></p><p><ph id="Data_Node_Vrt_1400">Data Node
+Virtual 1499 appliance</ph></p><p><ph id="vm_qradar_siem_1590"><tm tmtype="reg" trademark="QRadar"
+>QRadar</tm> Event Collector Virtual 1599</ph></p><p><ph id="vm_qradar_8099"><tm tmtype="reg"
+trademark="QRadar">QRadar</tm> Log Manager Virtual 8099</ph></p><p><ph id="dlc_long"><tm
+trademark="IBM" tmtype="reg">IBM</tm> Disconnected Log Collector</ph></p><p><ph id="dlc_short"
+>Disconnected Log Collector</ph></p></section>
+<section> <!--This section for X-Force feed--> <p><ph id="xforce"><tm tmtype="reg" trademark="X-Force">X-Force</tm></ph></p>
+<p><ph id="xforce_feed_long"><tm tmtype="reg" trademark="IBM">IBM</tm> Security <tm tmtype="reg" trademark="X-Force">X-Force</tm> Threat Intelligence</ph></p> <p><ph id="xforce_feed_short"><tm tmtype="reg" trademark="X-Force">X-Force</tm> Threat
+Intelligence</ph></p> <p><ph id="xforce_exchange"><tm tmtype="reg" trademark="IBM">IBM</tm> <tm tmtype="reg" trademark="X-Force">X-Force</tm> Exchange</ph></p> <p><ph id="x-force_exchange_short"><tm tmtype="reg" trademark="X-Force">X-Force</tm> Exchange</ph></p> <p><ph id="x-force_exchange_long"><ph><tm tmtype="reg" trademark="IBM">IBM</tm> Security</ph> <tm tmtype="reg" trademark="X-Force">X-Force</tm> Exchange</ph></p> <p><ph id="xforce_content_hub"><tm tmtype="reg" trademark="IBM">IBM</tm> Security
+App Exchange</ph></p>
+<p><ph id="xforce_app"><tm trademark="IBM" tmtype="reg">IBM</tm> Security Threat Content</ph></p> <p><ph id="xforce_content_hub_url">(https://apps.xforce.ibmcloud.com/)</ph></p>
+<p><ph id="cloude_security_enforcer">Cloud Security Enforcer</ph></p> </section>
+<section> <title>Product versions and file paths- to be replaced each
+release. If the information for the version does not change (not release
+dependent), you probably don't need a variable</title> <p><draft-comment translate="no">Upgrade minimum version - Insert new minimum version here to
+replace every instance.</draft-comment><ph id="version_7.1_mr1">version 7.1 (MR1)</ph></p> <p><ph id="version_7.1_mr2">version 7.1 (MR2)</ph></p>
+<p><ph id="version_7.2">version 7.2.0</ph></p> <p><ph id="version_7.2_mr1">version 7.2 (MR1)</ph></p> <p><ph id="V7.2.1">V7.2.1</ph></p> <p><ph id="V7.2.2">V7.2.2</ph></p>
+<p><ph id="version_7.2.2">V7.2.2</ph></p> <p><ph id="V7.2.3">V7.2.3</ph></p> <p><ph id="V7.2.4">V7.2.4</ph></p> <p><ph id="V7.2.5">V7.2.5</ph></p> <p><ph id="V7.2.6">V7.2.6</ph></p> <p><ph id="V7.2.6.1">V7.2.6.1</ph></p>
+<p><ph id="V7.2.7">V7.2.7</ph></p>
+<p><ph id="V7.2.8">V7.2.8</ph></p>
+<p><ph id="7.2.3">V7.2.3</ph></p>
+<p><ph id="7.2.4">V7.2.4</ph></p>
+<p><ph id="7.2.5">V7.2.5</ph></p>
+<p><ph id="7.2.6">V7.2.6</ph></p>
+<p><ph id="7.2.7">V7.2.7</ph></p>
+<p><ph id="7.2.8">V7.2.8</ph></p>
+<p><ph id="V7.3.0">V7.3.0</ph></p>
+<p><ph id="7.3.0">V7.3.0</ph></p>
+<p><ph id="V7.3.1">V7.3.1</ph></p>
+<p><ph id="7.3.1">7.3.1</ph></p>
+<p><ph id="V7.3.2">V7.3.2</ph></p>
+<p><ph id="7.3.2">7.3.2</ph></p>
+<p><ph id="V7.3.3">V7.3.3</ph></p>
+<p><ph>V7.3.3</ph></p>
+<p><ph id="V7.4.0">7.4.0</ph></p>
+<p><ph id="V7.4.1">7.4.1</ph></p>
+<p><ph id="V7.4.2"
+>7.4.2</ph><!--Use this for adding the version when you use the "QRadar" variable.--></p>
+<p><ph id="V7.4.3">7.4.3</ph></p>
+<p><ph id="V7.4">7.4</ph></p>
+<p><ph>7.4.1</ph></p>
+<p><ph id="version_current"
+>7.4.3</ph><!--Always increments to the current release version. Do not use in Whats New topics.--></p>
+<p><ph outputclass="carbon-tag-blue" id="7.4.0_new">New in
+7.4.0</ph><!--Use to indicate new features in topics.--></p>
+<p><ph outputclass="carbon-tag-blue" id="7.4.0_deprecated">Deprecated in
+7.4.0</ph><!--Use to indicate deprecated features in topics.--></p>
+<p><ph outputclass="carbon-tag-blue" id="7.4.0_removed">Removed in
+7.4.0</ph><!--Use to indicate removed features in topics.--></p>
+<p><ph outputclass="carbon-tag-blue" id="7.4.1_new">New in
+7.4.1</ph><!--Use to indicate new features in topics.--></p>
+<p><ph outputclass="carbon-tag-blue" id="7.4.1_deprecated">Deprecated in
+7.4.1</ph><!--Use to indicate deprecated features in topics.--></p>
+<p><ph outputclass="carbon-tag-blue" id="7.4.1_removed">Removed in
+7.4.1</ph><!--Use to indicate removed features in topics.--></p>
+<p><ph outputclass="carbon-tag-blue" id="7.4.2_new">New in
+7.4.2</ph><!--Use to indicate new features in topics.--></p>
+<p><ph outputclass="carbon-tag-blue" id="742_changed">Changed in
+7.4.2</ph><!--Use to indicate changed features in topics.--></p>
+<p><ph outputclass="carbon-tag-blue" id="7.4.2_deprecated">Deprecated in
+7.4.2</ph><!--Use to indicate deprecated features in topics.--></p>
+<p><ph outputclass="carbon-tag-blue" id="7.4.2_removed">Removed in
+7.4.2</ph><!--Use to indicate removed features in topics.--></p> <p>Upgrade patch updater file<filepath id="filepath_patch_updater"><varname id="var_filepath_updater">720_QRadar_patchupdate-7.2.0.&lt;build_number&gt;.sfs</varname></filepath></p> <p><ph id="adobe_flash_version"><tm tmtype="tm" trademark="Adobe">Adobe</tm> Flash
+version 10.x</ph></p> <p>JRE <ph id="jre_version">version 1.7</ph></p> <p>JRE <ph id="ibm_java_7"><tm tmtype="reg" trademark="IBM">IBM</tm> 64-bit Runtime
+Environment for <tm tmtype="tm" trademark="Java">Java</tm> V7.0</ph></p> <p>Firefox <ph id="firefox_10esr">10.0 Extended Support Release</ph></p> <p>Firefox <ph id="firefox_17esr">17.0 Extended Support Release</ph></p> <p>Firefox <ph id="firefox_24esr">24.0 Extended Support Release</ph></p> <p>Internet
+Explorer <ph id="ie_version8">8.0</ph></p> <p>Internet Explorer <ph id="ie_version9">9.0</ph></p> <p><!--Updated for version 7.4.1-->RHEL version <ph id="rhel_version">V7.7</ph></p> <p><ph id="vmware_esx_5"><tm trademark="VMWare" tmtype="tm">VMWare</tm> ESX 5.0</ph></p> <p><ph id="vmware_esx_5_1"><tm trademark="VMWare" tmtype="tm">VMWare</tm> ESX 5.1</ph></p> <p><ph id="vmware_esx_5_5"><tm trademark="VMWare" tmtype="tm">VMWare</tm> ESX 5.5</ph></p> <p><ph id="vmware_esx"><tm trademark="VMWare" tmtype="tm">VMWare</tm> ESX</ph></p>
+<p><ph id="vmware_esxi_5"><tm trademark="VMWare" tmtype="tm">VMWare</tm> ESXi 5.0</ph></p>
+<p><ph id="vmware_esxi_5_1"><tm trademark="VMWare" tmtype="tm">VMWare</tm> ESXi 5.1</ph></p>
+<p><ph id="vmware_esxi_5_5"><tm trademark="VMWare" tmtype="tm">VMWare</tm> ESXi 5.5</ph></p>
+<p><ph id="vmware_esxi_6"><tm trademark="VMWare" tmtype="tm">VMWare</tm> ESXi 6.0</ph></p>
+<p><ph id="vmware_esxi"><tm trademark="VMWare" tmtype="tm">VMWare</tm> ESXi</ph></p> <p><tm tmtype="reg" trademark="QRadar">QRadar</tm> upgrades <ph id="version_7_upgrades">version
+7.0</ph></p> <p><!--QVM hosted scanner contact email--><ph id="qvm_hosted_scanner_email"><codeph>QRadar-QVM-Hosted-Scanner@hursley.ibm.com</codeph></ph></p>
+<p><ph id="auto_update_host_name"><filepath>auto-update.qradar.ibmcloud.com/</filepath></ph></p> </section>
+<section>
+<title>References to other documentation</title>
+<p><!--Documentation points to Configuring Offboard Storage Guide, but can find Offboard Storage Guide--><cite id="offboard_storage_guide">Offboard Storage Guide</cite></p>
+<p><cite id="log_sources_guide">Managing Log Sources Guide</cite></p>
+<p><cite id="qlm_admin_guide"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager Administration Guide</cite></p>
+<p><cite id="qradar_dsm_guide">DSM Configuration Guide</cite></p>
+<p><cite id="aql_ug"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Ariel Query Language Guide</cite></p>
+<p><cite id="siem_ug"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> User Guide</cite></p>
+<p><cite id="qvm_ug"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Vulnerability Manager User Guide</cite></p>
+<p><cite id="vuln_ass_guide"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Vulnerability Assessment Configuration
+Guide</cite></p>
+<p><cite id="qrm_user_guide"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Risk Manager User Guide</cite></p>
+<p><cite id="ha_guide"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> High Availability Guide</cite></p>
+<p><cite id="siem_admin_guide"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Administration Guide</cite></p>
+<p><cite id="qnad_admin_guide"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Anomaly Detection Administration Guide</cite></p>
+<p><cite id="imm_ug">Integrated Management Module User's Guide</cite></p>
+<p><cite id="hardware_guide"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm tmtype="reg" trademark="QRadar">QRadar</tm> Hardware Guide</cite></p>
+<p><cite id="bootable_usb_flash">Installing <tm trademark="IBM" tmtype="reg">IBM</tm> <tm tmtype="reg" trademark="QRadar">QRadar</tm> Using a Bootable USB flash drive</cite></p>
+<p><cite id="qrm_install_guide"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Risk Manager Installation Guide</cite></p>
+<p><cite id="upgrade_guide"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Upgrade Guide</cite></p>
+<p><cite id="app_config_guide"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Application Configuration Guide</cite></p>
+<p><cite id="dsm_config_guide"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> DSM Configuration Guide</cite></p>
+<p><cite id="trbls_sys_notifs_guide"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Troubleshooting and System Notifications
+Guide</cite></p>
+<p><cite id="admin_guide_general">Administration Guide</cite></p>
+<p><cite id="qradar_inst_guide"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Installation Guide</cite></p>
+<p><cite id="pcap_quick_ref_guide"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Packet Capture Quick Reference Guide</cite></p>
+<p><cite id="qif_inst_guide"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Incident Forensics Installation Guide</cite></p>
+<p><cite id="qrm_adp_cfg_guide"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Risk Manager Adapter Configuration Guide</cite></p>
+<p><cite id="log_sources_user_guidw"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Sources User Guide</cite></p>
+<p><cite id="log_sources_configuration_guide"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Sources Configuration Guide</cite></p>
+<p><cite id="qrm_migration_guide"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Risk Manager Migration Guide</cite></p>
+<p><cite id="qradar_hw_install_guide"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Hardware Installation Guide</cite></p>
+<p><cite id="qradar_api_guide"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> API Guide</cite></p>
+<p><cite id="qradar_gs_guide"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Getting Started Guide</cite></p>
+<p><cite id="qradar_wincollect_guide"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> WinCollect User Guide</cite></p>
+<p><cite id="qradar_deployment"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Architecture and Deployment Guide</cite></p>
+<p><cite id="qradar_appframework_dev"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Application Framework Developer Quick Start Guide</cite></p>
+<p><cite id="qradar_whats_new"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> What's New</cite></p>
+<!--Should this be flow log file?-->
+<p><ph id="flowlog">Flowlog</ph>file</p>
+</section>
+<section> <title>References to other products</title> <p><ph><tm tmtype="reg" trademark="IBM">IBM</tm> <tm tmtype="reg" trademark="InfoSphere">InfoSphere</tm> <tm tmtype="reg" trademark="BigInsights">BigInsights</tm></ph></p> <p><ph><tm tmtype="reg" trademark="InfoSphere">InfoSphere</tm> <tm tmtype="reg" trademark="BigInsights">BigInsights</tm></ph></p>
+<p><ph id="ibm_i"><tm trademark="IBM" tmtype="reg">IBM</tm> i</ph></p>
+<p><ph id="ibm_iseries"><tm trademark="IBM" tmtype="reg">IBM</tm> i</ph></p> <p><ph id="checkpoint_secure_platfrom_appl">Check Point SecurePlatform Appliances</ph></p> <p><ph id="checkpoint_short">Check Point</ph></p> <p><ph id="netscreen_firewall">NetScreen
+Fiewall</ph></p> <p><ph id="cisco">Cisco Systems</ph></p> <!--Endace DAG NMIC is a registered trademark--> <p>Endace
+DAG NMIC?<ph id="endace_nmic">Endace network monitoring interface
+card</ph></p> <p><ph id="jflow">J-Flow</ph></p> <p><ph id="sFlow">sFlow</ph></p> <p><ph id="packateer">Packeteer</ph></p> <p><ph id="cisco_pix_short">Cisco
+PIX</ph></p> <p><ph id="java_short"><tm tmtype="tm" trademark="Java">Java</tm></ph></p> <p>Novell <ph id="groupwise_shortname">GroupWise</ph></p> <p><ph id="snort">Snort</ph></p> <p><ph id="PIX_firewall">Cisco Private Internet Exchange (PIX) Firewall</ph></p> <!--Needs to be replaced with proper product--> <p><ph id="windows_auth_server"><tm tmtype="tm" trademark="Windows">Windows</tm> Auth
+Server</ph></p> <p><ph id="napatech">Napatech </ph></p> <p><ph id="nortel">Nortel</ph></p> <p><ph id="TippongPoint">HP TippingPoint</ph></p> <p><ph id="dragon">Dragon</ph></p> <p><ph id="cisco_catos">Cisco CatOS</ph></p> <p><ph id="cisco_ios">Cisco IOS</ph></p> <p><ph id="cisco_nexus">Cisco Nexus</ph></p> <p><ph id="cisco_security_appl">Cisco Security Appliances</ph></p> <p><ph id="juniper_networks_junos">Juniper Networks JUNOS</ph></p> <p><ph id="juniper_networks_nsm">Juniper Networks NSM</ph></p> <p><ph id="juniper_networks_screenos">Juniper Networks ScreenOS</ph></p> <p><ph id="cisco_catalyst_catos">Cisco Catalyst (CatOS)</ph></p> <p><ph id="cisco_ios_longname">Cisco Internet Operating System (IOS)</ph></p> <p><ph id="nexus_shortname">Nexus</ph></p> <p><ph id="sourcefire_shortname">Sourcefire
+IPS</ph></p> <p><ph id="sourcefire_longname">Sourcefire 3D Sensor</ph></p> <p><ph id="ziptie">ziptie</ph></p> <p><ph id="rhel">Red Hat Enterprise <tm tmtype="reg" trademark="Linux">Linux</tm></ph></p> <p><ph id="linux"><tm tmtype="reg" trademark="Linux">Linux</tm></ph></p> <!--The NetFlow reference is in the SIEM IG. Not sure whether the vednor is Cisco--> <p>Cisco <ph id="netflow">NetFlow</ph></p> <p><ph id="jre_long_name"><tm tmtype="tm" trademark="Java">Java</tm> Runtime Environment</ph></p> <p><ph id="firefox_longanme">Mozilla Firefox</ph></p> <p><ph id="ie_longname"><tm tmtype="tm" trademark="Microsoft">Microsoft</tm> Internet Explorer</ph></p> <p><ph id="ie_shortname">Internet Explorer</ph></p> <p><ph id="chrome_longname">Google
+Chrome</ph></p> <p><ph id="vmware_vsphere_client_5"><tm trademark="VMware vSphere" tmtype="tm">VMware vSphere</tm> Client 5.0</ph></p> <p><ph id="vsphere_client_short"><tm trademark="VMware vSphere" tmtype="tm">VMware vSphere</tm> Client</ph></p> <p><ph id="BigInsights_longname"><tm tmtype="reg" trademark="IBM">IBM</tm> <tm tmtype="reg" trademark="InfoSphere">InfoSphere</tm> <tm tmtype="reg" trademark="BigInsights">BigInsights</tm></ph></p> <p><ph id="BigInsights_shortname"><tm tmtype="reg" trademark="InfoSphere">InfoSphere</tm> <tm tmtype="reg" trademark="BigInsights">BigInsights</tm></ph></p> <p><ph id="ibm_endpoint_manager"><tm tmtype="reg" trademark="IBM">IBM</tm> Security
+Endpoint Manager</ph></p> <p><ph id="ibm_security_siteprotector"><tm tmtype="reg" trademark="IBM">IBM</tm> Security <tm tmtype="tm" trademark="SiteProtector" tmclass="IGNORE">SiteProtector</tm></ph></p> <p><ph id="Dell"><tm tmtype="reg" trademark="Linux">Dell</tm></ph></p> <p><ph id="ibm_bigfix"><tm tmtype="reg" trademark="IBM">IBM</tm> <tm tmtype="reg" trademark="BigFix">BigFix</tm></ph></p> <p><ph id="ibm_bigfix_shortname"><tm tmtype="reg" trademark="BigFix">BigFix</tm></ph></p> <p><ph id="M3_1201"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> QFlow Collector 1201 (MTM 4378-QC1)</ph></p> <p><ph id="M3_1202"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> QFlow Collector 1202 (MTM 4378-QC2)</ph></p> <p><ph id="M3_1301"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> QFlow Collector 1301 (MTM 4378-QD1)</ph></p> <p><ph id="1310_name_only"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> QFlow Collector 1310</ph></p> <p><ph id="M3_1310_SR">-SR (MTM 4378-QSR)</ph></p> <p><ph id="M3_1310_LR">-LR
+(MTM 4378-QLR)</ph></p>
+<p><ph id="qradar_assistant"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Assistant</ph></p>
+<p><ph id="qradar_pulse"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Pulse</ph></p> <p><ph id="M3_1501"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Event Collector 1501 (MTM 4378-Q21)</ph></p>
+<p><ph id="M5_1501"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Event Collector 1501 (MTM 4412-Q4D)</ph></p> <p><ph id="M3_1605"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Event Processor 1605 (MTM 4379-Q05)</ph></p> <p><ph id="M3_QLM_1605"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 1605 (MTM 4379-Q05)</ph></p>
+<p><ph id="m5_forensics"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Incident Forensics appliance (MTM 4412-F1A)</ph></p>
+<p><ph id="M6_forensics"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Incident Forensics appliance (MTM 4563-F3A)</ph></p>
+<p><ph id="m5_forensicsc"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Incident Forensics-C appliance (MTM
+4654-F2A)</ph></p> <p><ph id="M3_1624"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Event Processor 1624 (MTM 4379-Q24)</ph></p> <p><ph id="M3_QLM_1624"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 1624 (MTM 4379-Q24)</ph></p> <p><ph id="M3_1705"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Flow Processor 1705 (MTM 4379-Q05)</ph></p> <p><ph id="M3_1724"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Flow Processor 1724 (MTM 4379-Q24)</ph></p> <p><ph id="M3_1805"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> 1805 (MTM 4379-Q05)</ph></p> <p><ph id="M3_2100"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> 2100 (MTM 4378-Q21)</ph></p> <p><ph id="M3_qlm_2100"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 2100 (MTM 4378-Q21)</ph></p> <p><ph id="M3_2100_light"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> 2100 Light (MTM 4378-Q21)</ph></p> <p><ph id="M3_3105_base"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> 3105 (Base) (MTM 4379-Q05)</ph></p> <p><ph id="M3_qlm_3105_base"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 3105 (Base) (MTM 4379-Q05)</ph></p> <p><ph id="M3_3105_console"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> 3105 (Console) (MTM 4379-Q05)</ph></p> <p><ph id="M3_qlm_3105_console"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 3105 (Console) (MTM 4379-Q05)</ph></p> <p><ph id="M3_3124_base"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> 3124 (Base) (MTM 4379-Q24)</ph></p> <p><ph id="M3_qlm_3124_base"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 3124 (Base) (MTM 4379-Q24)</ph></p> <p><ph id="M3_3124_console"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> 3124 (Console) (MTM 4379-Q24)</ph></p> <p><ph id="M3_qlm_3124_console"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 3124 (Console) (MTM 4379-Q24)</ph></p>
+<p><ph><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Source Management </ph></p> <p><ph id="M4_1201"> <tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> QFlow Collector 1201 (MTM 4380-Q2C)</ph></p> <p><ph id="M4_1202"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> QFlow Collector 1202 (MTM 4380-Q3C)</ph></p>
+<p><ph id="1202_1301-C"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Core Appliance QFlow Collector 1202-C and 1301-C (MTM 4380-Q1G)</ph>
+</p> <p><ph id="M4_1301"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> QFlow Collector 1301 (MTM 4380-Q4C)</ph></p> <p><ph id="M4_1310"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> QFlow Collector 1310 (MTM 4380-Q5C)</ph></p>
+<p><ph id="1310-C"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Core Appliance QFlow Collector 1310SR-C and LR-C (MTM 4380-Q2G)</ph></p> <p><ph id="M4_1400"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> 1400 Data Node (MTM 4380-Q1E)</ph></p> <p><ph id="M4_1400-C"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> 1400-C Data Node</ph></p> <p><ph id="M4_1501"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Event Collector 1501 (MTM 4380-Q2C) </ph></p> <p><ph id="M4_1605"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Event Processor 1605 (MTM 4380-Q1E)</ph></p> <p><ph id="M4_1628"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Event Processor 1628 (MTM 4380-Q2E) </ph></p> <p><ph id="M4_1628-C"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Event Processor 1628-C</ph></p> <p><ph id="M4_1705"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Flow Processor 1705 (MTM 4380-Q1E)</ph></p> <p><ph id="M4_1728"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Flow Processor 1728 (MTM 4380-Q2E)</ph></p> <p><ph id="M4_1728-C"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Flow Processor 1728-C</ph></p> <p><ph id="M4_1805"><tm trademark="QRadar" tmtype="reg">QRadar</tm> 1805 (MTM 4380-Q1E) </ph></p> <p><ph id="M4_1828"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Flow Processor 1828 (MTM 4380-Q2E)</ph></p> <p><ph id="M4_1828-C"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Flow Processor 1828-C</ph></p> <p><ph id="M4_2100"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> 2100 (MTM 4380-Q1C)</ph></p> <p><ph id="M4_3105_all_one"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> 3105 (All-in-One) (MTM 4380-Q1E)</ph></p> <p><ph id="M4_3105_console"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> 3105 (Console) (MTM 4380-Q1E)</ph></p> <p><ph id="M4__3128_all_one"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> 3128 (All-in-One) (MTM 4380-Q2E)</ph></p> <p><ph id="M4_3128-C_all_one"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> 3128-C (All-in-One)</ph></p> <p><ph id="M4_3128_console"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> 3128 (Console) (MTM 4380-Q2E)</ph></p> <p><ph id="M4_3128-C_console"><tm trademark="QRadar" tmtype="reg">QRadar</tm> 3128-C (Console)</ph></p> <p><ph id="M4_qlm_1605"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 1605 (MTM 4380-Q1E)</ph></p> <p><ph id="M4_qlm_1628"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 1628 (MTM 4380-Q2E)</ph></p> <p><ph id="M4_QLM_1628-C"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 1628-C</ph></p> <p><ph id="M4_qlm_2100"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 2100 (MTM 4380-Q1C)</ph></p> <p><ph id="M4_qlm_3105_all_one"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 3105 (All-in-One) (MTM 4380-Q1E)</ph></p> <p><ph id="M4_qlm_3105_console"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 3105 (Console) (MTM 4380-Q1E)</ph></p> <p><ph id="M4_qlm_3128_all_one"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 3128 (All-in-One) (MTM 4380-Q2E)</ph></p> <p><ph id="M4_qlm_3128_c_all_one"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 3128-C (All-in-One)</ph></p> <p><ph id="M4_qlm_3128_console"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 3128 (Console) (MTM 4380-Q2E) </ph></p> <p><ph id="M4_qlm_3128-c_console"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 3128-C (Console)</ph></p> <p><ph id="M4_QVM"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Vulnerability Manager (MTM 4380-Q1E) </ph></p> <p><ph id="M4_qrm"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Risk Manager (MTM 4380-Q1E)</ph></p> <p><ph id="M4_qif"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Incident Forensics (MTM 4531-G1E)</ph></p>
+<p><ph id="M5_xx48"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> xx48 (MTM 4412-Q3B)</ph></p>
+<p><ph id="M6_xx48_long"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> xx48 (MTM 4563-Q5B)</ph></p>
+<p><ph id="M5_xx48c"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> xx48-C (MTM 4654-Q4B)</ph></p>
+<p><ph id="M5_net_packetcap">
+<tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm>
+Network Packet Capture (MTM 4412-F2C)</ph></p>
+<p><ph id="M6_Network_PCAP">
+<tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Packet Capture (MTM 4563-F3C)</ph></p>
+<p><ph id="M6_Network_PCAP_C">
+<tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Packet Capture 40 Gb (MTM 4654-F3D)</ph></p>
+<p><ph id="M5_xx48_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> xx48</ph></p>
+<p><ph id="M6_xx48_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> xx48</ph></p>
+<p><ph id="M5_xx48c_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> xx48-C</ph></p>
+<p><ph id="M5_1301"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> QFlow Collector 1202/1301 (MTM 4412-Q7C)</ph></p>
+<p><ph id="M6_1201_1501_long"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> QFlow Collector 1201/1501 (MTM 4563-Q5D)</ph></p>
+<p><ph id="M6_1201_1501_short"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> QFlow Collector 1201/1501</ph></p>
+<p><ph id="M5_1310"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> QFlow Collector 1310 (MTM 4412-Q8C)</ph></p> <p><ph id="M4_pcap"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> Packet Capture</ph></p> <p><ph id="1201_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> QFlow Collector 1201</ph></p> <p><ph id="1202_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> QFlow Collector 1202</ph></p>
+<p><ph id="1202_1301-C_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> QFlow Collector
+1202-C/1301-C</ph></p>
+<p><ph id="1202_1301_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> QFlow Collector 1202/1301</ph></p> <p><ph id="1301_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> QFlow Collector 1301</ph></p> <p><ph id="1310_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> QFlow Collector 1310</ph></p>
+<p><ph id="1310-C_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> QFlow Collector 1310 SR-C/LR-C</ph></p> <p><ph id="1400_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> 1400 Data Node</ph></p>
+<p><ph id="M6_Data_Node_long"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Data Node (MTM
+4563-D1S)</ph></p>
+<p><ph id="M6_Data_Node_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Data Node</ph></p> <p><ph id="1400-c_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> 1400-C Data Node</ph></p> <p><ph id="1501_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Event Collector 1501</ph></p> <p><ph id="1605_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Event Processor 1605</ph></p> <p><ph id="1624_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Event Processor 1624</ph></p> <p><ph id="1628_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Event Processor 1628</ph></p> <p><ph id="1628-C_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Event Processor 1628-C</ph></p> <p><ph id="1705_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Flow Processor 1705</ph></p> <p><ph id="1724_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Flow Processor 1724</ph></p> <p><ph id="1728_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Flow Processor 1728</ph></p> <p><ph id="1728-C_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Flow Processor 1728-C</ph></p> <p><ph id="1805_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> 1805</ph></p>
+<p><ph id="1805_short2"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Event and Flow Processor
+1805</ph></p> <p><ph id="1828_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Flow Processor 1828</ph></p> <p><ph id="1828-C_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Flow Processor 1828-C</ph></p> <p><ph id="2100_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> 2100</ph></p> <p><ph id="3105_all_one_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> 3105 (All-in-One)</ph></p> <p><ph id="3105_console_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> 3105 (Console)</ph></p> <p><ph id="3124__all_one_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> 3124 (All-in-One)</ph></p> <p><ph id="3124_console_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> 3124 (Console)</ph></p> <p><ph id="3128_all_one_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> 3128 (All-in-One)</ph></p> <p><ph id="3128-c_all_one"><tm trademark="QRadar" tmtype="reg">QRadar</tm> 3128-C (All-in-One)</ph></p> <p><ph id="3128_console_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> 3128 (Console)</ph></p> <p><ph id="3128_c_console_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> 3128-C (Console)</ph></p> <p><ph id="qlm_1624_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 1624</ph></p> <p><ph id="qlm_1605_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 1605</ph></p> <p><ph id="qlm_1628_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 1628</ph></p> <p><ph id="qlm_1628-c_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 1628-C</ph></p> <p><ph id="qlm_2100_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 2100</ph></p> <p><ph id="2100_light_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 2100 Light</ph></p> <p><ph id="qlm_3105_all_one_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 3105 (All-in-One)</ph></p> <p><ph id="qlm_3105_console_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 3105 Console</ph></p> <p><ph id="qlm_3124_short_all_one"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 3124 (All-in-One)</ph></p> <p><ph id="qlm_3124_short_console"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 3124 Console</ph></p> <p><ph id="qlm_3128_all_one_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 3128 (All-in-One)</ph></p> <p><ph id="qlm_3128-c_all_one_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 3128-C (All-in-One)</ph></p> <p><ph id="qlm_3128_console_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 3128 (Console)</ph></p> <p><ph id="qlm_3128-c_console_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 3128-C (Console)</ph></p> <p><ph id="qif_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Incident Forensics</ph></p> <p><ph id="pcap_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Packet Capture</ph></p>
+<p><ph id="hw_maximum_cap_entry">Maximum capacity</ph></p>
+<p><ph id="M5_xx05_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> xx05</ph></p>
+<p><ph id="M5_xx29_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> xx29</ph></p>
+<p><ph id="M5_xx29C_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> xx29-C</ph></p>
+<p><ph id="M5_xx05_long"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> xx05 (MTM 4412-Q1E)</ph></p>
+<p><ph id="M5_xx29_long"><tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> xx29 (MTM 4412-Q2A)</ph></p>
+<p><ph id="M5_xx29C_long"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> xx29-C (MTM 4654-Q3A)</ph></p>
+<p><ph id="M6_xx05_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> xx05</ph></p>
+<p><ph id="M6_xx29_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> xx29</ph></p>
+<p><ph id="M6_xx29C_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> xx29-C</ph></p>
+<p><ph id="M6_xx05_long"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> xx05 (MTM 4563-Q3E)</ph></p>
+<p><ph id="M6_xx29_long"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> xx29 (MTM 4563-Q4A)</ph></p>
+<p><ph id="M5_1901">
+<tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm>
+Network Insights 1901 (MTM 4412-F4Y)</ph></p>
+<p><ph id="M6_1901_long">
+<tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights 1901 (MTM 4563-F8Y)</ph></p>
+<p><ph id="M6_1901_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights
+1901</ph></p>
+<p><ph id="M5_1901_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights
+1901</ph></p>
+<p><ph id="M5_1901C"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights 1901-C (MTM 4654-F6Y)</ph></p>
+<p><ph id="M5_1901C_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights
+1901-C</ph></p>
+<p><ph id="M6_1910_long"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights 1910 (MTM 4563-F7Y)</ph></p>
+<p><ph id="M6_1910_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights
+1910</ph></p>
+<p><ph id="1910-4412-f5y"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights 1910 (MTM 4412-F5Y)</ph></p>
+<p><ph id="1910-4412-f5ysh"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights
+1910</ph></p>
+<p><ph id="M5_1910c"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights 1910-C (MTM 4654-Q9C)</ph></p>
+<p><ph id="M5_1910c_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights
+1910-C</ph></p>
+<p><ph id="M6_1940_long">
+<tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights 1940 (MTM 4563-F6G)</ph></p>
+<p><ph id="M6_1940_short">
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights 1940</ph></p>
+<p><ph id="M6_1940-C_long">
+<tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights 1940-C (MTM 4654-F7G)</ph></p>
+<p><ph id="M6_1940-C_short">
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights 1940-C</ph></p>
+<p><ph id="M5_1920">
+<tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm>
+Network Insights 1920 (MTM 4412-F3F)</ph></p>
+<p><ph id="M5_1920_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights
+1920</ph></p>
+<p><ph id="M6_1920_long">
+<tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights 1920 (MTM 4563-F5F)</ph></p>
+<p><ph id="M6_1920_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights
+1920</ph></p>
+<p><ph id="M5_1920C"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights 1920-C (MTM 4531-F3F)</ph></p>
+<p><ph id="M5_1920C_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights
+1920-C</ph></p>
+<p><ph id="M5_1920c2"><tm trademark="IBM" tmtype="reg">IBM</tm>
+<tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights 1920-C (MTM 4654-F4F)</ph></p>
+<p><ph id="M5_1920c2_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Insights
+1920-C</ph></p>
+<p><ph id="M5_net_packet_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Packet
+Capture</ph></p>
+<p><ph id="M5_PCAPC"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Packet Capture-C (MTM
+4531-F2C)</ph></p>
+<p><ph id="M5_PCAPC_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Packet
+Capture-C</ph></p>
+<p><ph id="M6_PCAP_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Packet
+Capture</ph></p>
+<p><ph id="M6_PCAP_C_40Gb"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Packet Capture 40
+Gb</ph></p>
+<p><ph id="NPCAP_DAS_C_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Packet Capture
+Direct Attached Storage</ph></p>
+<p><ph id="NPCAP_DAS_C_long"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Packet Capture
+Direct Attached Storage-C (4654-D2S)</ph></p>
+<p><ph id="M5_PCAPC2"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Packet Capture-C (MTM
+4654-F3C)</ph></p>
+<p><ph id="M5_PCAPC_short2"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Network Packet
+Capture-C</ph></p>
+<p><ph id="1629_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Event Processor 1629</ph></p>
+<p><ph id="1729_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Flow Processor 1729</ph></p>
+<p><ph id="1829_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Event and Flow Processor
+1829</ph></p>
+<p><ph id="3129_all_one_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> 3129
+(All-in-One)</ph></p>
+<p><ph id="all_in_one">All-in-One</ph></p>
+<p><ph id="3129_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> 3129 (Console)</ph></p>
+<p><ph id="qlm_1629_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 1629</ph></p>
+<p><ph id="qlm_3129_all_one_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 3129
+(All-in-One)</ph></p>
+<p><ph id="qlm_3129_console_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Manager 3129
+(Console)</ph></p>
+<p><ph id="1648_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Event Processor 1648</ph></p>
+<p><ph id="1748_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Flow Processor 1748</ph></p>
+<p><ph id="1848_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Event and Flow Processor 1848</ph></p>
+<p><ph id="3148_base_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> 3148
+(All-in-One)</ph></p>
+<p><ph id="3148_console_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> 3148
+(Console)</ph></p>
+<p><ph><tm trademark="QRadar" tmtype="reg">IBM<tm tmtype="reg" trademark="IBM"/> QRadar</tm> Log
+Source Management</ph></p>
+<p><ph id="qlm_lsm"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Source Management</ph></p>
+<p><ph id="qlm_lsm_short"><tm trademark="QRadar" tmtype="reg">QRadar</tm> Log Source
+Management</ph></p>
+<p><ph id="analyst_workflow_short"><tm tmtype="reg" trademark="QRadar">QRadar</tm> Analyst
+Workflow</ph></p>
+<p><ph id="analyst_workflow_long"><tm trademark="IBM" tmtype="reg">IBM</tm> Security <tm
+trademark="QRadar" tmtype="reg">QRadar</tm> Analyst Workflow</ph></p> </section>
+<section id="statement_of_gd_scrty_prcts">
+<title>Statement of good security practices </title>
+<p>IT system security involves protecting systems and information through prevention, detection and
+response to improper access from within and outside your enterprise. Improper access can result in
+information being altered, destroyed, misappropriated or misused or can result in damage to or
+misuse of your systems, including for use in attacks on others. No IT system or product should be
+considered completely secure and no single product, service or security measure can be completely
+effective in preventing improper use or access. <tm tmtype="reg" trademark="IBM">IBM</tm> systems,
+products and services are designed to be part of a lawful comprehensive security approach, which
+will necessarily involve additional operational procedures, and may require other systems, products
+or services to be most effective. <tm tmtype="reg" trademark="IBM">IBM</tm> DOES NOT WARRANT THAT
+ANY SYSTEMS, PRODUCTS OR SERVICES ARE IMMUNE FROM, OR WILL MAKE YOUR ENTERPRISE IMMUNE FROM, THE
+MALICIOUS OR ILLEGAL CONDUCT OF ANY PARTY.</p>
+<note othertype="Please Note" type="other">
+<p>Use of this Program may implicate various laws or regulations, including those related to
+privacy, data protection, employment, and electronic communications and storage. <tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> may be used only for
+lawful purposes and in a lawful manner. Customer agrees to use this Program pursuant to, and assumes
+all responsibility for complying with, applicable laws, regulations and policies. Licensee
+represents that it will obtain or has obtained any consents, permissions, or licenses required to
+enable its lawful use of <tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm>.</p>
+</note>
+</section>
+<section id="technical_doc_library">
+<title>Technical documentation</title>
+<p>To find <tm trademark="IBM" tmtype="reg">IBM</tm> <tm trademark="QRadar" tmtype="reg">QRadar</tm> product documentation on the web, including all translated documentation, access the
+<xref format="html" href="http://www.ibm.com/support/knowledgecenter/SS42VS/welcome" scope="external"><tm tmtype="reg" trademark="IBM">IBM</tm> Knowledge Center</xref>
+(http://www.ibm.com/support/knowledgecenter/SS42VS/welcome).</p>
+<p>For information about how to access more technical documentation in the <tm tmtype="reg" trademark="QRadar">QRadar</tm> products library, see <xref format="html" href="http://www.ibm.com/support/docview.wss?rs=0&amp;uid=swg21614644" scope="external">Accessing
+<tm tmtype="reg" trademark="IBM">IBM</tm> Security Documentation Technical Note</xref>
+(www.ibm.com/support/docview.wss?rs=0&amp;uid=swg21614644).</p>
+</section>
+<section id="customer_support_contact">
+<title>Contacting customer support</title>
+<p>For information about contacting customer support, see the <xref format="html" href="http://www.ibm.com/support/docview.wss?uid=swg21616144" scope="external">Support and Download
+Technical Note</xref> (http://www.ibm.com/support/docview.wss?uid=swg21616144).</p>
+</section>
+<section>
+<title><tm tmtype="reg" trademark="IBM">IBM</tm> links</title>
+<p><ph id="fix_central"><xref format="html" href="http://www.ibm.com/support/fixcentral/" scope="external">Fix Central </xref> (www.ibm.com/support/fixcentral/)</ph></p>
+<p><ph id="fix_central_short"><tm tmtype="reg" trademark="IBM">IBM</tm> Fix Central</ph></p>
+<p><ph id="ibm_customer_support"><xref format="html" href="http://www.ibm.com/support/" scope="external">Customer Support</xref> (www.ibm.com/support/)</ph></p>
+<p><ph id="auto_update_url"><filepath>https://auto-update.qradar.ibmcloud.com/</filepath></ph></p>
+</section>
+<section><title>Attribution statements</title><p>The listed trademarks of the following companies
+require attribution:</p><p id="ibm_attribution" otherprops="ibmTM"><tm tmtype="reg" trademark="IBM">IBM</tm>, the <tm tmtype="reg" trademark="IBM">IBM</tm> logo, and <tm tmtype="reg" trademark="ibm.com">ibm.com</tm> are trademarks or registered trademarks of International Business
+Machines Corp., registered in many jurisdictions worldwide. Other product and service names might be
+trademarks of <tm tmtype="reg" trademark="IBM">IBM</tm> or other companies. A current list of <tm tmtype="reg" trademark="IBM">IBM</tm> trademarks is available on the Web at "Copyright and trademark
+information" at <xref format="html" href="http://www.ibm.com/legal/copytrade.shtml" scope="external">www.ibm.com/legal/copytrade.shtml</xref>.</p><p id="adobe_attribution" otherprops="AdobeTM"><tm tmtype="tm" trademark="Adobe">Adobe</tm>, the <tm tmtype="tm" trademark="Adobe">Adobe</tm> logo, <tm tmtype="tm" trademark="PostScript">PostScript</tm>, and the <tm tmtype="tm" trademark="PostScript">PostScript</tm> logo are either registered trademarks or trademarks of <tm tmtype="tm" trademark="Adobe">Adobe</tm> Systems Incorporated in the United States, and/or other
+countries.</p><p id="ITI_atttribution"><tm tmtype="reg" trademark="IT Infrastructure Library">IT
+Infrastructure Library</tm> is a Registered Trade Mark of AXELOS Limited.</p><p id="LTO_attribution"><tm tmtype="tm" trademark="Linear Tape-Open">Linear Tape-Open</tm>, <tm tmtype="tm" trademark="LTO">LTO</tm>, the <tm tmtype="tm" trademark="LTO">LTO</tm> Logo, <tm tmtype="tm" trademark="Ultrium">Ultrium</tm>, and the <tm tmtype="tm" trademark="Ultrium">Ultrium</tm> logo are trademarks of HP,
+<tm tmtype="reg" trademark="IBM">IBM</tm> Corp. and Quantum in the U.S. and other countries.</p><p id="Intel_attribution"><tm tmtype="tm" trademark="Intel">Intel</tm>, <tm tmtype="tm" trademark="Intel">Intel</tm> logo, <tm tmtype="tm" trademark="Intel Inside">Intel Inside</tm>, <tm tmtype="tm" trademark="Intel Inside">Intel Inside</tm> logo, <tm tmtype="tm" trademark="Intel Centrino">Intel Centrino</tm>, <tm tmtype="tm" trademark="Intel Centrino">Intel
+Centrino</tm> logo, <tm tmtype="tm" trademark="Celeron">Celeron</tm>, <tm tmtype="tm" trademark="Intel Xeon">Intel Xeon</tm>, <tm tmtype="tm" trademark="Intel SpeedStep">Intel
+SpeedStep</tm>, <tm tmtype="tm" trademark="Itanium">Itanium</tm>, and <tm tmtype="tm" trademark="Pentium">Pentium</tm> are trademarks or registered trademarks of <tm tmtype="tm" trademark="Intel">Intel</tm> Corporation or its subsidiaries in the United States and other
+countries.</p><p id="Linux_attribution" otherprops="LinuxTM"><tm tmtype="reg" trademark="Linux">Linux</tm> is a registered trademark of Linus Torvalds in the United States, other countries, or
+both.</p><p id="Microsoft_attribution" outputclass="MicrosoftTM" otherprops="MicrosoftTM"><tm tmtype="tm" trademark="Microsoft">Microsoft</tm>, <tm tmtype="tm" trademark="Windows">Windows</tm>,
+<tm tmtype="tm" trademark="Windows NT">Windows NT</tm>, and the <tm tmtype="tm" trademark="Windows">Windows</tm> logo are trademarks of <tm tmtype="tm" trademark="Microsoft">Microsoft</tm>
+Corporation in the United States, other countries, or both.</p><p id="java_attribution" otherprops="JavaTM"><tm tmtype="tm" trademark="Java">Java</tm> and all <tm tmtype="tm" trademark="Java">Java</tm>-based trademarks and logos are trademarks or registered trademarks of
+Oracle and/or its affiliates.</p><image href="java.GIF" id="java_logo" placement="inline" scope="local" outputclass="JavaTM" otherprops="JavaTM">
+<alt>Java logo</alt>
+</image><p id="ITIL_attribution"><tm tmtype="reg" trademark="ITIL" tmclass="IGNORE">ITIL</tm> is a Registered Trade
+Mark of AXELOS Limited.</p><p id="CBE_attribution"><tm tmtype="reg" trademark="Cell Broadband Engine">Cell Broadband Engine</tm> is a trademark of Sony Computer Entertainment, Inc. in the United
+States, other countries, or both and is used under license therefrom.</p><p id="unix_attribution" outputclass="unixTM"><tm tmtype="reg" trademark="UNIX">UNIX</tm> is a registered trademark of The
+Open Group in the United States and other countries.</p><p id="password_criteria">
+<ul id="ul_tzj_mzw_h2b">
+<li>Contains at least 5 characters</li>
+<li>Contains no spaces</li>
+<li>Can include the following special characters: @, #, ^, and *.</li>
+</ul>
+</p></section>
+</body>
+</topic><?Pub *0000038959?><?tm 1583495463150 523 ibm.com||X-Force||Windows NT||Windows||VMware vSphere||VMWare||Ultrium||UNIX||SiteProtector||QRadar||PostScript||Pentium||Microsoft||Linux||Linear Tape-Open||LTO||Java||Itanium||Intel Xeon||Intel SpeedStep||Intel Inside||Intel Centrino||Intel||InfoSphere||ITIL||IT Infrastructure Library||IBM||Cell Broadband Engine||Celeron||BigInsights||BigFix||Adobe ?>

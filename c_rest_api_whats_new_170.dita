@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//IBM//DTD DITA IBM Concept//EN" "ibm-concept.dtd">
+<concept id="c_rest_api_whats_new_726" xml:lang="en-us">
+<title>What's new in REST API Version 17.0</title>
+<shortdesc><ph conref="variables_qradar_gen.dita#variables_general/ibm_security_qradar"/> 7.5.0
+introduces version 17.0 of the API endpoints.</shortdesc>
+<conbody>
+<section id="wn_new_endpoints">
+<title>New endpoints</title>
+<p> RESTful API 17.0 introduces new categories of API endpoints and updates to existing endpoints in
+the following categories:</p>
+<p>
+<dl>
+<dlentry>
+<dt>Configuration endpoints</dt>
+<dd>Resilient connection</dd>
+</dlentry>
+</dl>
+</p>
+</section>
+<section id="wn_deprecated_endpoints">
+<title>Deprecated endpoints</title>
+<p>All version 14.x API endpoints are marked as deprecated in <ph
+conref="variables_qradar_gen.dita#variables_general/qradar_short_name"/> 7.5.0.</p>
+<p>Although deprecated endpoints continue to function, they will be removed in a future release. You
+must update your integration to use the most recent version of the <ph
+conref="variables_qradar_gen.dita#variables_general/qradar_short_name"/> RESTful API. Responses to
+deprecated endpoint requests include a <systemoutput>Deprecated</systemoutput> response header.</p>
+</section>
+</conbody>
+</concept>

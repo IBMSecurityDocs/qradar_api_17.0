@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--health-metrics-system_metrics_global_config-POST" xml:lang="en-us">
+<title>POST /health/metrics/system_metrics_global_config</title>
+<shortdesc>Updates the frequency and enabled value of all the qradar metrics identified by metric_id parameter.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/health/metrics/system_metrics_global_config</apiname>
+<keyword>POST</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Updates the frequency and enabled fields of all the system metrics.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /health/metrics/system_metrics_global_config resource details</title>
+<desc><p outputclass="summary">POST /health/metrics/system_metrics_global_config resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /health/metrics/system_metrics_global_config request parameter details</title>
+<desc><p outputclass="summary">POST /health/metrics/system_metrics_global_config request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>header</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /health/metrics/system_metrics_global_config request body details</title>
+<desc><p outputclass="summary">POST /health/metrics/system_metrics_global_config request body details</p></desc>
+<tgroup cols="5">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="2*" />
+<colspec colname="col5" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Data Type</entry>
+<entry colname="col3">MIME Type</entry>
+<entry colname="col4">Description</entry>
+<entry colname="col5">Sample</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>global_config</p></entry>
+<entry colname="col2"><p>Object</p></entry>
+<entry colname="col3"><p>application/json</p></entry>
+<entry colname="col4"><p>GlobalMetricConfiguration DTO. This DTO has time_resolution and enabled fields in JSON format.</p></entry>
+<entry colname="col5"><p>{
+    "enabled": true,
+    "time_resolution": 42
+}</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /health/metrics/system_metrics_global_config response codes</title>
+<desc><p outputclass="summary">POST /health/metrics/system_metrics_global_config response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>Global system metric configuration resource defined by the GlobalMetricConfiguration DTO.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1010</p></entry>
+<entry colname="col3"><p>The time_resolution value cannot be less than 5000.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1014</p></entry>
+<entry colname="col3"><p>Time_resolution and enabled both cannot be empty.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>Internal Server Error.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>A GlobalMetricConfiguration DTO. A GlobalMetricConfiguration object contains the following fields:
+ <ul>
+ <li><b>global_config</b> - The GlobalMetricConfiguration DTO provides the time_resolution and enabled fields in JSON format.</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "enabled": true,
+    "time_resolution": 42
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

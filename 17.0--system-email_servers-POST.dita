@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--system-email_servers-POST" xml:lang="en-us">
+<title>POST /system/email_servers</title>
+<shortdesc>Creates a new email server.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/system/email_servers</apiname>
+<keyword>POST</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn/>
+<refsyn>
+<table pgwide="0">
+<title>POST /system/email_servers resource details</title>
+<desc><p outputclass="summary">POST /system/email_servers resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /system/email_servers request body details</title>
+<desc><p outputclass="summary">POST /system/email_servers request body details</p></desc>
+<tgroup cols="5">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="2*" />
+<colspec colname="col5" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Data Type</entry>
+<entry colname="col3">MIME Type</entry>
+<entry colname="col4">Description</entry>
+<entry colname="col5">Sample</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>email_server_details</p></entry>
+<entry colname="col2"><p>Object</p></entry>
+<entry colname="col3"><p>application/json</p></entry>
+<entry colname="col4"><p>Required - An email server details record that contains the following fields: <ul>
+<li><b>description</b> - String - Description identifying the email server.</li>
+<li><b>hostname</b> - String - Hostname of the email server.</li>
+<li><b>port</b> - Number - Port to connect to the email server with.</li>
+<li><b>username</b> - String - User name to authenticate with the email server.</li>
+<li><b>password</b> - String - Password to authenticate with the email server.</li>
+<li><b>enable_tls</b> - Boolean - Whether to ignore TLS verification errors to the email
+server.</li>
+</ul>
+</p></entry>
+<entry colname="col5"><p>{
+    "default": true,
+    "description": "String",
+    "enable_tls": true,
+    "hostname": "String",
+    "password": "String",
+    "port": 42,
+    "username": "String"
+}</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /system/email_servers response codes</title>
+<desc><p outputclass="summary">POST /system/email_servers response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>201</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The email server record was created.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>409</p></entry>
+<entry colname="col2"><p>4011</p></entry>
+<entry colname="col3"><p>An email server with the same hostname, port and username already exists.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>4000</p></entry>
+<entry colname="col3"><p>The required field hostname was not given.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>4001</p></entry>
+<entry colname="col3"><p>The hostname is an IP address.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>4002</p></entry>
+<entry colname="col3"><p>The hostname cannot be longer than 255 characters.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>4003</p></entry>
+<entry colname="col3"><p>The username cannot be longer than 255 characters.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>4004</p></entry>
+<entry colname="col3"><p>The password cannot be longer than 255 characters.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>4005</p></entry>
+<entry colname="col3"><p>Problem encountered while encrypting email server password.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>4006</p></entry>
+<entry colname="col3"><p>Port must be bewtween 1 and 65535 inclusive.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>4007</p></entry>
+<entry colname="col3"><p>The default value can only be set to true.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>4010</p></entry>
+<entry colname="col3"><p>The description cannot be longer than 255 characters.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>4014</p></entry>
+<entry colname="col3"><p>The username cannot contain spaces or quotes.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>4015</p></entry>
+<entry colname="col3"><p>Username or password not given while creating either field for email server.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>4016</p></entry>
+<entry colname="col3"><p>null</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>4008</p></entry>
+<entry colname="col3"><p>Problem encountered while updating default email server database entry.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>4009</p></entry>
+<entry colname="col3"><p>Problem encountered while attempting to read the default email server from the database.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>4012</p></entry>
+<entry colname="col3"><p>Problem encountered while creating new EmailServer database entry.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>4013</p></entry>
+<entry colname="col3"><p>Problem encountered while attempting to read the database.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>The created email server record that contains the following fields: <ul>
+<li><b>id</b> - Number - ID of the email server.</li>
+<li><b>description</b> - String - Description identifying the email server.</li>
+<li><b>hostname</b> - String - Hostname of the email server.</li>
+<li><b>port</b> - Number - Port to connect to the email server with.</li>
+<li><b>username</b> - String - User name to authenticate with the email server.</li>
+<li><b>password</b> - String - Password to authenticate with the email server.</li>
+<li><b>enable_tls</b> - Boolean - Whether to ignore TLS verification errors to the email
+server.</li>
+</ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "default": true,
+    "description": "String",
+    "enable_tls": true,
+    "hostname": "String",
+    "id": 42,
+    "password": "String",
+    "port": 42,
+    "username": "String"
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

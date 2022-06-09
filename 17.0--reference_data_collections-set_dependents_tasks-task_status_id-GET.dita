@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--reference_data_collections-set_dependents_tasks-task_status_id-GET" xml:lang="en-us">
+<title>GET /reference_data_collections/set_dependents_tasks/{task_status_id}</title>
+<shortdesc>Get the status of the Get Dependents task</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/reference_data_collections/set_dependents_tasks/{task_status_id}</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn/>
+<refsyn>
+<table pgwide="0">
+<title>GET /reference_data_collections/set_dependents_tasks/{task_status_id} resource details</title>
+<desc><p outputclass="summary">GET /reference_data_collections/set_dependents_tasks/{task_status_id} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /reference_data_collections/set_dependents_tasks/{task_status_id} request parameter details</title>
+<desc><p outputclass="summary">GET /reference_data_collections/set_dependents_tasks/{task_status_id} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>task_status_id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>- The ID for Get Dependents task</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /reference_data_collections/set_dependents_tasks/{task_status_id} response codes</title>
+<desc><p outputclass="summary">GET /reference_data_collections/set_dependents_tasks/{task_status_id} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>13007</p></entry>
+<entry colname="col3"><p>The Get Dependents task does not exist.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>110000</p></entry>
+<entry colname="col3"><p>An unknown server error occurred.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>200 and the task status DTO for the Get Dependents request</p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "cancelled_by": "String",
+    "completed": 42,
+    "created": 42,
+    "created_by": "String",
+    "id": 42,
+    "maximum": 42,
+    "message": "String",
+    "modified": 42,
+    "name": "String",
+    "number_of_dependents": 42,
+    "progress": 42,
+    "started": 42,
+    "status": "String &lt;one of: CANCELLED, CANCELING, CANCEL_REQUESTED, COMPLETED, CONFLICT, EXCEPTION, INITIALIZING, INTERRUPTED, PAUSED, PROCESSING, QUEUED, RESUMING&gt;",
+    "task_components": [
+        {
+            "completed": 42,
+            "created": 42,
+            "maximum": 42,
+            "message": "String",
+            "modified": 42,
+            "number_of_dependents": 42,
+            "progress": 42,
+            "started": 42,
+            "status": "String &lt;one of: CANCELLED, CANCELING, CANCEL_REQUESTED, COMPLETED, CONFLICT, EXCEPTION, INITIALIZING, INTERRUPTED, PAUSED, PROCESSING, QUEUED, RESUMING&gt;",
+            "task_sub_type": "String &lt;one of: FIND_DEPENDENT_ARIEL_SAVED_SEARCHES, FIND_DEPENDENT_OFFENSE_SAVED_SEARCHES, FIND_DEPENDENT_ASSET_SAVED_SEARCHES, FIND_DEPENDENT_VULNERABILITY_SAVED_SEARCHES, FIND_DEPENDENT_ADE_RULES, FIND_DEPENDENT_RULES, FIND_DEPENDENT_CALCULATED_PROPERTIES, FIND_DEPENDENT_AQL_PROPERTIES, FIND_DEPENDENT_LOG_SOURCE_GROUPS, FIND_DEPENDENT_CUSTOM_PROPERTIES, FIND_DEPENDENT_REPORTS, FIND_DEPENDENT_DASHBOARDS, FIND_DEPENDENT_STORE_AND_FORWARD_POLOCIES, FIND_DEPENDENT_AUTHORIZED_SERVICES, FIND_DEPENDENT_OFFENSE_TYPES, FIND_DEPENDENT_ASSIGNED_OFFENSES, FIND_DEPENDENT_VULNERABILITIES, FIND_DEPENDENT_GROUPS, FIND_DEPENDENT_HISTORICAL_CORRELATION_PROFILES, FIND_DEPENDENT_SECURITY_PROFILES, FIND_DEPENDENT_ARIEL_INDEXING, FIND_DEPENDENT_DOMAIN, FIND_DEPENDENT_NAMED_SERVICES, FIND_DEPENDENT_FORWARDING_PROFILE&gt;"
+        }
+    ]
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

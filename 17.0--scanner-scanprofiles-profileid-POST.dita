@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--scanner-scanprofiles-profileid-POST" xml:lang="en-us">
+<title>POST /scanner/scanprofiles/{profileid}</title>
+<shortdesc>Update a scan profile. The Scan Profile ID is required.
+  The following information on a scan profile can be updated 
+ 
+  - name
+  - description
+  - ips
+      eg  {'name':'Updated Scan Profile', 'ips':['10.100.85.135']}</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/scanner/scanprofiles/{profileid}</apiname>
+<keyword>POST</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn/>
+<refsyn>
+<table pgwide="0">
+<title>POST /scanner/scanprofiles/{profileid} resource details</title>
+<desc><p outputclass="summary">POST /scanner/scanprofiles/{profileid} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /scanner/scanprofiles/{profileid} request parameter details</title>
+<desc><p outputclass="summary">POST /scanner/scanprofiles/{profileid} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>profileid</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>The unique id of the scan profile used to update</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /scanner/scanprofiles/{profileid} request body details</title>
+<desc><p outputclass="summary">POST /scanner/scanprofiles/{profileid} request body details</p></desc>
+<tgroup cols="5">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="2*" />
+<colspec colname="col5" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Data Type</entry>
+<entry colname="col3">MIME Type</entry>
+<entry colname="col4">Description</entry>
+<entry colname="col5">Sample</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>scanProfile</p></entry>
+<entry colname="col2"><p>JSON</p></entry>
+<entry colname="col3"><p>application/json</p></entry>
+<entry colname="col4"><p>null</p></entry>
+<entry colname="col5"><p>null</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /scanner/scanprofiles/{profileid} response codes</title>
+<desc><p outputclass="summary">POST /scanner/scanprofiles/{profileid} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>202</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The scan profile was successfully updated</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1030</p></entry>
+<entry colname="col3"><p>Occurs when an attempt is made to update a scan profile when certain conditions are not met, or when too many scan requests have been made</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>A message to indicate whether the scan profile has updated or not.</p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

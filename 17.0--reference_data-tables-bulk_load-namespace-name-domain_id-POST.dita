@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--reference_data-tables-bulk_load-namespace-name-domain_id-POST" xml:lang="en-us">
+<title>POST /reference_data/tables/bulk_load/{namespace}/{name}/{domain_id}</title>
+<shortdesc>Adds or updates data in a reference table.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/reference_data/tables/bulk_load/{namespace}/{name}/{domain_id}</apiname>
+<keyword>POST</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Adds or updates data in a reference table.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /reference_data/tables/bulk_load/{namespace}/{name}/{domain_id} resource details</title>
+<desc><p outputclass="summary">POST /reference_data/tables/bulk_load/{namespace}/{name}/{domain_id} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /reference_data/tables/bulk_load/{namespace}/{name}/{domain_id} request parameter details</title>
+<desc><p outputclass="summary">POST /reference_data/tables/bulk_load/{namespace}/{name}/{domain_id} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>namespace</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Required - Either SHARED or TENANT.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>name</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Required - The name of table to add or update data in.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>domain_id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Required - Specify the numeric domain_id tag for the data or SHARED for Admin users. Must be a domain ID for which the caller has access.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>header</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /reference_data/tables/bulk_load/{namespace}/{name}/{domain_id} request body details</title>
+<desc><p outputclass="summary">POST /reference_data/tables/bulk_load/{namespace}/{name}/{domain_id} request body details</p></desc>
+<tgroup cols="5">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="2*" />
+<colspec colname="col5" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Data Type</entry>
+<entry colname="col3">MIME Type</entry>
+<entry colname="col4">Description</entry>
+<entry colname="col5">Sample</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>data</p></entry>
+<entry colname="col2"><p>Array</p></entry>
+<entry colname="col3"><p>application/json</p></entry>
+<entry colname="col4"><p>Required - The JSON-formatted data to add or update in the reference table.</p></entry>
+<entry colname="col5"><p>{"key1":{"col1":"Data11","col2":"Data12","col3":"Data13","col4":"Data14"},
+ "key2":{"col1":"Data21","col2":"Data22","col3":"Data23","col4":"Data24"},
+ "key3":{"col1":"Data31","col2":"Data32","col3":"Data33","col4":"Data34"},
+ "key4":{"col1":"Data41","col2":"Data42","col3":"Data43","col4":"Data44"},
+ "key5":{"col1":"Data51","col2":"Data52","col3":"Data53","col4":"Data54"},
+ "key6":{"col1":"Data61","col2":"Data62","col3":"Data63","col4":"Data64"}}
+ </p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /reference_data/tables/bulk_load/{namespace}/{name}/{domain_id} response codes</title>
+<desc><p outputclass="summary">POST /reference_data/tables/bulk_load/{namespace}/{name}/{domain_id} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>Data was successfully added or updated in the reference table.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>400</p></entry>
+<entry colname="col2"><p>1001</p></entry>
+<entry colname="col3"><p>An error occurred parsing the JSON-formatted message body.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1002</p></entry>
+<entry colname="col3"><p>The reference table does not exist.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1011</p></entry>
+<entry colname="col3"><p>Domain not found</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1005</p></entry>
+<entry colname="col3"><p>A request parameter is not valid.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1012</p></entry>
+<entry colname="col3"><p>The namespace value of SHARED was expected</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1014</p></entry>
+<entry colname="col3"><p>The domain_id parameter must be specified</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1015</p></entry>
+<entry colname="col3"><p>The namespace parameter must be either SHARED or TENANT</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>An error occurred during the attempt to add or update data in the reference table.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>Information about the reference table where data was added or updated. This returns information about the reference table but not the data that it contains.</p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "collection_id": 42,
+    "creation_time": 42,
+    "element_type": "String &lt;one of: ALN, NUM, IP, PORT, ALNIC, DATE&gt;",
+    "key_label": "String",
+    "key_name_types": {
+        "String": "String &lt;one of: ALN, NUM, IP, PORT, ALNIC, DATE&gt;"
+    },
+    "name": "String",
+    "namespace": "String &lt;one of: PRIVATE, SHARED, TENANT&gt;",
+    "number_of_elements": 42,
+    "time_to_live": "String",
+    "timeout_type": "String &lt;one of: UNKNOWN, FIRST_SEEN, LAST_SEEN&gt;"
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

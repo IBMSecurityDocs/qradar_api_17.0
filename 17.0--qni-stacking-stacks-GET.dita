@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--qni-stacking-stacks-GET" xml:lang="en-us">
+<title>GET /qni/stacking/stacks</title>
+<shortdesc>Retrieves a list of all QNI stacks in the system.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/qni/stacking/stacks</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Retrieves a list of all QNI stacks in the system.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /qni/stacking/stacks resource details</title>
+<desc><p outputclass="summary">GET /qni/stacking/stacks resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /qni/stacking/stacks request parameter details</title>
+<desc><p outputclass="summary">GET /qni/stacking/stacks request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>filter</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - This parameter is used to restrict the elements in a list base on the contents of various fields.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>Range</p></entry>
+<entry colname="col2"><p>header</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to restrict the number of elements that are returned in the list to a specified range. The list is indexed starting at zero.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /qni/stacking/stacks response codes</title>
+<desc><p outputclass="summary">GET /qni/stacking/stacks response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The requested list of QNI stacks has been retrieved.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>An error occurred attempting to retrieve data for QNI stacks.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>List of QNI stacks. Each stack contains the following fields: 
+         <ul> 
+         <li><b>stack_id</b> - Long - The ID of the QNI stack.</li>
+         <li><b>hosts</b> - List&lt;Host&gt; - The list of the QNI managed hosts in the stack.</li>
+         <li><b>name</b> - String - The name of the QNI stack.</li>
+         <li><b>ports_type</b> - enum - Port configuration type for the QNI stack. The possible
+values are:<ul>
+<li>IN_4</li>
+<li>IN_2_OUT_2</li>
+<li>IN_1_OUT_1</li>
+<li>IN_1_OUT_3</li>
+<li>IN_3_OUT_1</li>
+</ul></li>
+         <li><b>inspection_level</b> - <i>Optional</i> - Enumeration - The depth of content
+inspection. The possible values are:<ul>
+<li><i>BASIC</i> - Lowest level of inspection. Flows are detected by 5-tuple, and the number of
+bytes and packets that are flowing in each direction are counted.</li>
+<li><i>ENRICHED</i> - Each flow is identified and inspected by one of the protocol or domain
+inspectors. The inspection can generate many kinds of attributes.</li>
+<li><i>ADVANCED</i> - The highest level of inspection. It does everything that the Enriched level
+does, but it also scans and inspects the content of the files that it finds.</li>
+<li><i>DEFAULT</i> - Indicates that the QNI host is configured to use the globally-set inspection
+level.</li>
+</ul></li>
+         <li><b>raw_payload</b> - <i>Optional</i> - Long - The maximum amount of data (Bytes) that
+the QFlow Collector captures and retains in the flow payload. The possible values are:<ul>
+<li>-1: The QNI host is set to use the globally-set raw payload setting</li>
+<li>0: Turn off the payload</li>
+<li>1 - 32768: Number of bytes</li>
+</ul></li>
+         </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+[
+    {
+        "hosts": [
+            {
+                "host_id": 42,
+                "host_ip": "String",
+                "primary": true
+            }
+        ],
+        "inspection_level": "String &lt;one of: BASIC, ADVANCED, ENRICHED, DEFAULT&gt;",
+        "name": "String",
+        "ports_type": "String &lt;one of: IN_4, IN_2_OUT_2, IN_1_OUT_1, IN_1_OUT_3, IN_3_OUT_1&gt;",
+        "raw_payload": 42,
+        "stack_id": 42
+    }
+]
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

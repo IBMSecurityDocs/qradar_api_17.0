@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE map PUBLIC "-//IBM//DTD DITA IBM Map//EN"  "ibm-map.dtd">
+<map xml:lang="en-us">
+<title>scanner endpoints</title>
+<topicref href="c_rest_api_version170_scanner_intro.dita" scope="local" format="dita" type="concept">
+<topicref href="17.0--scanner-profiles-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--scanner-profiles-create-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--scanner-profiles-start-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--scanner-scanprofiles-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--scanner-scanprofiles-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--scanner-scanprofiles-profileid-DELETE.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--scanner-scanprofiles-profileid-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--scanner-scanprofiles-profileid-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--scanner-scanprofiles-profileid-runs-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--scanner-scanprofiles-profileid-runs-run_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--scanner-scanprofiles-profileid-runs-run_id-results-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--scanner-scanprofiles-profileid-start-POST.dita" scope="local" format="dita" type="reference"/>
+</topicref>
+</map>

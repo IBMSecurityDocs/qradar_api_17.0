@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--qvm-filters-GET" xml:lang="en-us">
+<title>GET /qvm/filters</title>
+<shortdesc>Get a list of the allowable filters that can be used or applied against the: </shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/qvm/filters</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<ul>
+<li>/qvm/assets</li>
+<li>/qvm/vulns</li>
+<li>/qvm/vulninstances</li>
+<li>/qvm/openservices</li>
+<li>/qvm/networks</li>
+<li>queries</li>
+</ul>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /qvm/filters resource details</title>
+<desc><p outputclass="summary">GET /qvm/filters resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<p>There are no parameters for this endpoint.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /qvm/filters response codes</title>
+<desc><p outputclass="summary">GET /qvm/filters response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The search executed successfully</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>420</p></entry>
+<entry colname="col2"><p>9102</p></entry>
+<entry colname="col3"><p>An error occurred while executing the search</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>list of Filters.</p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

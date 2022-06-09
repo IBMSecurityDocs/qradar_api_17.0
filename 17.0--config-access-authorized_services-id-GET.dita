@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--config-access-authorized_services-id-GET" xml:lang="en-us">
+<title>GET /config/access/authorized_services/{id}</title>
+<shortdesc>Retrieves an authorized service.  For security reasons, the token field will never be populated in this endpoint.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/config/access/authorized_services/{id}</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>To view any authorized service, the caller must have the Administrator Manager permission. Callers without the Administrator Manager permission can only see the authorized services that they've created. An authorized service can see itself and other authorized services it created, but the Administrator Manager permission is needed to see the complete list of authorized services.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/access/authorized_services/{id} resource details</title>
+<desc><p outputclass="summary">GET /config/access/authorized_services/{id} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/access/authorized_services/{id} request parameter details</title>
+<desc><p outputclass="summary">GET /config/access/authorized_services/{id} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>The ID of the authorized service to get.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/access/authorized_services/{id} response codes</title>
+<desc><p outputclass="summary">GET /config/access/authorized_services/{id} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>Authorized Service retrieved.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>95101001</p></entry>
+<entry colname="col3"><p>The authorized service ID does not exist.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>A single Authorized Service structure.
+ <ul>
+ <li><b>id</b> - Long - The ID of the authorized service. This field is read-only.</li>
+ <li><b>label</b> - String - The label of the authorized service. Authorized service labels and users "usernames" must be unique between them.</li>
+ <li><b>token</b> - String - The token of this authorized service, generated as a UUID. The authorized service token is a pre-authorized key. This token can be used in place of a username and password when authentication to the APIs. This field is only available in the response to a POST to the /api/config/access/authorized_services endpoint.</li>
+ <li><b>created_by</b> - String - The label of the system actor that created this authorized service.</li>
+ <li><b>tenant_id</b> - Long - The tenant_id of the current authorized service. Access tenants using /config/access/tenant_management/tenants API.</li>
+ <li><b>security_profile_id</b> - Long - The security profile ID of the authorized service. Access deployed user roles under /api/config/security_profiles API.</li>
+ <li><b>user_role_id</b> - Long - The user_role_id of the user. Access deployed user roles under /api/confg/user_roles API.</li>
+ <li><b>creation_date</b> - Long - The time in milliseconds since epoch that this authorized service was created. This field is read-only.</li>
+ <li><b>expiration_date</b> - Long - The time in milliseconds since epoch that this authorized service will expire. If this field is null, this authorized service does not expire.</li>
+ <li><b>last_used_date</b> - Long - The time in milliseconds since epoch that this authorized service was last used. If this field is null, this authorized service has not been used.</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "created_by": "String",
+    "creation_date": 42,
+    "expiration_date": 42,
+    "id": 42,
+    "label": "String",
+    "last_used_date": 42,
+    "security_profile_id": 42,
+    "tenant_id": 42,
+    "token": "String",
+    "user_role_id": 42
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

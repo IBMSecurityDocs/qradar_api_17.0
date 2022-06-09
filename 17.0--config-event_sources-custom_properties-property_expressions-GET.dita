@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--config-event_sources-custom_properties-property_expressions-GET" xml:lang="en-us">
+<title>GET /config/event_sources/custom_properties/property_expressions</title>
+<shortdesc>Retrieves a list of event regex property expressions.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/config/event_sources/custom_properties/property_expressions</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Retrieves a list of event regex property expressions.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/event_sources/custom_properties/property_expressions resource details</title>
+<desc><p outputclass="summary">GET /config/event_sources/custom_properties/property_expressions resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/event_sources/custom_properties/property_expressions request parameter details</title>
+<desc><p outputclass="summary">GET /config/event_sources/custom_properties/property_expressions request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>Range</p></entry>
+<entry colname="col2"><p>header</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to restrict the number of elements that are returned in the list to a specified range. The list is indexed starting at zero.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>filter</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - This parameter is used to restrict the elements in a list base on the contents of various fields.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/event_sources/custom_properties/property_expressions response codes</title>
+<desc><p outputclass="summary">GET /config/event_sources/custom_properties/property_expressions response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The requested list of event regex property expressions was retrieved.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1010</p></entry>
+<entry colname="col3"><p>An error occurred while building the filter.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>An error occurred during the attempt to retrieve the list of event regex property expressions.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>A list of event regex property expressions. Each regex property expression contains the
+         following fields:
+         <ul>
+         <li><b>id</b> - Integer - The sequence ID of the event regex property expression.</li>
+         <li><b>identifier</b> - String - The unique ID of the event regex property expression. This value is typically in the form of a UUID, with the exception of some legacy event regex property expressions.</li>
+         <li><b>regex_property_identifier</b> - String - The identifier of the event regex property to which this expression belongs.</li>
+         <li><b>enabled</b> - Boolean - Flag that indicates whether this expression is enabled.</li>
+         <li><b>regex</b> - String - The regex to extract the property from the payload. </li>
+         <li><b>capture_group</b> - Integer - The capture group to capture.</li>
+         <li><b>payload</b> - String - Test payload. This parameter is only used in the UI so that you can verify that your expression matches the expected payload.</li>
+         <li><b>log_source_type_id</b> - Integer - The expression is only applied to events for this log source type.</li>
+         <li><b>log_source_id</b> - Integer - The expression is only applied to events for this log source (more specific than type alone). </li>
+         <li><b>qid</b> - Integer - The expression is only applied to events associated with this QID record. </li>
+         <li><b>low_level_category_id</b> - Integer - The expression is only applied to events with this low level category. </li>
+         <li><b>username</b> - String - The owner of the event regex property expression.</li>
+         </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+[
+    {
+        "capture_group": 42,
+        "creation_date": 42,
+        "enabled": true,
+        "id": 42,
+        "identifier": "String",
+        "log_source_id": 42,
+        "log_source_type_id": 42,
+        "low_level_category_id": 42,
+        "modification_date": 42,
+        "payload": "String",
+        "qid": 42,
+        "regex": "String",
+        "regex_property_identifier": "String",
+        "username": "String"
+    }
+]
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

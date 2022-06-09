@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE map PUBLIC "-//IBM//DTD DITA IBM Map//EN"  "ibm-map.dtd">
+<map xml:lang="en-us">
+<title>health endpoints</title>
+<topicref href="c_rest_api_version170_health_intro.dita" scope="local" format="dita" type="concept">
+<topicref href="17.0--health-metrics-qradar_metrics-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--health-metrics-qradar_metrics-id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--health-metrics-qradar_metrics-id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--health-metrics-qradar_metrics_global_config-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--health-metrics-system_metrics-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--health-metrics-system_metrics-id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--health-metrics-system_metrics-id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--health-metrics-system_metrics_global_config-POST.dita" scope="local" format="dita" type="reference"/>
+</topicref>
+</map>

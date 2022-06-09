@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--config-event_sources-log_source_management-log_source_statistics-POST" xml:lang="en-us">
+<title>POST /config/event_sources/log_source_management/log_source_statistics</title>
+<shortdesc>Creates log source statistics Log source statistics contains the following fields: </shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/config/event_sources/log_source_management/log_source_statistics</apiname>
+<keyword>POST</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn><ul>
+<li><b>filter</b> - String - The optional log source filter that specifies which log sources are
+included in the statistics. The syntax of this filter is identical to the one used by the Log Source
+API.</li>
+<li><b>type_id</b> - Array of LogSourceFieldValueStatistic - Statistics for the log source's type_id
+field.</li>
+<li><b>protocol_type_id</b> - Array of LogSourceFieldValueStatistic - Statistics for the log
+source's protocol_type_id field.</li>
+<li><b>enabled</b> - Array of LogSourceFieldValueStatistic - Statistics for the log source's enabled
+field.</li>
+<li><b>gateway</b> - Array of LogSourceFieldValueStatistic - Statistics for the log source's gateway
+field.</li>
+<li><b>internal</b> - Array of LogSourceFieldValueStatistic - Statistics for the log source's
+internal field.</li>
+<li><b>credibility</b> - Array of LogSourceFieldValueStatistic - Statistics for the log source's
+credibility field.</li>
+<li><b>target_event_collector_id</b> - Array of LogSourceFieldValueStatistic - Statistics for the
+log source's target_event_collector_id field.</li>
+<li><b>disconnected_log_collector_id</b> - Array of LogSourceFieldValueStatistic - Statistics for
+the log source's disconnected_log_collector_id field.</li>
+<li><b>coalesce_events</b> - Array of LogSourceFieldValueStatistic - Statistics for the log source's
+coalesce_events field.</li>
+<li><b>store_event_payload</b> - Array of LogSourceFieldValueStatistic - Statistics for the log
+source's store_event_payload field.</li>
+<li><b>log_source_extension_id</b> - Array of LogSourceFieldValueStatistic - Statistics for the log
+source's log_source_extension_id field.</li>
+<li><b>language_id</b> - Array of LogSourceFieldValueStatistic - Statistics for the log source's
+language_id field.</li>
+<li><b>group_id</b> - Array of LogSourceFieldValueStatistic - Statistics for the log source's
+group_ids field.</li>
+<li><b>requires_deploy</b> Array of LogSourceFieldValueStatistic - Statistics for the log source's
+requires_deploy field.</li>
+<li><b>status</b> - Array of LogSourceFieldValueStatistic - Statistics for the log source's status
+field.</li>
+<li><b>auto_discovered</b> - Array of LogSourceFieldValueStatistic - Statistics for the log source's
+auto_discovered field.</li>
+<li><b>wincollect_internal_destination_id</b> - Array of LogSourceFieldValueStatistic - Statistics
+for the log source's wincollect_internal_destination_id field.</li>
+<li><b>wincollect_external_destination_id</b> - Array of LogSourceFieldValueStatistic - Statistics
+for the log source's wincollect_external_destination_ids field.</li>
+<li><b>sending_ip</b> - Array of LogSourceFieldValueStatistic - Statistics for the log source's
+sending_ip field.</li>
+</ul> LogSourceFieldValueStatistic contains the following fields: <ul>
+<li><b>value</b> - String - The field value.</li>
+<li><b>count</b> - Integer - The number of log sources that have the given field value.</li>
+</ul></refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /config/event_sources/log_source_management/log_source_statistics resource details</title>
+<desc><p outputclass="summary">POST /config/event_sources/log_source_management/log_source_statistics resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /config/event_sources/log_source_management/log_source_statistics request parameter details</title>
+<desc><p outputclass="summary">POST /config/event_sources/log_source_management/log_source_statistics request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>header</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /config/event_sources/log_source_management/log_source_statistics request body details</title>
+<desc><p outputclass="summary">POST /config/event_sources/log_source_management/log_source_statistics request body details</p></desc>
+<tgroup cols="5">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="2*" />
+<colspec colname="col5" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Data Type</entry>
+<entry colname="col3">MIME Type</entry>
+<entry colname="col4">Description</entry>
+<entry colname="col5">Sample</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>statistics</p></entry>
+<entry colname="col2"><p>Object</p></entry>
+<entry colname="col3"><p>application/json</p></entry>
+<entry colname="col4"><p>The statistics object. Only filter field is modifiable. All other fields are ignored.</p></entry>
+<entry colname="col5"><p>{
+    "filter": "String"
+}</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /config/event_sources/log_source_management/log_source_statistics response codes</title>
+<desc><p outputclass="summary">POST /config/event_sources/log_source_management/log_source_statistics response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The log source statistics was created successfully.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1001</p></entry>
+<entry colname="col3"><p>An invalid filter criteria was specified.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1003</p></entry>
+<entry colname="col3"><p>An error occurred during the attempt to create the log source.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>The log source statistics.</p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "auto_discovered": [
+        {
+            "count": 42,
+            "value": "String"
+        }
+    ],
+    "coalesce_events": [
+        {
+            "count": 42,
+            "value": "String"
+        }
+    ],
+    "credibility": [
+        {
+            "count": 42,
+            "value": "String"
+        }
+    ],
+    "disconnected_log_collector_id": [
+        {
+            "count": 42,
+            "value": "String"
+        }
+    ],
+    "enabled": [
+        {
+            "count": 42,
+            "value": "String"
+        }
+    ],
+    "filter": "String",
+    "gateway": [
+        {
+            "count": 42,
+            "value": "String"
+        }
+    ],
+    "group_id": [
+        {
+            "count": 42,
+            "value": "String"
+        }
+    ],
+    "internal": [
+        {
+            "count": 42,
+            "value": "String"
+        }
+    ],
+    "language_id": [
+        {
+            "count": 42,
+            "value": "String"
+        }
+    ],
+    "log_source_extension_id": [
+        {
+            "count": 42,
+            "value": "String"
+        }
+    ],
+    "parsing_order": [
+        {
+            "count": 42,
+            "value": "String"
+        }
+    ],
+    "protocol_type_id": [
+        {
+            "count": 42,
+            "value": "String"
+        }
+    ],
+    "requires_deploy": [
+        {
+            "count": 42,
+            "value": "String"
+        }
+    ],
+    "sending_ip": [
+        {
+            "count": 42,
+            "value": "String"
+        }
+    ],
+    "status": [
+        {
+            "count": 42,
+            "value": "String"
+        }
+    ],
+    "store_event_payload": [
+        {
+            "count": 42,
+            "value": "String"
+        }
+    ],
+    "target_event_collector_id": [
+        {
+            "count": 42,
+            "value": "String"
+        }
+    ],
+    "type_id": [
+        {
+            "count": 42,
+            "value": "String"
+        }
+    ],
+    "wincollect_external_destination_id": [
+        {
+            "count": 42,
+            "value": "String"
+        }
+    ],
+    "wincollect_internal_destination_id": [
+        {
+            "count": 42,
+            "value": "String"
+        }
+    ]
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE map PUBLIC "-//IBM//DTD DITA IBM Map//EN"  "ibm-map.dtd">
+<map xml:lang="en-us">
+<title>REST API Version 17.0 references</title>
+<topicref href="c_rest_api_whats_new_170.dita" format="dita" scope="local" type="concept"
+navtitle="What's new in REST API Version 17.0"/>
+<topicref href="m_rest_api_v170_access_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_analytics_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_ariel_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_asset_model_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_auth_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_backup_and_restore_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_bandwidth_manager_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_config_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_data_classification_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_disaster_recovery_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_dynamic_search_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_forensics_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_gui_app_framework_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_health_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_health_data_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_help_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_qni_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_qrm_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_qvm_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_reference_data_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_reference_data_collections_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_scanner_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_services_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_siem_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_staged_config_container.ditamap" scope="local" format="ditamap" type="map"/>
+<topicref href="m_rest_api_v170_system_container.ditamap" scope="local" format="ditamap" type="map"/>
+</map>

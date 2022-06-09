@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--gui_app_framework-application_definitions-application_definition_id-DELETE" xml:lang="en-us">
+<title>DELETE /gui_app_framework/application_definitions/{application_definition_id}</title>
+<shortdesc>Deletes an application definition and its associated instances.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/gui_app_framework/application_definitions/{application_definition_id}</apiname>
+<keyword>DELETE</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Deletes an application definition and its associated instances.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>DELETE /gui_app_framework/application_definitions/{application_definition_id} resource details</title>
+<desc><p outputclass="summary">DELETE /gui_app_framework/application_definitions/{application_definition_id} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>text/plain
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>DELETE /gui_app_framework/application_definitions/{application_definition_id} request parameter details</title>
+<desc><p outputclass="summary">DELETE /gui_app_framework/application_definitions/{application_definition_id} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application_definition_id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Required - The application definition identifier.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>DELETE /gui_app_framework/application_definitions/{application_definition_id} response codes</title>
+<desc><p outputclass="summary">DELETE /gui_app_framework/application_definitions/{application_definition_id} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>204</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The application definition has been successfully deleted.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>33900</p></entry>
+<entry colname="col3"><p>The application definition ID does not exist.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>409</p></entry>
+<entry colname="col2"><p>33000</p></entry>
+<entry colname="col3"><p>The current state of the application definition does not allow the requested action.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>409</p></entry>
+<entry colname="col2"><p>33001</p></entry>
+<entry colname="col3"><p>This is a core QRadar app. You cannot upgrade or delete it.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>409</p></entry>
+<entry colname="col2"><p>33005</p></entry>
+<entry colname="col3"><p>The application definition cannot be deleted because it has dependent components.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>409</p></entry>
+<entry colname="col2"><p>33700</p></entry>
+<entry colname="col3"><p>The application framework is currently disabled.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>409</p></entry>
+<entry colname="col2"><p>33904</p></entry>
+<entry colname="col3"><p>The application definition cannot be deleted without first deleting its associated instances.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>The request could not be completed.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p/>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

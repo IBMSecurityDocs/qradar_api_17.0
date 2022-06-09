@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE map PUBLIC "-//IBM//DTD DITA IBM Map//EN"  "ibm-map.dtd">
+<map xml:lang="en-us">
+<title>qni endpoints</title>
+<topicref href="c_rest_api_version170_qni_intro.dita" scope="local" format="dita" type="concept">
+<topicref href="17.0--qni-hosts-host_id-configs-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--qni-hosts-host_id-configs-id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--qni-stacking-stacks-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--qni-stacking-stacks-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--qni-stacking-stacks-stack_id-DELETE.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--qni-stacking-stacks-stack_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--qni-stacking-stacks-stack_id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--qni-stacking-standalone_hosts-GET.dita" scope="local" format="dita" type="reference"/>
+</topicref>
+</map>

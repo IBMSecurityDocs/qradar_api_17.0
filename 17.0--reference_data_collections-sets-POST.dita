@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--reference_data_collections-sets-POST" xml:lang="en-us">
+<title>POST /reference_data_collections/sets</title>
+<shortdesc>Create a set given the properties based in the body DTO</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/reference_data_collections/sets</apiname>
+<keyword>POST</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn/>
+<refsyn>
+<table pgwide="0">
+<title>POST /reference_data_collections/sets resource details</title>
+<desc><p outputclass="summary">POST /reference_data_collections/sets resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /reference_data_collections/sets request parameter details</title>
+<desc><p outputclass="summary">POST /reference_data_collections/sets request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>header</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /reference_data_collections/sets request body details</title>
+<desc><p outputclass="summary">POST /reference_data_collections/sets request body details</p></desc>
+<tgroup cols="5">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="2*" />
+<colspec colname="col5" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Data Type</entry>
+<entry colname="col3">MIME Type</entry>
+<entry colname="col4">Description</entry>
+<entry colname="col5">Sample</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>body</p></entry>
+<entry colname="col2"><p>Object</p></entry>
+<entry colname="col3"><p>application/json</p></entry>
+<entry colname="col4"><p>- The Set DTO specifying the new Set properties. Both name and entry_type are required. Namespace, tenantid,
+ expiry_type, time_to_live and expired_log_option are optional fields. All other fields will be ignored.</p></entry>
+<entry colname="col5"><p>{
+    "creation_time": 42,
+    "delete_entries": true,
+    "entry_type": "String &lt;one of: ALN, ALNIC, NUM, IP, PORT, DATE&gt;",
+    "expired_log_option": "String &lt;one of: LOG_NONE, LOG_EACH, LOG_BATCH&gt;",
+    "expiry_type": "String &lt;one of: FIRST_SEEN, LAST_SEEN, NO_EXPIRY&gt;",
+    "global_id": "String",
+    "id": 42,
+    "name": "String",
+    "namespace": "String &lt;one of: PRIVATE, SHARED, TENANT&gt;",
+    "number_of_entries": 42,
+    "tenant_id": 42,
+    "time_to_live": 42
+}</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /reference_data_collections/sets response codes</title>
+<desc><p outputclass="summary">POST /reference_data_collections/sets response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>409</p></entry>
+<entry colname="col2"><p>10006</p></entry>
+<entry colname="col3"><p>A collection with the same name already exists</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>10001</p></entry>
+<entry colname="col3"><p>The entry_type field was not specified.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>10002</p></entry>
+<entry colname="col3"><p>The name field was not specified</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>10003</p></entry>
+<entry colname="col3"><p>The TENANT namespace was specified but a valid tenant ID is required</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>10004</p></entry>
+<entry colname="col3"><p>SHARED or PRIVATE namespace does not permit tenant_id to be specified</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>10005</p></entry>
+<entry colname="col3"><p>The user does not have permission to create a collection in the provided namespace</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>10007</p></entry>
+<entry colname="col3"><p>An invalid time_to_live value was specified</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>110000</p></entry>
+<entry colname="col3"><p>An unspecified server error occurred</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>201 and the newly created Set DTO</p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "creation_time": 42,
+    "delete_entries": true,
+    "entry_type": "String &lt;one of: ALN, ALNIC, NUM, IP, PORT, DATE&gt;",
+    "expired_log_option": "String &lt;one of: LOG_NONE, LOG_EACH, LOG_BATCH&gt;",
+    "expiry_type": "String &lt;one of: FIRST_SEEN, LAST_SEEN, NO_EXPIRY&gt;",
+    "global_id": "String",
+    "id": 42,
+    "name": "String",
+    "namespace": "String &lt;one of: PRIVATE, SHARED, TENANT&gt;",
+    "number_of_entries": 42,
+    "tenant_id": 42,
+    "time_to_live": 42
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

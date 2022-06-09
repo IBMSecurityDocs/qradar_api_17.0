@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--config-certificates-end_certificates-id-full_chain-GET" xml:lang="en-us">
+<title>GET /config/certificates/end_certificates/{id}/full_chain</title>
+<shortdesc>Gets the full chain of the certificate. The chain hierarchy includes the content of the end certificate, and the content of the issuer chain certificates, up to and including the root certificate.
+  This endpoint might not return the root certificate if it was uploaded in the last 24 hours.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/config/certificates/end_certificates/{id}/full_chain</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Gets the full chain of the certificate.</p>
+ <p>You must have System Administrator, Security Administrator, Manage Log Sources, or WinCollect permissions to use this endpoint.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/certificates/end_certificates/{id}/full_chain resource details</title>
+<desc><p outputclass="summary">GET /config/certificates/end_certificates/{id}/full_chain resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/certificates/end_certificates/{id}/full_chain request parameter details</title>
+<desc><p outputclass="summary">GET /config/certificates/end_certificates/{id}/full_chain request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Required. The ID of the certificate whose full chain is required.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/certificates/end_certificates/{id}/full_chain response codes</title>
+<desc><p outputclass="summary">GET /config/certificates/end_certificates/{id}/full_chain response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1002</p></entry>
+<entry colname="col3"><p>No certificate exists with this ID.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1103</p></entry>
+<entry colname="col3"><p>null</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1104</p></entry>
+<entry colname="col3"><p>null</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>null</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>2035</p></entry>
+<entry colname="col3"><p>null</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>A JSON object that contains the chain hierarchy, from the end certificate up to the root certificate. The JSON object contains each certificate's original contents.
+  <ul>
+      <li><b>id</b> - The root certificate's resource ID.</li>
+  </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "end_certificate": {
+        "ca_chain_file": "String",
+        "cert_file": "String",
+        "certificate_revocation_list_distribution_point": "String",
+        "component_id": 42,
+        "component_name": "String",
+        "csr_id": 42,
+        "expiry": 42,
+        "extended_key_usage": [
+            "String &lt;one of: TLS_Web_server_authentication, TLS_Web_client_authentication, Email_protection&gt;"
+        ],
+        "id": 42,
+        "issuer": [
+            {
+                "field_name": "String",
+                "value": "String"
+            }
+        ],
+        "key_file": "String",
+        "key_password": "String",
+        "key_usage": [
+            "String &lt;one of: CRL_SIGN, DATA_ENCIPHERMENT, DECIPHER_ONLY, DIGITAL_SIGNATURE, ENCIPHER_ONLY, KEY_AGREEMENT, KEY_CERT_SIGN, KEY_ENCIPHERMENT, NON_REPUDIATION&gt;"
+        ],
+        "name": "String",
+        "not_before": 42,
+        "purpose": "String",
+        "serial_number": "String",
+        "status": "String",
+        "subject": [
+            {
+                "field_name": "String",
+                "value": "String"
+            }
+        ],
+        "validation": 42
+    },
+    "intermediate_chain": [
+        {
+            "certificate_revocation_list_distribution_point": "String",
+            "expiry": 42,
+            "issuer": [
+                {
+                    "field_name": "String",
+                    "value": "String"
+                }
+            ],
+            "key_usage": [
+                "String &lt;one of: CRL_SIGN, DATA_ENCIPHERMENT, DECIPHER_ONLY, DIGITAL_SIGNATURE, ENCIPHER_ONLY, KEY_AGREEMENT, KEY_CERT_SIGN, KEY_ENCIPHERMENT, NON_REPUDIATION&gt;"
+            ],
+            "not_before": 42,
+            "serial_number": "String",
+            "status": "String",
+            "subject": [
+                {
+                    "field_name": "String",
+                    "value": "String"
+                }
+            ],
+            "validation": 42
+        }
+    ],
+    "root_certificate": {
+        "authority_key_id": "String",
+        "expiry": 42,
+        "id": "String",
+        "issuer": [
+            {
+                "field_name": "String",
+                "value": "String"
+            }
+        ],
+        "key_usage": [
+            "String &lt;one of: CRL_SIGN, DATA_ENCIPHERMENT, DECIPHER_ONLY, DIGITAL_SIGNATURE, ENCIPHER_ONLY, KEY_AGREEMENT, KEY_CERT_SIGN, KEY_ENCIPHERMENT, NON_REPUDIATION&gt;"
+        ],
+        "not_before": 42,
+        "serial_number": "String",
+        "status": "String",
+        "subject": [
+            {
+                "field_name": "String",
+                "value": "String"
+            }
+        ],
+        "subject_key_id": "String",
+        "validation": 42
+    }
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

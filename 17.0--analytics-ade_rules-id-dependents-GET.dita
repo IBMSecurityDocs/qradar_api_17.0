@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--analytics-ade_rules-id-dependents-GET" xml:lang="en-us">
+<title>GET /analytics/ade_rules/{id}/dependents</title>
+<shortdesc>Retrieves the objects that depend on the ADE rule.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/analytics/ade_rules/{id}/dependents</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Retrieves the objects that depend on the ADE rule.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /analytics/ade_rules/{id}/dependents resource details</title>
+<desc><p outputclass="summary">GET /analytics/ade_rules/{id}/dependents resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /analytics/ade_rules/{id}/dependents request parameter details</title>
+<desc><p outputclass="summary">GET /analytics/ade_rules/{id}/dependents request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>null</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /analytics/ade_rules/{id}/dependents response codes</title>
+<desc><p outputclass="summary">GET /analytics/ade_rules/{id}/dependents response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>202</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The ADE rule dependents retrieval was accepted and is in progress.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1002</p></entry>
+<entry colname="col3"><p>The ADE rule does not exist.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>An error occurred during the attempt to initiate the ADE rule dependents retrieval task.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>A Dependents Task Status object and the location header set to the task status url "/api/analytics/ade_rules/ade_rule_dependents_tasks/{task_id}". A Dependent Task Status object contains the following fields:
+ <ul>
+ <li><b>id</b> - Long - The ID of the task.</li>
+ <li><b>message</b> - String - The localized task message.</li>
+ <li><b>status</b> - String - The current state of the task.</li>
+ <li><b>name</b> - String - The name of the task.</li>
+ <li><b>created_by</b> - String - The name of the user who started the task.</li>
+ <li><b>cancelled_by</b> - String - The name of the user who requested to cancel the task.</li>
+ <li><b>created</b> - Long - The time in milliseconds since epoch since the task was created.</li>
+ <li><b>started</b> - Long - The time in milliseconds since epoch since the task was started.</li>
+ <li><b>modified</b> - Long - The time in milliseconds since epoch since the task was modified.</li>
+ <li><b>completed</b> - Long - The time in milliseconds since epoch since the task was completed.</li>
+ <li><b>number_of_dependents</b> - Long - The number of dependents found. the value is null until the task completes.</li>
+ <li><b>maximum</b> - Long - The maximum number of objects to check for dependency.</li>
+ <li><b>progress</b> - Long - The number of objects that were checked for dependency.</li>
+ <li><b>task_components</b> - Array - An array of task component objects. A task component object contains the following fields
+ 		<ul>
+ 		<li><b>message</b> - String - The localized sub-task status message.</li>
+ 		<li><b>status</b> - String - The current state of the sub-task.</li>
+ 		<li><b>sub_task_type</b> - String - The type of the sub-task.</li>
+  	<li><b>maximum</b> - Long - The maximum number of objects to check for dependency.</li>
+ 		<li><b>progress</b> - Long - The number of objects that were checked for dependency.</li>
+    	<li><b>created</b> - Long - The time in milliseconds since epoch since the sub-task was created.</li>
+ 		<li><b>started</b> - Long - The time in milliseconds since epoch since the sub-task was started.</li>
+ 		<li><b>modified</b> - Long - The time in milliseconds since epoch since the sub-task was modified.</li>
+ 		<li><b>completed</b> - Long - The time in milliseconds since epoch since the sub-task was completed.</li>
+      </ul>
+ </li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "cancelled_by": "String",
+    "completed": 42,
+    "created": 42,
+    "created_by": "String",
+    "id": 42,
+    "maximum": 42,
+    "message": "String",
+    "modified": 42,
+    "name": "String",
+    "number_of_dependents": 42,
+    "progress": 42,
+    "started": 42,
+    "status": "String &lt;one of: CANCELLED, CANCELING, CANCEL_REQUESTED, COMPLETED, CONFLICT, EXCEPTION, INITIALIZING, INTERRUPTED, PAUSED, PROCESSING, QUEUED, RESUMING&gt;",
+    "task_components": [
+        {
+            "completed": 42,
+            "created": 42,
+            "maximum": 42,
+            "message": "String",
+            "modified": 42,
+            "number_of_dependents": 42,
+            "progress": 42,
+            "started": 42,
+            "status": "String &lt;one of: CANCELLED, CANCELING, CANCEL_REQUESTED, COMPLETED, CONFLICT, EXCEPTION, INITIALIZING, INTERRUPTED, PAUSED, PROCESSING, QUEUED, RESUMING&gt;",
+            "task_sub_type": "String &lt;one of: FIND_DEPENDENT_ARIEL_SAVED_SEARCHES, FIND_DEPENDENT_OFFENSE_SAVED_SEARCHES, FIND_DEPENDENT_ASSET_SAVED_SEARCHES, FIND_DEPENDENT_VULNERABILITY_SAVED_SEARCHES, FIND_DEPENDENT_ADE_RULES, FIND_DEPENDENT_RULES, FIND_DEPENDENT_CALCULATED_PROPERTIES, FIND_DEPENDENT_AQL_PROPERTIES, FIND_DEPENDENT_LOG_SOURCE_GROUPS, FIND_DEPENDENT_CUSTOM_PROPERTIES, FIND_DEPENDENT_REPORTS, FIND_DEPENDENT_DASHBOARDS, FIND_DEPENDENT_STORE_AND_FORWARD_POLOCIES, FIND_DEPENDENT_AUTHORIZED_SERVICES, FIND_DEPENDENT_OFFENSE_TYPES, FIND_DEPENDENT_ASSIGNED_OFFENSES, FIND_DEPENDENT_VULNERABILITIES, FIND_DEPENDENT_GROUPS, FIND_DEPENDENT_HISTORICAL_CORRELATION_PROFILES, FIND_DEPENDENT_SECURITY_PROFILES, FIND_DEPENDENT_ARIEL_INDEXING, FIND_DEPENDENT_DOMAIN, FIND_DEPENDENT_NAMED_SERVICES, FIND_DEPENDENT_FORWARDING_PROFILE&gt;"
+        }
+    ]
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

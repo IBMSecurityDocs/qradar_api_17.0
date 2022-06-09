@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--ariel-searches-search_id-GET" xml:lang="en-us">
+<title>GET /ariel/searches/{search_id}</title>
+<shortdesc>Retrieves information about an Ariel search.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/ariel/searches/{search_id}</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Retrieve status information for a search, based on the search ID parameter.
+ The same informational fields are returned regardless of whether the search is in progress or is complete.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /ariel/searches/{search_id} resource details</title>
+<desc><p outputclass="summary">GET /ariel/searches/{search_id} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /ariel/searches/{search_id} request parameter details</title>
+<desc><p outputclass="summary">GET /ariel/searches/{search_id} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>search_id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Required. The identifier for an Ariel search.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>Prefer</p></entry>
+<entry colname="col2"><p>header</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional. Specify 'wait=N' where N is number of seconds to wait for COMPLETED status of the search.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /ariel/searches/{search_id} response codes</title>
+<desc><p outputclass="summary">GET /ariel/searches/{search_id} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The search information was retrieved.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>206</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The search information was retrieved with 'Prefer: wait=N' timeout(sec) expired before the search is completed</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1002</p></entry>
+<entry colname="col3"><p>The search does not exist.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1005</p></entry>
+<entry colname="col3"><p>A request parameter is not valid.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>An error occurred during the attempt to retrieve the search information.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>503</p></entry>
+<entry colname="col2"><p>1010</p></entry>
+<entry colname="col3"><p>The Ariel server might be temporarily unavailable or offline. Please try again later.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>Information about the specified search, including the search status.</p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+  "cursor_id": "s16",
+  "compressed_data_file_count": 0,
+  "compressed_data_total_size": 0,
+  "data_file_count": 5470,
+  "data_total_size": 67183115,
+  "index_file_count": 0,
+  "index_total_size": 0,
+  "processed_record_count": 1256462,
+  "error_messages": [
+    {
+      "code": "String",
+      "contexts": [
+        "String"
+      ],
+      "message": "String",
+      "severity": "String &lt;one of: INFO, WARN, ERROR&gt;"
+    }
+  ],
+  "desired_retention_time_msec": 86400000,
+  "progress": 46,
+  "progress_details": [
+    0,
+    0,
+    0,
+    0,
+    66957,
+    652657,
+    76594,
+    89809,
+    86032,
+    107729
+  ],
+  "query_execution_time": 1480,
+  "query_string": "SELECT sourceip, starttime, qid, sourceport  from events into s16 where sourceip in (select destinationip from events) parameters snapshotsize=2, PROGRESSDETAILSRESOLUTION=10",
+  "record_count": 1240923,
+  "save_results": false,
+  "status": "String &lt;one of: WAIT, EXECUTE, SORTING, COMPLETED, CANCELED, ERROR&gt;",
+  "snapshot": {
+    "events": [
+      {
+        "sourceip": "10.100.65.20",
+        "starttime": 1467049610018,
+        "qid": 10034,
+        "sourceport": 13675
+      },
+      {
+        "sourceip": "10.100.100.121",
+        "starttime": 1467049610019,
+        "qid": 20034,
+        "sourceport": 80
+      }
+    ]
+  },
+  "subsearch_ids": [
+     "sub_id_1"
+   ],
+  "search_id": "s16"
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

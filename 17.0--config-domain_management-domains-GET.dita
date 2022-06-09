@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--config-domain_management-domains-GET" xml:lang="en-us">
+<title>GET /config/domain_management/domains</title>
+<shortdesc>Gets the list of domains.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/config/domain_management/domains</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Gets the list of domains.
+
+ You must have the System Administrator or Security Administrator permissions to call this endpoint if you are trying to retrieve the details of all domains. You can retrieve details of domains that are assigned to your Security Profile without having the System Administrator or Security Administrator permissions. If you do not have the System Administrator or Security Administrator permissions, then for each domain assigned to your security profile you can only view the values for the id and name fields. All other values return null.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/domain_management/domains resource details</title>
+<desc><p outputclass="summary">GET /config/domain_management/domains resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/domain_management/domains request parameter details</title>
+<desc><p outputclass="summary">GET /config/domain_management/domains request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>Range</p></entry>
+<entry colname="col2"><p>header</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to restrict the number of elements that are returned in the list to a specified range. The list is indexed starting at zero.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>filter</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - This parameter is used to restrict the elements in a list base on the contents of various fields.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/domain_management/domains response codes</title>
+<desc><p outputclass="summary">GET /config/domain_management/domains response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The domain list has been successfully retrieved.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>An error occurred while the domain list was being retrieved.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>A list of domains.
+ <ul>
+ <li><b>id</b> - Integer - The ID of the domain.</li>
+ <li><b>name</b> - String - The name of the domain.</li>
+ <li><b>description</b> - String - The description given to the domain.</li>
+ <li><b>tenant_id</b> - Integer - The ID of the tenant that this domain belongs to.</li>
+ <li><b>deleted</b> - Boolean - Whether or not the domain has been deleted.</li>
+ <li><b>event_collector_ids</b> - Array of Longs - The list of event collector IDs that are assigned to this domain.</li>
+ <li><b>log_source_ids</b> - Array of Longs - The list of log source IDs that are assigned to this domain.</li>
+ <li><b>log_source_group_ids</b> - Array of Longs - The list of log source group IDs that are assigned to this domain.</li>
+ <li><b>custom_properties</b> - Array of Custom Property Objects - The list of custom properties that are assigned to this domain.</li>
+ <li><b>flow_source_ids</b> - Array of Longs - The list of flow source IDs that are assigned to this domain.</li>
+ <li><b>flow_collector_ids</b> - Array of Longs - The list of flow collector IDs that are assigned to this domain.</li>
+ <li><b>asset_scanner_ids</b> - Array of Longs - The list of asset scanner IDs that are assigned to this domain.</li>
+ <li><b>qvm_scanner_ids</b> - Array of Longs - The list of QVM scanner IDs that are assigned to this domain.</li>
+ <li><b>flow_vlans_ids</b> - Array of Longs - The list of flow VLAN IDs that are assigned to this domain.</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+[
+    {
+        "asset_scanner_ids": [
+            42
+        ],
+        "custom_properties": [
+            {
+                "capture_result": "String",
+                "id": 42
+            }
+        ],
+        "deleted": true,
+        "description": "String",
+        "event_collector_ids": [
+            42
+        ],
+        "flow_collector_ids": [
+            42
+        ],
+        "flow_source_ids": [
+            42
+        ],
+        "flow_vlan_ids": [
+            42
+        ],
+        "id": 42,
+        "log_source_group_ids": [
+            42
+        ],
+        "log_source_ids": [
+            42
+        ],
+        "name": "String",
+        "qvm_scanner_ids": [
+            42
+        ],
+        "tenant_id": 42
+    }
+]
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

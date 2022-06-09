@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--config-event_sources-property_discovery_profiles-id-POST" xml:lang="en-us">
+<title>POST /config/event_sources/property_discovery_profiles/{id}</title>
+<shortdesc>Updates a PropertyDiscoveryProfile based on the information supplied via the property_discovery_profile JSON object.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/config/event_sources/property_discovery_profiles/{id}</apiname>
+<keyword>POST</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn/>
+<refsyn>
+<table pgwide="0">
+<title>POST /config/event_sources/property_discovery_profiles/{id} resource details</title>
+<desc><p outputclass="summary">POST /config/event_sources/property_discovery_profiles/{id} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /config/event_sources/property_discovery_profiles/{id} request parameter details</title>
+<desc><p outputclass="summary">POST /config/event_sources/property_discovery_profiles/{id} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>The ID of the PropertyDiscoveryProfile to be updated.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>header</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /config/event_sources/property_discovery_profiles/{id} request body details</title>
+<desc><p outputclass="summary">POST /config/event_sources/property_discovery_profiles/{id} request body details</p></desc>
+<tgroup cols="5">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="2*" />
+<colspec colname="col5" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Data Type</entry>
+<entry colname="col3">MIME Type</entry>
+<entry colname="col4">Description</entry>
+<entry colname="col5">Sample</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>data</p></entry>
+<entry colname="col2"><p>Object</p></entry>
+<entry colname="col3"><p>application/json</p></entry>
+<entry colname="col4"><p>A PropertyDiscoveryProfileDTO instance that describes the profile to be updated.</p></entry>
+<entry colname="col5"><p>{
+    "active": true,
+    "create_for_normalized": true,
+    "delimiter": "String",
+    "delimiter_pair": "String",
+    "log_source_type_id": 42,
+    "property_discovery_type": "String",
+    "threshold": 42,
+    "use_for_rule_engine": true
+}</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /config/event_sources/property_discovery_profiles/{id} response codes</title>
+<desc><p outputclass="summary">POST /config/event_sources/property_discovery_profiles/{id} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1002</p></entry>
+<entry colname="col3"><p>If one or more of the parameters cannot be correlated to an existing system entity.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>409</p></entry>
+<entry colname="col2"><p>1004</p></entry>
+<entry colname="col3"><p>Log source type id is already in use by another property discovery profile.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1010</p></entry>
+<entry colname="col3"><p>If one or more of the parameters cannot be validated correctly.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>An internal server error has occurred.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>A PropertyDiscoveryProfile as updated within the system. 
+ <ul>
+ <li><b>id</b>        - Integer - The ID of the property discovery profile.</li>
+ <li><b>property_discovery_type</b>   - String  - The type of property discovery for this profile (JSON or NONE).</li>
+ <li><b>optimized</b>      - Boolean - Indicates whether this profile creates custom properties as optimized.</li>
+ <li><b>active</b>       - Boolean - Indicates whether this profile is enabled and actively being used.</li>
+ <li><b>threshold</b>      - Integer - How many events should be handling creating no custom-properties before this profile becomes inactive.</li>
+ <li><b>log_source_type_id</b>    - Integer - The ID of a log-source-type that this profile corresponds to (This is the basic filter property, it must be set for the profile to be used).</li>
+ <li><b>create_for_normalized</b>   - Boolean - If false, the property-discovery-engine will NOT create custom properties for any fields that match the name of a normalized system property. If true, it creates the properties, but with identifying tag on the name; for example a field that is called 'username' creates a custom-property that is named 'username_custom'.</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "active": true,
+    "create_for_normalized": true,
+    "delimiter": "String",
+    "delimiter_pair": "String",
+    "id": 42,
+    "log_source_type_id": 42,
+    "property_discovery_type": "String",
+    "threshold": 42,
+    "use_for_rule_engine": true
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

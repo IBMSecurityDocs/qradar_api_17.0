@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--ariel-saved_search_dependent_tasks-task_id-results-GET" xml:lang="en-us">
+<title>GET /ariel/saved_search_dependent_tasks/{task_id}/results</title>
+<shortdesc>Retrieves the Ariel saved search dependent task results.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/ariel/saved_search_dependent_tasks/{task_id}/results</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Retrieves the Ariel saved search dependent task results.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /ariel/saved_search_dependent_tasks/{task_id}/results resource details</title>
+<desc><p outputclass="summary">GET /ariel/saved_search_dependent_tasks/{task_id}/results resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /ariel/saved_search_dependent_tasks/{task_id}/results request parameter details</title>
+<desc><p outputclass="summary">GET /ariel/saved_search_dependent_tasks/{task_id}/results request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>task_id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>null</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /ariel/saved_search_dependent_tasks/{task_id}/results response codes</title>
+<desc><p outputclass="summary">GET /ariel/saved_search_dependent_tasks/{task_id}/results response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The Ariel saved search dependents were retrieved.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1002</p></entry>
+<entry colname="col3"><p>The Dependent Task Status does not exist.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>An error occurred during the attempt to retrieve the Ariel saved searches.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>An list of Dependent objects. A Dependent object contains the following fields:
+ <ul>
+ <li><b>dependent_id</b> - String - The ID of the dependent resource.</li>
+ <li><b>dependent_name</b> - String - The name of the dependent resource. ( Default resources can have localized names )</li>
+ <li><b>dependent_owner</b> - String - The owner of the dependent resource.</li>
+ <li><b>dependent_type</b> - String - The type of the dependent resource.</li>
+ <li><b>dependent_database</b> - String - The database of the dependent resource.</li>
+ <li><b>dependent_group_ids</b> - Array of Longs - List of groups that the dependent resource belongs to.</li>
+ <li><b>user_has_edit_permissions</b> - Boolean - The true if the user who created the task has permission to edit this dependent resource.</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+[
+    {
+        "blocking": true,
+        "dependent_database": "String &lt;one of: EVENTS, FLOWS, ASSETS&gt;",
+        "dependent_group_ids": [
+            42
+        ],
+        "dependent_id": "String",
+        "dependent_name": "String",
+        "dependent_owner": "String",
+        "dependent_type": "String &lt;one of: APP, NAMED_SERVICE, ARIEL_SAVED_SEARCH, ASSET_SAVED_SEARCH, OFFENSE_SAVED_SEARCH, VULNERABILITY_SAVED_SEARCH, QRM_SAVED_SEARCH_GROUP, ASSET_SAVED_SEARCH_GROUP, CUSTOM_RULE_GROUP, EVENT_ARIEL_SAVED_SEARCH_GROUP, FLOW_ARIEL_SAVED_SEARCH_GROUP, LOG_SOURCE_GROUP, MODEL_GROUP, OFFENSE_SAVED_SEARCH_GROUP, QUESTION_GROUP, REPORT_GROUP, SIMULATION_GROUP, TOPOLOGY_SAVED_SEARCH_GROUP, VULNERABILITY_SAVED_SEARCH_GROUP, ASSIGNED_OFFENSE, ASSIGNED_VULNERABILITY, AUTHORIZED_SERVICE, BUILDING_BLOCK, CRE_RULE, CRE_ADE_RULE, EVENT_REGEX_PROPERTY, EVENT_REGEX_PROPERTY_DEPENDENCY, EVENT_REGEX_PROPERTY_DISABLING_DEPENDENCY, EVENT_REGEX_PROPERTY_CHANGE_FIELD_TYPE_DEPENDENCY, EVENT_CALCULATED_PROPERTY_CHANGE_FIELD_TYPE_DEPENDENCY, EVENT_AQL_PROPERTY_DISABLING_DEPENDENCY, EVENT_CALCULATED_PROPERTY_DISABLING_DEPENDENCY, EVENT_CALCULATED_PROPERTY, FLOW_REGEX_PROPERTY, FLOW_REGEX_PROPERTY_DEPENDENCY, FLOW_REGEX_PROPERTY_DISABLING_DEPENDENCY, FLOW_REGEX_PROPERTY_CHANGE_FIELD_TYPE_DEPENDENCY, FLOW_AQL_PROPERTY_DISABLING_DEPENDENCY, FLOW_CALCULATED_PROPERTY_DISABLING_DEPENDENCY, FLOW_CALCULATED_PROPERTY_CHANGE_FIELD_TYPE_DEPENDENCY, FLOW_CALCULATED_PROPERTY, DASHBOARD, GV_REFERENCE, REPORT, REFERENCE_DATA, REFERENCE_DATA_MAP_OF_SETS, REFERENCE_DATA_MAPS, REFERENCE_DATA_SETS, REFERENCE_DATA_TABLES, REFERENCE_DATA_RESPONSE, REFERENCE_SET_RESPONSE, REFERENCE_DATA_KEY, REFERENCE_DATA_ELEMENT, EVENT_RETENTION_BUCKET, FLOW_RETENTION_BUCKET, ROUTING_RULE, STORE_AND_FORWARD_POLICY, USER, HISTORICAL_PROFILE, OFFENSE, EVENT_AQL_PROPERTY, FLOW_AQL_PROPERTY, OFFENSE_TYPE, SECURITY_PROFILE, ARIEL_INDEX, DOMAIN_MAPPING, FORWARDING_PROFILE, REGEX_EXPRESSION, JSON_EXPRESSION, LEEF_EXPRESSION, CEF_EXPRESSION, GENERICLIST_EXPRESSION, NAMEVALUEPAIR_EXPRESSION, XML_EXPRESSION, AQL_EXPRESSION, CALCULATED_EXPRESSION&gt;",
+        "user_has_edit_permissions": true
+    }
+]
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

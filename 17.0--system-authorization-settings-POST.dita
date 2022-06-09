@@ -1,0 +1,305 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--system-authorization-settings-POST" xml:lang="en-us">
+<title>POST /system/authorization/settings</title>
+<shortdesc>Updates the Authentication Settings.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/system/authorization/settings</apiname>
+<keyword>POST</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Updates the Authentication Settings. Changes to these values take effect immediately, but are not retroactive. For example, a change to the inactivity_timeout setting will not change the inactivity timeout for currently logged in users.</p>
+ <p>
+ When setting the account_lockout and host_lockout fields simultaneously, consider how they will operate. e.g. if the account based lockout configuration is less restrictive than the host based lockout configuration, a single host will be able to attempt to log in with multiple accounts before the IP address of the caller is locked out. Also, if users of the system are behind a proxy, consider disabling the host based lockout and enabling the account based lockout.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /system/authorization/settings resource details</title>
+<desc><p outputclass="summary">POST /system/authorization/settings resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /system/authorization/settings request parameter details</title>
+<desc><p outputclass="summary">POST /system/authorization/settings request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>header</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /system/authorization/settings request body details</title>
+<desc><p outputclass="summary">POST /system/authorization/settings request body details</p></desc>
+<tgroup cols="5">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="2*" />
+<colspec colname="col5" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Data Type</entry>
+<entry colname="col3">MIME Type</entry>
+<entry colname="col4">Description</entry>
+<entry colname="col5">Sample</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>body</p></entry>
+<entry colname="col2"><p>Object</p></entry>
+<entry colname="col3"><p>application/json</p></entry>
+<entry colname="col4"><p>The new Authentication Settings.</p></entry>
+<entry colname="col5"><p>{
+    "account_lockout": {
+        "attempt_window": 42,
+        "duration": 42,
+        "maximum_failures": 42
+    },
+    "allow_logon_page_password_autocomplete": true,
+    "authorized_service_default_max_expiration": 42,
+    "concurrent_session_limit": 42,
+    "display_login_history_after_login": "String &lt;one of: ALWAYS, NEVER&gt;",
+    "host_lockout": {
+        "attempt_window": 42,
+        "duration": 42,
+        "maximum_failures": 42
+    },
+    "inactivity_timeout": 42,
+    "ip_whitelist": [
+        "String"
+    ],
+    "login_history_retention": 42,
+    "logon_message": "String",
+    "persistent_session_timeout": 42,
+    "require_logon_message_acceptance": true
+}</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /system/authorization/settings response codes</title>
+<desc><p outputclass="summary">POST /system/authorization/settings response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The settings were updated.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>56201001</p></entry>
+<entry colname="col3"><p>The value in the inactivity_timeout field must be a positive integer</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>56201002</p></entry>
+<entry colname="col3"><p>The value in the persistent_session_timeout field must be a positive integer</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>56201003</p></entry>
+<entry colname="col3"><p>The value in the concurrent_session_limit field must be a positive integer</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>56201004</p></entry>
+<entry colname="col3"><p>The value in the host_lockout.maximum_failures field must be a positive integer</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>56201005</p></entry>
+<entry colname="col3"><p>The value in the host_lockout.attempt_window field must be a positive integer</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>56201006</p></entry>
+<entry colname="col3"><p>The value in the host_lockout.duration field must be a positive integer</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>56201007</p></entry>
+<entry colname="col3"><p>The host_lockout settings was partially set. All settings must be enabled or disabled, but a field was null</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>56201008</p></entry>
+<entry colname="col3"><p>The value in the account_lockout.maximum_failures field must be a positive integer</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>56201009</p></entry>
+<entry colname="col3"><p>The value in the account_lockout.attempt_window field must be a positive integer</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>56201010</p></entry>
+<entry colname="col3"><p>The value in the account_lockout.duration field must be a positive integer</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>56201011</p></entry>
+<entry colname="col3"><p>The account_lockout settings was partially set. All settings must be enabled or disabled, but a field was null</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>56201012</p></entry>
+<entry colname="col3"><p>The value in the login_history_retention field must be a positive integer</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>56201013</p></entry>
+<entry colname="col3"><p>The values in the ip_whitelist field could not all be parsed as IP addresses</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>56201014</p></entry>
+<entry colname="col3"><p>The logon_message field cannot be an empty string</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>56201015</p></entry>
+<entry colname="col3"><p>The require_logon_message_acceptance field must be set if the logon_message field is set</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>56201016</p></entry>
+<entry colname="col3"><p>The value in the authorized_service_default_max_expiration field must be a positive integer</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>56201017</p></entry>
+<entry colname="col3"><p>The value in the authorized_service_default_max_expiration field must not be null</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>Returns updated the settings.
+ <ul>
+ <li><b>inactivity_timeout</b> - Long - The length of time, in milliseconds, of inactivity before the UI will log out a user. This value is truncated to minutes.</li>
+ <li><b>persistent_session_timeout</b> - Long - The length of time, in milliseconds, that a user session is persisted. This value is truncated to minutes.</li>
+ <li><b>concurrent_session_limit</b> - Long - The number of times a single user can be logged in simultaneously.</li>
+ <li><b>ip_whitelist</b> - Array&lt;String&gt; - The list of IPv4 or IPv6 addresses that are exempt from being locked out of the system.</li>
+ <li><b>host_lockout</b> - Object - The host_lockout represents specific lockout settings for failed login attempts from a single source. If multiple failed login attempts from a single host are detected, that host will not be allowed to make additional login attempts for a period of time. To disable the host_lockout, set this field to null.
+ <ul>
+ <li><b>host_lockout.maximum_failures</b> - Long - The maximum number of failed login attempts during the attempt_window.</li>
+ <li><b>host_lockout.attempt_window</b> - Long - The length of time, in milliseconds, during which a maximum number of login failures can occur before the system is locked. This value is truncated to minutes.</li>
+ <li><b>host_lockout.duration</b> - Long - The length of time, in milliseconds, that the system is locked if the maximum login failures value is exceeded. This value is truncated to minutes.</li>
+ </ul>
+ </li>
+ <li><b>account_lockout</b> - Object - The account_lockout represents specific lockout settings for failed login attempts for a single account. If multiple failed login attempts for a single account are detected, that account will not be allowed to make additional login attempts for a period of time. To disable the account_lockout, set this field to null.
+ <ul>
+ <li><b>account_lockout.maximum_failures</b> - Long - The maximum number of failed login attempts during the attempt_window.</li>
+ <li><b>account_lockout.attempt_window</b> - Long - The length of time, in milliseconds, during which a maximum number of login failures can occur before the system is locked. This value is truncated to minutes.</li>
+ <li><b>account_lockout.duration</b> - Long - The length of time, in milliseconds, that the system is locked if the maximum login failures value is exceeded. This value is truncated to minutes.</li>
+ </ul>
+ </li>
+ <li><b>logon_message</b> - String - The message that will appear on the logon page. <i>If this field is unset (null) then <b>require_logon_message_acceptance</b> is set to <b>false</b>.</i></li>
+ <li><b>require_logon_message_acceptance</b> - Boolean - Set this option to require a user to "accept" the message on the logon page before being allowed to authenticate. This field is ignored if <b>logon_message</b> is not set.</li>
+ <li><b>allow_logon_page_password_autocomplete</b> - Boolean - Select this option to enable the browser autocomplete option for the logon page password field. Disabling this option might not prevent some password managers from autocompleting the password field.</li>
+ <li><b>display_login_history_after_login</b> - Enumeration: &lt;ALWAYS|NEVER&gt; - Set this option to have a Login History interstitial pop up after login. Values are:
+ <ul>
+ <li><b>ALWAYS</b> - Always show the Login History interstitial</li>
+ <li><b>NEVER</b> - Never show the Login History interstitial</li>
+ </ul>
+ </li>
+ <li><b>login_history_retention</b> - Long - The length of time, in milliseconds, that the Login History is retained. This value is truncated to days.</li>
+ <li><b>authorized_service_default_max_expiration</b> - Long - The length of time, in milliseconds, that authorized services are active before expiring by default. This value is truncated to days, and cannot be set to null.</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "account_lockout": {
+        "attempt_window": 42,
+        "duration": 42,
+        "maximum_failures": 42
+    },
+    "allow_logon_page_password_autocomplete": true,
+    "authorized_service_default_max_expiration": 42,
+    "concurrent_session_limit": 42,
+    "display_login_history_after_login": "String &lt;one of: ALWAYS, NEVER&gt;",
+    "host_lockout": {
+        "attempt_window": 42,
+        "duration": 42,
+        "maximum_failures": 42
+    },
+    "inactivity_timeout": 42,
+    "ip_whitelist": [
+        "String"
+    ],
+    "login_history_retention": 42,
+    "logon_message": "String",
+    "persistent_session_timeout": 42,
+    "require_logon_message_acceptance": true
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--help-endpoints-GET" xml:lang="en-us">
+<title>GET /help/endpoints</title>
+<shortdesc>Retrieves a list of endpoint documentation objects that are currently in the system.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/help/endpoints</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Retrieves a list of endpoint documentation objects that are currently in the system.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /help/endpoints resource details</title>
+<desc><p outputclass="summary">GET /help/endpoints resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /help/endpoints request parameter details</title>
+<desc><p outputclass="summary">GET /help/endpoints request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>Range</p></entry>
+<entry colname="col2"><p>header</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to restrict the number of elements that are returned in the list to a specified range. The list is indexed starting at zero.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>filter</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - This parameter is used to restrict the elements in a list base on the contents of various fields.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /help/endpoints response codes</title>
+<desc><p outputclass="summary">GET /help/endpoints response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The endpoint documentation list was retrieved.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>An unexpected error has occurred.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>An array of endpoint documentation objects. An endpoint documentation object contains the following
+         fields:
+         <ul>
+         <li><b>id</b> - Number - The ID of the endpoint documentation. This ID is not permanent. It might change
+         any time services are restarted.</li>
+         <li><b>summary</b> - String - A brief summary of the endpoint.</li>
+         <li><b>deprecated</b> - Boolean - Returns true if the endpoint is deprecated. Returns false
+         otherwise.</li>
+         <li><b>http_method</b> - String - The HTTP request type. One of OPTIONS, GET, HEAD, POST, PUT, DELETE,
+         TRACE, CONNECT, PATCH.</li>
+         <li><b>error_responses</b> - Array of Objects - A list of potential error responses of this
+         endpoint.</li>
+         <li><b>error_responses(response_code)</b> - Number - The HTTP code for this error response.</li>
+         <li><b>error_responses(description)</b> - String - The description for this error response.</li>
+         <li><b>error_responses(unique_code)</b> - Number - The unique code for this error response.</li>
+         <li><b>error_responses(response_code_description)</b> - String - The description of the response.</li>
+         <li><b>response_description</b> - String - The description of the response.</li>
+         <li><b>version</b> - String - The version of this endpoint.</li>
+         <li><b>success_responses</b> - Array of Objects - A list of potential success responses for this
+         endpoint.</li>
+         <li><b>success_responses(response_code)</b> - Number - The HTTP code for this response.</li>
+         <li><b>success_responses(description)</b> - String - The description of this response.</li>
+         <li><b>success_responses(response_code_description)</b> - String - The name for the response code from
+         RFC 2616.</li>
+         <li><b>description</b> - String - A description of this endpoint.</li>
+         <li><b>path</b> - String - The path of this endpoint.</li>
+         <li><b>response_mime_types</b> - Array of Objects - A list of possible response MIME types for this
+         endpoint.</li>
+         <li><b>response_mime_types(mime_type)</b> - String - The MIME type value, e.g. TEXT_PLAIN</li>
+         <li><b>response_mime_types(media_type)</b> - String - The RFC style Media Type, e.g. text/plain This
+         value is suitable for use in HTTP requests.</li>
+         <li><b>response_mime_types(sample)</b> - String - The sample of this response MIME type.</li>
+         <li><b>parameters</b> - Array of Objects - A list of user parameters for this endpoint.</li>
+         <li><b>parameters(description)</b> - String - A description of this parameter.</li>
+         <li><b>parameters(default_value)</b> - String - The default value of this parameter. Null if there is no
+         default value for this parameter. This is always a String, regardless of the underlying data type of the
+         parameter.</li>
+         <li><b>parameters(type)</b> - String - The type of parameter, one of QUERY, HEADER, PATH, BODY.</li>
+         <li><b>parameters(parameter_name)</b> - String - The name of this parameter.</li>
+         <li><b>parameters(mime_types)</b> - Array of Objects - A list of possible mime_types for this
+         parameter.</li>
+         <li><b>parameters(mime_types(data_type))</b> - String - A description of the data type of this parameter.
+         </li>
+         <li><b>parameters(mime_types(mime_type))</b> - String - The MIME type of the parameter.</li>
+         <li><b>parameters(mime_types(sample))</b> - String - The sample for this parameter.</li>
+         <li><b>resource_id</b> - Number - The ID of the associated resource.</li>
+         <li><b>last_modified_version</b> - String - The API version this endpoint was last modified. It is less
+         than or equal to the version in the version field.</li>
+         <li><b>caller_has_access</b> - Boolean - True if the user has the required capabilities to call this
+         endpoint, false otherwise.</li>
+         </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+[
+  {
+    "caller_has_access": true,
+    "deprecated": true,
+    "description": "String",
+    "error_responses": [
+      {
+        "description": "String",
+        "response_code": 42,
+        "response_code_description": "String",
+        "unique_code": 42
+      }
+    ],
+    "http_method": "String &lt;one of: OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT, PATCH&gt;",
+    "id": 42,
+    "last_modified_version": "String",
+    "parameters": [
+      {
+        "default_value": "String",
+        "description": "String",
+        "mime_types": [
+          {
+            "data_type": "String",
+            "mime_type": "String",
+            "sample": "String"
+          }
+        ],
+        "parameter_name": "String",
+        "type": "String &lt;one of: QUERY, HEADER, PATH, BODY&gt;"
+      }
+    ],
+    "path": "String",
+    "resource_id": 42,
+    "response_description": "String",
+    "response_mime_types": [
+      {
+        "mime_type": "String",
+        "sample": "String",
+        "media_type": "String"
+      }
+    ],
+    "success_responses": [
+      {
+        "description": "String",
+        "response_code": 42,
+        "response_code_description": "String"
+      }
+    ],
+    "summary": "String",
+    "version": "String"
+  }
+]
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE map PUBLIC "-//IBM//DTD DITA IBM Map//EN"  "ibm-map.dtd">
+<map xml:lang="en-us">
+<title>analytics endpoints</title>
+<topicref href="c_rest_api_version170_analytics_intro.dita" scope="local" format="dita" type="concept">
+<topicref href="17.0--analytics-ade_rules-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-ade_rules-ade_rule_delete_tasks-task_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-ade_rules-ade_rule_dependent_tasks-task_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-ade_rules-ade_rule_dependent_tasks-task_id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-ade_rules-ade_rule_dependent_tasks-task_id-results-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-ade_rules-id-DELETE.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-ade_rules-id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-ade_rules-id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-ade_rules-id-dependents-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-building_blocks-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-building_blocks-building_block_delete_tasks-task_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-building_blocks-building_block_dependent_tasks-task_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-building_blocks-building_block_dependent_tasks-task_id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-building_blocks-building_block_dependent_tasks-task_id-results-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-building_blocks-id-DELETE.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-building_blocks-id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-building_blocks-id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-building_blocks-id-dependents-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-custom_actions-actions-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-custom_actions-actions-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-custom_actions-actions-action_id-DELETE.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-custom_actions-actions-action_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-custom_actions-actions-action_id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-custom_actions-interpreters-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-custom_actions-interpreters-interpreter_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-custom_actions-scripts-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-custom_actions-scripts-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-custom_actions-scripts-script_id-DELETE.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-custom_actions-scripts-script_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-custom_actions-scripts-script_id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-rule_groups-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-rule_groups-group_id-DELETE.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-rule_groups-group_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-rule_groups-group_id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-rules-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-rules-id-DELETE.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-rules-id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-rules-id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-rules-id-dependents-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-rules-rule_delete_tasks-task_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-rules-rule_dependent_tasks-task_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-rules-rule_dependent_tasks-task_id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-rules-rule_dependent_tasks-task_id-results-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--analytics-rules_offense_contributions-GET.dita" scope="local" format="dita" type="reference"/>
+</topicref>
+</map>

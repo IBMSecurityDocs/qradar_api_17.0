@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--disaster_recovery-ariel_copy_profiles-id-GET" xml:lang="en-us">
+<title>GET /disaster_recovery/ariel_copy_profiles/{id}</title>
+<shortdesc>Retrieves a Ariel Copy Profile by ID.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/disaster_recovery/ariel_copy_profiles/{id}</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Retrieves a Ariel Copy Profile by ID.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /disaster_recovery/ariel_copy_profiles/{id} resource details</title>
+<desc><p outputclass="summary">GET /disaster_recovery/ariel_copy_profiles/{id} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /disaster_recovery/ariel_copy_profiles/{id} request parameter details</title>
+<desc><p outputclass="summary">GET /disaster_recovery/ariel_copy_profiles/{id} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Required. The ID for the Ariel Copy Profile to get.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /disaster_recovery/ariel_copy_profiles/{id} response codes</title>
+<desc><p outputclass="summary">GET /disaster_recovery/ariel_copy_profiles/{id} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The Ariel Copy Profile was retrieved.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1001</p></entry>
+<entry colname="col3"><p>The Resource that was requested by the provided id does not exist.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1000</p></entry>
+<entry colname="col3"><p>An error occurred during the attempt to retrieve the Ariel Copy Profile.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>The Ariel Copy Profile object containing the following fields:
+ <ul>
+     <li><b>id</b> - Long - The ID of the Ariel Copy Profile.</li>
+     <li><b>host_id</b> - Long - The ID of the Ariel Copy host. The host_id references the /config/deployment/hosts endpoint.</li>
+     <li><b>destination_host_ip</b> - String - The IP address of the managed host where the Ariel data is sent.</li>
+     <li><b>destination_port</b> - Long - The port of the managed host over which the Ariel data is sent.</li>
+     <li><b>exclude_event_retention_bucket_ids</b> - Array[Long] - The ID of the event retention bucket where events are not copied from. The exclude_event_retention_bucket_id references the /config/event_retention_buckets endpoint.</li>
+     <li><b>exclude_flow_retention_bucket_ids</b> - Array[Long] - The ID of the flow retention bucket where flow data is not copied from. The exclude_flow_retention_bucket_id references the /config/flow_retention_buckets endpoint.</li>
+     <li><b>bandwidth_limit</b> - Long - The amount to limit the bandwidth in bytes per second for copying data.</li>
+     <li><b>enabled</b> - Boolean - Whether Ariel Copy is enabled on the host. The enabled field is set to false by default</li>
+     <li><b>frequency</b> - Long - The frequency, in milliseconds, that Ariel Copy will run.</li>
+     <li><b>start_date</b> - Long - The date to start copying Ariel data from.</li>
+     <li><b>end_date</b> - Long - The date to copy Ariel data up until.</li>
+     <li><b>last_successful_transfer_ariel_type</b> - Enum - The type of Ariel data transferred during most recent successful transfer. Can be one of: EVENTS_PAYLOAD, EVENTS_RECORD, EVENTS_MD, FLOWS_PAYLOAD, FLOWS_RECORD, FLOWS_MD </li>
+     <li><b>last_successful_ariel_content_transferred</b> - Long - The date of the Ariel content transferred during most recent successful transfer </li>
+     <li><b>last_successful_transfer_date</b> - Long - The date the most recent successful transfer occurred </li>
+     <li><b>last_error_ariel_type</b> - String - The type of Ariel data attempted transferred during most recent error, Can be one of: EVENTS_PAYLOAD, EVENTS_RECORD, EVENTS_MD, FLOWS_PAYLOAD, FLOWS_RECORD, FLOWS_MD </li>
+     <li><b>last_error_ariel_content_transferred</b> - Long - The type of Ariel data attempted to be transferred during last unsuccessful transfer </li>
+     <li><b>last_error_date</b> - Long - The date the most recent error occurred </li>
+     <li><b>last_error_max_threshold_surpassed_date</b> - Long - The most recent date Ariel copy was forced to abort due to error threshold being surpassed </li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "bandwidth_limit": 42,
+    "destination_host_ip": "String",
+    "destination_port": 42,
+    "enabled": true,
+    "end_date": 42,
+    "exclude_event_retention_bucket_ids": [
+        42
+    ],
+    "exclude_flow_retention_bucket_ids": [
+        42
+    ],
+    "frequency": 42,
+    "host_id": 42,
+    "id": 42,
+    "last_error_ariel_content_transferred": 42,
+    "last_error_ariel_type": "String &lt;one of: EVENTS_PAYLOAD, EVENTS_RECORD, EVENTS_MD, FLOWS_PAYLOAD, FLOWS_RECORD, FLOWS_MD&gt;",
+    "last_error_date": 42,
+    "last_error_max_threshold_surpassed_date": 42,
+    "last_successful_ariel_content_transferred": 42,
+    "last_successful_transfer_ariel_type": "String &lt;one of: EVENTS_PAYLOAD, EVENTS_RECORD, EVENTS_MD, FLOWS_PAYLOAD, FLOWS_RECORD, FLOWS_MD&gt;",
+    "last_successful_transfer_date": 42,
+    "start_date": 42
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--ariel-taggedfieldcategories-POST" xml:lang="en-us">
+<title>POST /ariel/taggedfieldcategories</title>
+<shortdesc>Creates a new category for tagged fields. To use this endpoint, you must have System Administrator or Security Admin permissions.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/ariel/taggedfieldcategories</apiname>
+<keyword>POST</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Creates a new category for tagged fields.
+ 
+ To use this endpoint, you must have System Administrator or Security Admin permissions.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /ariel/taggedfieldcategories resource details</title>
+<desc><p outputclass="summary">POST /ariel/taggedfieldcategories resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /ariel/taggedfieldcategories request body details</title>
+<desc><p outputclass="summary">POST /ariel/taggedfieldcategories request body details</p></desc>
+<tgroup cols="5">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="2*" />
+<colspec colname="col5" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Data Type</entry>
+<entry colname="col3">MIME Type</entry>
+<entry colname="col4">Description</entry>
+<entry colname="col5">Sample</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>body</p></entry>
+<entry colname="col2"><p>Object</p></entry>
+<entry colname="col3"><p>application/json</p></entry>
+<entry colname="col4"><p>The structure of the category. Only the name field can be set when creating a category. All other fields are ignored.
+ <ul>
+ <li><b>name</b> - String - The name of the category for tagged fields.</li>
+ </ul></p></entry>
+<entry colname="col5"><p>{
+    "creation_date": 42,
+    "modified_date": 42,
+    "name": "String",
+    "uuid": "String"
+}</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /ariel/taggedfieldcategories response codes</title>
+<desc><p outputclass="summary">POST /ariel/taggedfieldcategories response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>201</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The category was created.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>409</p></entry>
+<entry colname="col2"><p>8000</p></entry>
+<entry colname="col3"><p>A category already exists with the specified name.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>8001</p></entry>
+<entry colname="col3"><p>You must specify the name parameter.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>8002</p></entry>
+<entry colname="col3"><p>The specified name must be between 1 and 255 (inclusive) characters.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1028</p></entry>
+<entry colname="col3"><p>An error occurred while creating the category.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>201 response with the new category structure. Location header set to the URL of the new category ID.
+ <ul>
+ <li><b>id</b> - Long - The ID of the category for tagged fields.</li>
+ <li><b>name</b> - String - The name of the category for tagged fields.</li>
+ <li><b>uuid</b> - String - The ID of the category for tagged fields, represented as a UUID.</li>
+ <li><b>modified_date</b> - Long - The time stamp that the category was last modified, specified in milliseconds since epoch.</li>
+ <li><b>creation_date</b> - Long - The time stamp that the category was created, specified in milliseconds since epoch. </li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "creation_date": 42,
+    "id": 42,
+    "modified_date": 42,
+    "name": "String",
+    "uuid": "String"
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--system-eulas-GET" xml:lang="en-us">
+<title>GET /system/eulas</title>
+<shortdesc>Retrieves a list of EULAs.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/system/eulas</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Retrieves a list of EULAs.
+
+ All users are able to call this endpoint.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /system/eulas resource details</title>
+<desc><p outputclass="summary">GET /system/eulas resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<p>There are no parameters for this endpoint.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /system/eulas response codes</title>
+<desc><p outputclass="summary">GET /system/eulas response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The EULA list was retrieved.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>79301001</p></entry>
+<entry colname="col3"><p>There was an unexpected error loading the EULAs.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>All the available EULAs on the system, tagged with the language it's translated in
+ <ul>
+ <li><b>locale_id</b> - String - The Locale ID associated with this EULA translation.</li>
+ <li><b>eula_text</b> - String - The EULA text, translated for the indicated locale.</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+[
+    {
+        "eula_text": "String",
+        "locale_id": "String"
+    }
+]
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE map PUBLIC "-//IBM//DTD DITA IBM Map//EN"  "ibm-map.dtd">
+<map xml:lang="en-us">
+<title>reference_data endpoints</title>
+<topicref href="c_rest_api_version170_reference_data_intro.dita" scope="local" format="dita" type="concept">
+<topicref href="17.0--reference_data-map_delete_tasks-task_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-map_dependent_tasks-task_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-map_dependent_tasks-task_id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-map_dependent_tasks-task_id-results-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-map_of_sets-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-map_of_sets-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-map_of_sets-bulk_load-name-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-map_of_sets-bulk_load-namespace-name-domain_id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-map_of_sets-name-DELETE.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-map_of_sets-name-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-map_of_sets-name-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-map_of_sets-name-dependents-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-map_of_sets-name-key-DELETE.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-map_of_sets_delete_tasks-task_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-map_of_sets_dependent_tasks-task_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-map_of_sets_dependent_tasks-task_id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-map_of_sets_dependent_tasks-task_id-results-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-maps-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-maps-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-maps-bulk_load-name-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-maps-bulk_load-namespace-name-domain_id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-maps-name-DELETE.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-maps-name-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-maps-name-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-maps-name-dependents-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-maps-name-key-DELETE.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-sets-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-sets-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-sets-bulk_load-namespace-name-domain_id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-sets-name-DELETE.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-sets-name-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-sets-name-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-sets-name-value-DELETE.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-tables-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-tables-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-tables-bulk_load-name-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-tables-bulk_load-namespace-name-domain_id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-tables-name-DELETE.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-tables-name-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-tables-name-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-tables-name-dependents-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-tables-name-outer_key-inner_key-DELETE.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-tables_delete_tasks-task_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-tables_dependent_tasks-task_id-GET.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-tables_dependent_tasks-task_id-POST.dita" scope="local" format="dita" type="reference"/>
+<topicref href="17.0--reference_data-tables_dependent_tasks-task_id-results-GET.dita" scope="local" format="dita" type="reference"/>
+</topicref>
+</map>

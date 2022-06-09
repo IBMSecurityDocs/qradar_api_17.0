@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--config-extension_management-extensions-GET" xml:lang="en-us">
+<title>GET /config/extension_management/extensions</title>
+<shortdesc>Retrieve a list of extensions.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/config/extension_management/extensions</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Requires the System Administrator or Security Admin permissions.
+ Retrieves a list of extensions.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/extension_management/extensions resource details</title>
+<desc><p outputclass="summary">GET /config/extension_management/extensions resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/extension_management/extensions request parameter details</title>
+<desc><p outputclass="summary">GET /config/extension_management/extensions request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>Range</p></entry>
+<entry colname="col2"><p>header</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to restrict the number of elements that are returned in the list to a specified range. The list is indexed starting at zero.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>filter</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - This parameter is used to restrict the elements in a list base on the contents of various fields.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>sort</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - This parameter is used to sort the elements in a list.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/extension_management/extensions response codes</title>
+<desc><p outputclass="summary">GET /config/extension_management/extensions response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The requested list of extensions has been retrieved.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>22608</p></entry>
+<entry colname="col3"><p>The supplied filter is invalid.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>22615</p></entry>
+<entry colname="col3"><p>Unknown status used in filter.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>22610</p></entry>
+<entry colname="col3"><p>The selected field cannot be utilized for sorting.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>22609</p></entry>
+<entry colname="col3"><p>Only top-level-elements of the root entity can be sorted on.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>22602</p></entry>
+<entry colname="col3"><p>An error has occurred while trying to retrieve the list of extensions.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>A list of extensions. Each extension contains the following fields:
+ <ul>
+ <li><b>id</b> - Number - The unique ID of this extension within the QRadar deployment.</li>
+ <li><b>name</b> - String - The name of the extension.</li>
+ <li><b>description</b> - String - The description of the extension.</li>
+ <li><b>author</b> - String - The person who generated the extension.</li>
+ <li><b>authored_by_email</b> - String - The email address of the author.</li>
+ <li><b>version</b> - String - The version of the extension.</li>
+ <li><b>supported_languages</b> - Array of strings - The language tags supported by this extension.</li>
+ <li><b>exported_qradar_version</b> - String - The version of the QRadar deployment this extension was exported from.</li>
+ <li><b>min_qradar_version</b>  - String - The minimum QRadar version required for the extension to function properly.</li>
+ <li><b>file_location</b> - String - The location of the extension file on disk.</li>
+ <li><b>size</b> - Number - The size in bytes of the extension file.</li>
+ <li><b>signed</b> - String - The state of the extension's signature.</li>
+ <li><b>beta</b> - Boolean - True if the extension is considered to be beta or experimental.</li>
+ <li><b>added_by</b> - String - The user or authorized service that added the extension to QRadar.</li>
+ <li><b>installed_by</b> - String The user or authorized service that installed the extension.</li>
+ <li><b>add_time</b> - Number - The date/time at which the extension was added to QRadar, represented as number of milliseconds since Unix epoch.</li>
+ <li><b>install_time</b> - Number - The date/time at which the extension was installed, represented as number of milliseconds since Unix epoch.</li>
+ <li><b>full_uninstall</b> - Boolean - True if the extension and all of its contents can be fully uninstalled.</li>
+ <li><b>status</b> - String - The tag corresponding to the current status of the extension. Possible values are UPLOADED, UPLOADING, INSTALLED, INSTALLING, INSTALL_FAILED, UNINSTALLED, UNINSTALLING, UNINSTALL_FAILED, NOT_INSTALLED, PREVIEWING, NONE.</li>
+ <li><b>contents</b> - An array of objects representing an item contained within the extension. Each object has the following fields:
+  <ul>
+   <li><b>content_type_id</b> - Number - The ID of the content type.</li>
+   <li><b>content_type_name</b> - String - The name of the content type.</li>
+   <li><b>identifier</b> - String - The descriptive name/identifier of the item.</li>
+  </ul></li>
+ <li><b>fips_compliant</b> - Boolean - True if the extension is FIPS compliant.</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+[{"min_qradar_version": "String", "add_time": 42, "added_by": "String", "author": "String", "fips_compliant": true, "description": "String", "signed": "String &lt;one of: NOT_SIGNED, SIGNED_NOT_VERIFIED, SIGNED_AND_VERIFIED, UNKNOWN&gt;", "authored_by_email": "String", "file_location": "String", "install_time": 42, "exported_qradar_version": "String", "version": "String", "supported_languages": ["String"], "size": 42, "contents": [{"identifier": "String", "content_type_id": 42, "content_metadata": "String", "content_type_name": "String"}], "content_operation_error": "String", "full_uninstall": true, "name": "String", "installed_by": "String", "id": 42, "beta": true, "status": "String &lt;one of: UPLOADED, UPLOADING, INSTALLED, INSTALLING, INSTALL_FAILED, UNINSTALLED, UNINSTALLING, UNINSTALL_FAILED, NOT_INSTALLED, PREVIEWING, NONE, INSTALLED_WITH_ERROR, UNINSTALL_PREVIEWING, UNINSTALL_PREVIEW_FAILED&gt;"}]
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

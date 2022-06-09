@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--config-access-authorized_services-POST" xml:lang="en-us">
+<title>POST /config/access/authorized_services</title>
+<shortdesc>Creates an authorized service. The response to this API invocation will contain the API token. This will be the only time the token value is available.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/config/access/authorized_services</apiname>
+<keyword>POST</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Any user or authorized service can call this endpoint. To create an authorized service with any user role, security profile, or tenant, the caller must have the Administrator Manager permission. Callers who don't have the Administrator Manager permission can only create an authorized service with their own user role, security profile and tenant. An authorized service that is created by a caller who doesn't have the Administrator Manager permission expires no later than the default expiration time, even if the caller enters a later time. The default expiration time is also what is set as the expiration date for the authorized service if the expiration_date is not set in the request. This default expiration time can be configured using the Authentication Settings API found here: /api/system/authorization/settings.</p>
+ <p>
+ Only the label, tenant_id, security_profile_id, user_role_id, and expiration_date fields can be set when creating an authorized service. All other fields are ignored.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /config/access/authorized_services resource details</title>
+<desc><p outputclass="summary">POST /config/access/authorized_services resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /config/access/authorized_services request parameter details</title>
+<desc><p outputclass="summary">POST /config/access/authorized_services request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>header</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /config/access/authorized_services request body details</title>
+<desc><p outputclass="summary">POST /config/access/authorized_services request body details</p></desc>
+<tgroup cols="5">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="2*" />
+<colspec colname="col5" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Data Type</entry>
+<entry colname="col3">MIME Type</entry>
+<entry colname="col4">Description</entry>
+<entry colname="col5">Sample</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>authorized_service</p></entry>
+<entry colname="col2"><p>Object</p></entry>
+<entry colname="col3"><p>application/json</p></entry>
+<entry colname="col4"><p>Only the label, tenant_id, security_profile_id, user_role_id, and expiration_date fields can be set when creating an authorized service. All other fields are ignored.</p></entry>
+<entry colname="col5"><p>{
+    "created_by": "String",
+    "creation_date": 42,
+    "expiration_date": 42,
+    "id": 42,
+    "label": "String",
+    "last_used_date": 42,
+    "security_profile_id": 42,
+    "tenant_id": 42,
+    "token": "String",
+    "user_role_id": 42
+}</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>POST /config/access/authorized_services response codes</title>
+<desc><p outputclass="summary">POST /config/access/authorized_services response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>201</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>response with the new authorized service structure. Location header set to the URL of the new authorized service.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>95103001</p></entry>
+<entry colname="col3"><p>The label field must be provided.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>95103002</p></entry>
+<entry colname="col3"><p>The security_profile_id field must be provided.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>95103003</p></entry>
+<entry colname="col3"><p>The security_profile_id provided must reference a deployed security profile.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>95103004</p></entry>
+<entry colname="col3"><p>The user_role_id field must be provided.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>95103005</p></entry>
+<entry colname="col3"><p>The user_role_id provided must reference a deployed user role.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>95103006</p></entry>
+<entry colname="col3"><p>The tenant_id provided must reference an existing tenant.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>95103007</p></entry>
+<entry colname="col3"><p>The tenant_id was provided, but the security_profile_id does not limit access to data in that tenant.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>95103008</p></entry>
+<entry colname="col3"><p>The authorized service label must be unique for all authorized services and usernames.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>95103009</p></entry>
+<entry colname="col3"><p>security_profile_id must be set to the Admin security profile when creating an authorized service with the System Administrator permission.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>95103010</p></entry>
+<entry colname="col3"><p>tenant_id must be null when creating an authorized service with a user role that contains the System Administrator permission.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>95103011</p></entry>
+<entry colname="col3"><p>The length of the label field cannot exceed 255 characters.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>95103012</p></entry>
+<entry colname="col3"><p>The expiration_date must expire before the default expiration time if you do not have the Administrator Manager permission.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>95103013</p></entry>
+<entry colname="col3"><p>The expiration_date must be set to a time in the future.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>95103014</p></entry>
+<entry colname="col3"><p>The limit for the number of authorized services that a user or authorized service without the Administrator Manager permission is allowed to create has been met by the caller.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>95103015</p></entry>
+<entry colname="col3"><p>The user_role_id must match your own if you do not have the Administrator Manager permission.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>95103016</p></entry>
+<entry colname="col3"><p>The security_profile_id must match your own if you do not have the Administrator Manager permission.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>95103017</p></entry>
+<entry colname="col3"><p>The tenant_id must match your own if you do not have the Administrator Manager permission.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p><ul>
+ <li><b>label</b> - String - 	The label of the authorized service. Authorized service labels and usernames must be unique between them. This field is not configurable if the caller does not have the Administrator Manager permission. The label will instead be auto-generated by appending the callers label with a randomly generated UUID.</li>
+ <li><b>token</b> - String - The token of this authorized service. The authorized service token is a pre-authorized key. This token can be used in place of a username and password when authentication to the APIs. This field is only available in the response to a POST to the /api/config/access/authorized_services endpoint.</li>
+ <li><b>tenant_id</b> - Long - (Optional) The tenant ID of the authorized service. Access a list of tenants using /api/config/access/tenant_management/tenants. When set, this field will restrict the security_profile_id field to ones that are completely contained within the specified tenant. Only callers with the Administrator Manager permission can configure this field. For callers without the Administrator Manager permission, the tenant_id of the authorized service must be the same as the tenant_id of the caller.</li>
+ <li><b>security_profile_id</b> - Long - 	The security profile ID of the authorized service. Access security profiles using /api/config/security_profiles API. Only callers with the Administrator Manager permission can configure this field. For callers without the Administrator Manager permission, the security_profile_id of the authorized service must be the same as the security_profile_id of the caller.</li>
+ <li><b>user_role_id</b> - Long - The user role ID of the authorized service. Access user roles using /api/config/user_roles API. Only callers with the Administrator Manager permission can configure this field. For callers without the Administrator Manager permission, the user_role_id of the authorized service must be the same as the user_role_id of the caller.</li>
+ <li><b>expiration_date</b> - Long - The time in milliseconds since epoch that this authorized service will expire. This field, if set, must always be set to a time in the future. Only callers with the Administrator Manager permission can set this field to null. If this field is set to null, this authorized service does not expire. A caller who does not have the Administrator Manager permission can only set the expiration_date to a value that is less than or equal to the default expiration time described in the main description of this endpoint, and cannot set it to null. If this field is not set, the expiration_date is set to the default expiration time. This value will be truncated to seconds.</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "created_by": "String",
+    "creation_date": 42,
+    "expiration_date": 42,
+    "id": 42,
+    "label": "String",
+    "last_used_date": 42,
+    "security_profile_id": 42,
+    "tenant_id": 42,
+    "token": "String",
+    "user_role_id": 42
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

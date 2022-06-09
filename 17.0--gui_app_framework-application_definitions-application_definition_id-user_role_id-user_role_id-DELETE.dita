@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--gui_app_framework-application_definitions-application_definition_id-user_role_id-user_role_id-DELETE" xml:lang="en-us">
+<title>DELETE /gui_app_framework/application_definitions/{application_definition_id}/user_role_id/{user_role_id}</title>
+<shortdesc></shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/gui_app_framework/application_definitions/{application_definition_id}/user_role_id/{user_role_id}</apiname>
+<keyword>DELETE</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn/>
+<refsyn>
+<table pgwide="0">
+<title>DELETE /gui_app_framework/application_definitions/{application_definition_id}/user_role_id/{user_role_id} resource details</title>
+<desc><p outputclass="summary">DELETE /gui_app_framework/application_definitions/{application_definition_id}/user_role_id/{user_role_id} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>DELETE /gui_app_framework/application_definitions/{application_definition_id}/user_role_id/{user_role_id} request parameter details</title>
+<desc><p outputclass="summary">DELETE /gui_app_framework/application_definitions/{application_definition_id}/user_role_id/{user_role_id} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application_definition_id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>- The application definition identifier.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>user_role_id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>- The user role identifier.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>DELETE /gui_app_framework/application_definitions/{application_definition_id}/user_role_id/{user_role_id} response codes</title>
+<desc><p outputclass="summary">DELETE /gui_app_framework/application_definitions/{application_definition_id}/user_role_id/{user_role_id} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>33900</p></entry>
+<entry colname="col3"><p>The application definition ID specified does not exist</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>409</p></entry>
+<entry colname="col2"><p>33000</p></entry>
+<entry colname="col3"><p>The current state of the specified application ID does not allow the requested action</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>33906</p></entry>
+<entry colname="col3"><p>The user role ID does not exist</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>The request could not be completed.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>An updated list of user roles for the application definition</p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "user_roles": [
+        42
+    ]
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

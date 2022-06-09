@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--staged_config-certificates-end_certificates-id-GET" xml:lang="en-us">
+<title>GET /staged_config/certificates/end_certificates/{id}</title>
+<shortdesc>Gets information about a specific certificate, as specified by the certificate ID. You
+must have System Administrator, Security Administrator, Manage Log Sources, or WinCollect
+permissions to use this endpoint.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/staged_config/certificates/end_certificates/{id}</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn/>
+<refsyn>
+<table pgwide="0">
+<title>GET /staged_config/certificates/end_certificates/{id} resource details</title>
+<desc><p outputclass="summary">GET /staged_config/certificates/end_certificates/{id} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /staged_config/certificates/end_certificates/{id} request parameter details</title>
+<desc><p outputclass="summary">GET /staged_config/certificates/end_certificates/{id} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Required. The ID of the certificate that you want more information about.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /staged_config/certificates/end_certificates/{id} response codes</title>
+<desc><p outputclass="summary">GET /staged_config/certificates/end_certificates/{id} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1002</p></entry>
+<entry colname="col3"><p>No certificate exists with this ID.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>null</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>2035</p></entry>
+<entry colname="col3"><p>null</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>The certificate resource with the following fields:
+ 
+     <note>Non-administrative users see only the certificate name and ID. All other fields appear as 'null'.</note>
+      <ul>
+      <li><b>id</b> - The certificate resource ID.</li>
+      <li><b>name</b> - A unique name that identifies the certificate.</li>
+      <li><b>purpose</b> - The intended use of the certificate.</li>
+      <li><b>subject</b> - Returns the Subject of the certificate.</li>
+      <li><b>issuer</b> - Returns the Issuer of the certificate.</li>
+     <li><b>not_before</b> - Returns the "Validity Not Before" value of the certificate, represented as the number of milliseconds since UNIX Epoch.</li>
+      <li><b>expiry</b> - Returns the "Validity Not After" field of the certificate, represented as the number of milliseconds since UNIX epoch.</li>
+      <li><b>serial_number</b> - Returns the "Serial Number" field of the certificate.</li>
+ 	  <li><b>key_usage</b> - Returns the "Key Usage" field of the certificate. The values are one or more of the enum X509Certificate.KeyUsage
+ 		 <ul>
+ 	 	    <li>CRL_SIGN</li>
+ 	 	    <li>DATA_ENCIPHERMENT</li>
+ 		     <li>DECIPHER_ONLY</li>
+ 	 	    <li>DIGITAL_SIGNATURE</li>
+ 	 	    <li>ENCIPHER_ONLY</li>
+ 		     <li>KEY_AGREEMENT</li>
+ 		     <li>KEY_CERT_SIGN</li>
+ 	 	    <li>KEY_ENCIPHERMENT</li>
+ 	 	    <li>NON_REPUDIATION</li>
+ 	 	 </ul>
+ 	 </li>
+ 	 <li><b>extended_key_usage</b> - Returns the "Extended Key Usage" field of the certificate. Values will be one or more of the enum X509Certificate.ExtendedKeyUsage values: "CLIENT_AUTH", "CODE_SIGNING", "EMAIL_PROTECTION", "OCSP_SIGNING", "SERVER_AUTH", "TIME_STAMPING"</li>
+ 	 <li><b>certificate_revocation_list_distribution_point</b> - returns the "CRL Distribution Points" field of the certificate</li>
+     <li><b>password</b> - Returns the password that is used to encrypt the private key. This value is always null in the response.</li>
+      <li><b>component_id</b> - Returns the assigned component ID of the certificate.</li>
+      <li><b>validation</b> - Returns the code to indicate whether the certificate is valid. If not, it returns the reason that the certificate is not valid.
+                <ul>
+                <li>-1 - The certificate has not been validated.</li>
+                <li>0 - The certificate is valid or has not been checked.</li>
+                <li>2001 - Error parsing a certificate.</li>
+                <li>2002 - Error decoding a certificate.</li>
+                <li>2003 - The certificate is expired.</li>
+                <li>2004 - The certificate is not yet valid.</li>
+                <li>2005 - The certificate is revoked.</li>
+                <li>2010 - Unexpected error occurred when processing a certificate.</li>
+                <li>2011 - Error finding the issuer certificates. </li>
+                <li>2012 - The certificate's key usage or extended key usage does not match its purpose.</li>
+                <li>2013 - Error validating the full chain of the certificate.</li>
+                <li>2014 - The certificate is an invalid self-signed certificate.</li>
+                <li>2020 - The CRL is invalid.</li>
+                <li>2030 - Unexpected error when processing the CRL.</li>
+                <li>2031 - Error finding the issuer certificates for the CRL.</li>
+                <li>2032 - The issuer does not have the <i>CRL sign</i> usage.</li>
+                <li>2033 - Error validating the CRL.</li>
+                <li>2034 - The CRL is expired.</li>
+	    </ul></li>
+       </ul> </p>
+
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "ca_chain_file": "String",
+    "cert_file": "String",
+    "certificate_revocation_list_distribution_point": "String",
+    "component_id": 42,
+    "component_name": "String",
+    "csr_id": 42,
+    "expiry": 42,
+    "extended_key_usage": [
+        "String &lt;one of: TLS_Web_server_authentication, TLS_Web_client_authentication, Email_protection&gt;"
+    ],
+    "id": 42,
+    "issuer": [
+        {
+            "field_name": "String",
+            "value": "String"
+        }
+    ],
+    "key_file": "String",
+    "key_password": "String",
+    "key_usage": [
+        "String &lt;one of: CRL_SIGN, DATA_ENCIPHERMENT, DECIPHER_ONLY, DIGITAL_SIGNATURE, ENCIPHER_ONLY, KEY_AGREEMENT, KEY_CERT_SIGN, KEY_ENCIPHERMENT, NON_REPUDIATION&gt;"
+    ],
+    "name": "String",
+    "not_before": 42,
+    "purpose": "String",
+    "serial_number": "String",
+    "status": "String",
+    "subject": [
+        {
+            "field_name": "String",
+            "value": "String"
+        }
+    ],
+    "validation": 42
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--config-extension_management-extensions_task_status-status_id-GET" xml:lang="en-us">
+<title>GET /config/extension_management/extensions_task_status/{status_id}</title>
+<shortdesc>Retrieves the tasks status based on the status_id.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/config/extension_management/extensions_task_status/{status_id}</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Retrieves the tasks status based on the status_id.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/extension_management/extensions_task_status/{status_id} resource details</title>
+<desc><p outputclass="summary">GET /config/extension_management/extensions_task_status/{status_id} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/extension_management/extensions_task_status/{status_id} request parameter details</title>
+<desc><p outputclass="summary">GET /config/extension_management/extensions_task_status/{status_id} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>status_id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Required - the id of the task status.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/extension_management/extensions_task_status/{status_id} response codes</title>
+<desc><p outputclass="summary">GET /config/extension_management/extensions_task_status/{status_id} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The requested task status has been retrieved.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>22604</p></entry>
+<entry colname="col3"><p>The task status for status_id cannot be found.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>22606</p></entry>
+<entry colname="col3"><p>A supplied numeric parameter was not positive.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>22602</p></entry>
+<entry colname="col3"><p>An error has occurred while trying to retrieve the task status.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>A task status containing the following fields:
+   <ul>
+      <li><b>id</b> - Number - The ID of the task status.</li>
+      <li><b>name</b> - String - The name of the task status.</li>
+      <li><b>status</b> - String - A string that represents the current state of the task status.</li>
+      <li><b>message</b> - String - A message regarding the current state of the task.</li>
+      <li><b>progress</b> - Number - The current progress of the task</li>
+      <li><b>minimum</b> - Number - The minimum progress of the task.</li>
+      <li><b>maximum</b> - Number - The maximum progress of the task.</li>
+      <li><b>created_by</b> - String - The username of the user who created the task.</li>
+      <li><b>cancelled_by</b> - String - The username of the user who cancelled the task.</li>
+      <li><b>created</b> - Number - The date/time at which this task was created, represented as number of milliseconds since Unix epoch.</li>
+      <li><b>started</b> - Number - The date/time at which this task was started, represented as number of milliseconds since Unix epoch.</li>
+      <li><b>modified</b> - Number - The date/time at which this task was last modified, represented as number of milliseconds since Unix epoch.</li>
+      <li><b>completed</b> - Number - The date/time at which this task was completed, represented as number of milliseconds since Unix epoch.</li>
+      <li><b>result_url</b> - String - The url where the result can be viewed.</li>
+      <li><b>cancel_requested</b> - Boolean - True if cancel has been requested.</li>
+      <li><b>child_tasks</b> - Array - Array of child task id's that are executed asynchronously from this task.</li>
+      <li><b>task_components</b> - Array - Array of task components that are executed sequentially.</li>
+   </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+  "progress": 0,
+  "result_url": "",
+  "cancelled_by": "",
+  "status": "COMPLETED",
+  "task_components": null,
+  "modified": 1440891517961,
+  "id": 102,
+  "message": "Completed Extension uninstallation task for extension id 56",
+  "created_by": "admin",
+  "created": 1440891514006,
+  "maximum": 0,
+  "cancel_requested": false,
+  "name": "Extension uninstallation task",
+  "child_tasks": null,
+  "started": 1440891514041,
+  "completed": 1440891515224
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

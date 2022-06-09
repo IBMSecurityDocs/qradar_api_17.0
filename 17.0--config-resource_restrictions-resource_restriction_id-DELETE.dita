@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--config-resource_restrictions-resource_restriction_id-DELETE" xml:lang="en-us">
+<title>DELETE /config/resource_restrictions/{resource_restriction_id}</title>
+<shortdesc>Deletes a resource restriction consumer by ID.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/config/resource_restrictions/{resource_restriction_id}</apiname>
+<keyword>DELETE</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Deletes a resource restriction consumer by ID.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>DELETE /config/resource_restrictions/{resource_restriction_id} resource details</title>
+<desc><p outputclass="summary">DELETE /config/resource_restrictions/{resource_restriction_id} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>text/plain
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>DELETE /config/resource_restrictions/{resource_restriction_id} request parameter details</title>
+<desc><p outputclass="summary">DELETE /config/resource_restrictions/{resource_restriction_id} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>resource_restriction_id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Required - The resource restriction ID of the resource
+            restriction to be retrieved. Must be of the format [1-3]-\d+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>DELETE /config/resource_restrictions/{resource_restriction_id} response codes</title>
+<desc><p outputclass="summary">DELETE /config/resource_restrictions/{resource_restriction_id} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>204</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The resource restriction consumer was successfully deleted.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1003</p></entry>
+<entry colname="col3"><p>null</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1002</p></entry>
+<entry colname="col3"><p>Provided ID is not a valid format. Must be of the format [1-3]-\d+</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1004</p></entry>
+<entry colname="col3"><p>An error occurred during the retrieval of  the resource restrictions.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>The deleted restriction object.</p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

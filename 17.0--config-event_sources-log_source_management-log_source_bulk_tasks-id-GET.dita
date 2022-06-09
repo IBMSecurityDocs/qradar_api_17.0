@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--config-event_sources-log_source_management-log_source_bulk_tasks-id-GET" xml:lang="en-us">
+<title>GET /config/event_sources/log_source_management/log_source_bulk_tasks/{id}</title>
+<shortdesc>Retrieves a log source bulk task by ID.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/config/event_sources/log_source_management/log_source_bulk_tasks/{id}</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn/>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/event_sources/log_source_management/log_source_bulk_tasks/{id} resource details</title>
+<desc><p outputclass="summary">GET /config/event_sources/log_source_management/log_source_bulk_tasks/{id} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/event_sources/log_source_management/log_source_bulk_tasks/{id} request parameter details</title>
+<desc><p outputclass="summary">GET /config/event_sources/log_source_management/log_source_bulk_tasks/{id} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>The ID of the log source bulk task to retrieve.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/event_sources/log_source_management/log_source_bulk_tasks/{id} response codes</title>
+<desc><p outputclass="summary">GET /config/event_sources/log_source_management/log_source_bulk_tasks/{id} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The log source bulk task was retrieved successfully.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1001</p></entry>
+<entry colname="col3"><p>The log source bulk task ID was not found.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>The log source bulk task.
+ 
+ A log source bulk task contains the following fields:
+ <ul>
+ <li><b>id</b> - String - The ID of the bulk task.</li>
+ <li><b>status</b> - Enum - Indicates the status of the bulk task. Possible values are: IN_PROGRESS, COMPLETED_SUCCESSFULLY, COMPLETED_WITH_ERRORS, CANCELLING, CANCELLED.</li>
+ <li><b>operation_statuses</b> - Array - An array of LogSourceBulkOperationStatus. The size and order of this list matches the list of Log Source DTOs that were passed to the bulk endpoint.</li>
+ </ul>
+ 
+ A LogSourceBulkOperationStatus contains the following fields:
+ <ul>
+ <li><b>log_source_id</b> - Integer - The ID of the log source being operated on.</li>
+ <li><b>operation_type</b> - Enum - The type of operation. Possible values are: CREATE, UPDATE, DELETE.</li>
+ <li><b>http_status</b> - Integer - The HTTP status of the operation. This will be null until the operation completes.</li>
+ <li><b>message</b> - String - The error message. This will only be set if the operation fails, otherwise it will be null.</li>
+ <li><b>unique_code</b> - Integer - The unique error code. This will only be set if the operation fails, otherwise it will be null.</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "id": "String",
+    "operation_statuses": [
+        {
+            "http_status": 42,
+            "log_source_id": 42,
+            "message": "String",
+            "operation_type": "String &lt;one of: CREATE, UPDATE, DELETE&gt;",
+            "unique_code": 42
+        }
+    ],
+    "status": "String &lt;one of: IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED_SUCCESSFULLY, CANCELLING, CANCELLED&gt;"
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--system-authorization-settings-GET" xml:lang="en-us">
+<title>GET /system/authorization/settings</title>
+<shortdesc>Retrieves the current Authentication Settings.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/system/authorization/settings</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Gets the Authentication Settings for the system. These settings apply to all methods of authentication with the following exceptions.</p>
+
+ <p>
+ These settings are not available if SAML authentication is being used:
+ <ul>
+ <li> logon_message</li>
+ <li> allow_logon_page_password_autocomplete</li>
+ <li> persistent_session_timeout</li>
+ <li> ip_whitelist</li>
+ <li> host_lockout</li>
+ <li> account_lockout</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /system/authorization/settings resource details</title>
+<desc><p outputclass="summary">GET /system/authorization/settings resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /system/authorization/settings request parameter details</title>
+<desc><p outputclass="summary">GET /system/authorization/settings request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /system/authorization/settings response codes</title>
+<desc><p outputclass="summary">GET /system/authorization/settings response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The settings were retrieved.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>Returns the settings.
+ <ul>
+ <li><b>inactivity_timeout</b> - Long - The length of time, in milliseconds, of inactivity before the UI will log out a user. This value is truncated to minutes.</li>
+ <li><b>persistent_session_timeout</b> - Long - The length of time, in milliseconds, that a user session is persisted. This value is truncated to minutes.</li>
+ <li><b>concurrent_session_limit</b> - Long - The number of times a single user can be logged in simultaneously.</li>
+ <li><b>ip_whitelist</b> - Array&lt;String&gt; - The list of IPv4 or IPv6 addresses that are exempt from being locked out of the system.</li>
+ <li><b>host_lockout</b> - Object - The host_lockout represents specific lockout settings for failed login attempts from a single source. If multiple failed login attempts from a single host are detected, that host will not be allowed to make additional login attempts for a period of time. To disable the host_lockout, set this field to null.
+ <ul>
+ <li><b>host_lockout.maximum_failures</b> - Long - The maximum number of failed login attempts during the attempt_window.</li>
+ <li><b>host_lockout.attempt_window</b> - Long - The length of time, in milliseconds, during which a maximum number of login failures can occur before the system is locked. This value is truncated to minutes.</li>
+ <li><b>host_lockout.duration</b> - Long - The length of time, in milliseconds, that the system is locked if the maximum login failures value is exceeded. This value is truncated to minutes.</li>
+ </ul>
+ </li>
+ <li><b>account_lockout</b> - Object - The account_lockout represents specific lockout settings for failed login attempts for a single account. If multiple failed login attempts for a single account are detected, that account will not be allowed to make additional login attempts for a period of time. To disable the account_lockout, set this field to null.
+ <ul>
+ <li><b>account_lockout.maximum_failures</b> - Long - The maximum number of failed login attempts during the attempt_window.</li>
+ <li><b>account_lockout.attempt_window</b> - Long - The length of time, in milliseconds, during which a maximum number of login failures can occur before the system is locked. This value is truncated to minutes.</li>
+ <li><b>account_lockout.duration</b> - Long - The length of time, in milliseconds, that the system is locked if the maximum login failures value is exceeded. This value is truncated to minutes.</li>
+ </ul>
+ </li>
+ <li><b>logon_message</b> - String - The message that will appear on the logon page. <i>If this field is unset (null) then <b>require_logon_message_acceptance</b> is set to <b>false</b>.</i></li>
+ <li><b>require_logon_message_acceptance</b> - Boolean - Set this option to require a user to "accept" the message on the logon page before being allowed to authenticate. This field is ignored if <b>logon_message</b> is not set.</li>
+ <li><b>allow_logon_page_password_autocomplete</b> - Boolean - Select this option to enable the browser autocomplete option for the logon page password field. Disabling this option might not prevent some password managers from autocompleting the password field.</li>
+ <li><b>display_login_history_after_login</b> - Enumeration: &lt;ALWAYS|NEVER&gt; - Set this option to have a Login History interstitial pop up after login. Values are:
+ <ul>
+ <li><b>ALWAYS</b> - Always show the Login History interstitial</li>
+ <li><b>NEVER</b> - Never show the Login History interstitial</li>
+ </ul>
+ </li>
+ <li><b>login_history_retention</b> - Long - The length of time, in milliseconds, that the Login History is retained. This value is truncated to days.</li>
+ <li><b>authorized_service_default_max_expiration</b> - Long - The length of time, in milliseconds, that authorized services are active before expiring by default. This value is truncated to days, and cannot be set to null.</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "account_lockout": {
+        "attempt_window": 42,
+        "duration": 42,
+        "maximum_failures": 42
+    },
+    "allow_logon_page_password_autocomplete": true,
+    "authorized_service_default_max_expiration": 42,
+    "concurrent_session_limit": 42,
+    "display_login_history_after_login": "String &lt;one of: ALWAYS, NEVER&gt;",
+    "host_lockout": {
+        "attempt_window": 42,
+        "duration": 42,
+        "maximum_failures": 42
+    },
+    "inactivity_timeout": 42,
+    "ip_whitelist": [
+        "String"
+    ],
+    "login_history_retention": 42,
+    "logon_message": "String",
+    "persistent_session_timeout": 42,
+    "require_logon_message_acceptance": true
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

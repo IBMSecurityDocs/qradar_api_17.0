@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--config-flow-common_destination_ports-active_configurations-id-GET" xml:lang="en-us">
+<title>GET /config/flow/common_destination_ports/active_configurations/{id}</title>
+<shortdesc>Gets the active configuration for a common destination port, as specified by an ID.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/config/flow/common_destination_ports/active_configurations/{id}</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn>
+<p>Gets the active configuration for a common destination port, as specified by an ID. 
+ 
+ You must have System Administrator or Security Admin permissions to use this endpoint.</p>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/flow/common_destination_ports/active_configurations/{id} resource details</title>
+<desc><p outputclass="summary">GET /config/flow/common_destination_ports/active_configurations/{id} resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/flow/common_destination_ports/active_configurations/{id} request parameter details</title>
+<desc><p outputclass="summary">GET /config/flow/common_destination_ports/active_configurations/{id} request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>The ID of the active configuration to get.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /config/flow/common_destination_ports/active_configurations/{id} response codes</title>
+<desc><p outputclass="summary">GET /config/flow/common_destination_ports/active_configurations/{id} response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The active Common Destination Port Configuration for the specified port number.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>2001</p></entry>
+<entry colname="col3"><p>A active configuration for the specified ID does not exist.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1005</p></entry>
+<entry colname="col3"><p>A field request parameter is not valid.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1010</p></entry>
+<entry colname="col3"><p>Invalid filter criteria supplied.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>422</p></entry>
+<entry colname="col2"><p>1015</p></entry>
+<entry colname="col3"><p>The sort field or order is not valid.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>An error occurred while retiriving active Common Destination Port Configuration.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>The active Common Destination Port Configuration for the specified ID. An active Common Destination Port Configuration object contains the following fields:
+ <ul>
+ <li><b>id</b> - Long - The unique ID of the configuration.</li>
+ <li><b>port</b> - Integer - The unique port number that you want to configure. </li>
+ <li><b>application_id</b> - Long - The application ID for this port configuration. The application ID for this port configuration that is used by the QRadar port-based mapping algorithm.</li>
+ <li><b>application_name</b> - String - The name of the application as it would appear on the Network Activity tab. </li>
+ <li><b>content_capture_size</b> - Integer - The maximum amount of payload to capture and store for an application on this port. Set this value to 1 if you want the application to inherit the content capture size from the SV_CONTENT_CAPTURE_LENGTH field in the nva.conf file.</li>
+ <li><b>app_detection_enabled</b> - Boolean - TRUE if the port configuration will be used to determine the application. If true, you must set the application_id.</li>
+ <li><b>flow_direction_enabled</b> - Boolean - TRUE if the port configuration will be used to determine the flow direction.</li>
+ <li><b>uuid</b> - String - The unique global ID of the configuration, specified as a UUID.</li>
+ <li><b>last_update_time</b> - Long - The epoch timestamp, represented in milliseconds, since this configuration was last modified.</li>
+ </ul></p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+{
+    "app_detection_enabled": true,
+    "application_id": 42,
+    "application_name": "String",
+    "content_capture_size": 42,
+    "flow_direction_enabled": true,
+    "id": 42,
+    "last_update_time": 42,
+    "port": 42,
+    "uuid": "String"
+}
+</codeblock>
+</refsyn>
+</refbody>
+</reference>

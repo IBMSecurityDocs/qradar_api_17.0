@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//IBM//DTD DITA IBM Reference//EN" "dtd/ibm-reference.dtd">
+<reference id="api-17.0--qvm-saved_searches-vuln_instances-task_id-results-vulnerabilities-GET" xml:lang="en-us">
+<title>GET /qvm/saved_searches/vuln_instances/{task_id}/results/vulnerabilities</title>
+<shortdesc>List the Vulnerability Instances vulnerabilities returned from the saved search.</shortdesc>
+<prolog>
+<metadata>
+<keywords>
+<apiname>/qvm/saved_searches/vuln_instances/{task_id}/results/vulnerabilities</apiname>
+<keyword>GET</keyword>
+<keyword>API</keyword>
+<keyword>REST API</keyword>
+</keywords>
+</metadata>
+</prolog>
+<refbody>
+<refsyn/>
+<refsyn>
+<table pgwide="0">
+<title>GET /qvm/saved_searches/vuln_instances/{task_id}/results/vulnerabilities resource details</title>
+<desc><p outputclass="summary">GET /qvm/saved_searches/vuln_instances/{task_id}/results/vulnerabilities resource details</p></desc>
+<tgroup cols="1">
+<colspec colname="col1" colwidth="1*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">MIME Type</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>application/json
+</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /qvm/saved_searches/vuln_instances/{task_id}/results/vulnerabilities request parameter details</title>
+<desc><p outputclass="summary">GET /qvm/saved_searches/vuln_instances/{task_id}/results/vulnerabilities request parameter details</p></desc>
+<tgroup cols="6">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="1*" />
+<colspec colname="col4" colwidth="1*" />
+<colspec colname="col5" colwidth="1*" />
+<colspec colname="col6" colwidth="2*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">Parameter</entry>
+<entry colname="col2">Type</entry>
+<entry colname="col3">Optionality</entry>
+<entry colname="col4">Data Type</entry>
+<entry colname="col5">MIME Type</entry>
+<entry colname="col6">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>task_id</p></entry>
+<entry colname="col2"><p>path</p></entry>
+<entry colname="col3"><p>Required</p></entry>
+<entry colname="col4"><p>Number (Integer)</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>null</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>fields</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>filter</p></entry>
+<entry colname="col2"><p>query</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - This parameter is used to restrict the elements in a list base on the contents of various fields.</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>Range</p></entry>
+<entry colname="col2"><p>header</p></entry>
+<entry colname="col3"><p>Optional</p></entry>
+<entry colname="col4"><p>String</p></entry>
+<entry colname="col5"><p>text/plain</p></entry>
+<entry colname="col6"><p>Optional - Use this parameter to restrict the number of elements that are returned in the list to a specified range. The list is indexed starting at zero.</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<table pgwide="0">
+<title>GET /qvm/saved_searches/vuln_instances/{task_id}/results/vulnerabilities response codes</title>
+<desc><p outputclass="summary">GET /qvm/saved_searches/vuln_instances/{task_id}/results/vulnerabilities response codes</p></desc>
+<tgroup cols="3">
+<colspec colname="col1" colwidth="1*" />
+<colspec colname="col2" colwidth="1*" />
+<colspec colname="col3" colwidth="3*" />
+<thead>
+<row valign="bottom">
+<entry colname="col1">HTTP Response Code</entry>
+<entry colname="col2">Unique Code</entry>
+<entry colname="col3">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="col1"><p>200</p></entry>
+<entry colname="col2"><p/></entry>
+<entry colname="col3"><p>The request to retrieve vulnerabilities by instance completed successfully</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>404</p></entry>
+<entry colname="col2"><p>1002</p></entry>
+<entry colname="col3"><p>Resource not found</p></entry>
+</row>
+<row>
+<entry colname="col1"><p>500</p></entry>
+<entry colname="col2"><p>1020</p></entry>
+<entry colname="col3"><p>Error while retrieving results</p></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</refsyn>
+<refsyn>
+<title>Response Description</title>
+<p>list of vulnerability instance data</p>
+</refsyn>
+<refsyn>
+<title>Response Sample</title>
+<codeblock>
+[{"severity": {"code": 42, "name": "String &lt;one of: Patch, Urgent, Critical, High, Medium, Low&gt;"}, "patches": [{"security_notice": "String", "description": "String"}], "description": "String", "cvss_base_score": 42.5, "cvss_temporal_score_string": "String", "cvss_base_score_string": "String", "critical_details": "String", "concern": "String", "remediation": "String", "cvss_temporal_score": 42.5, "osvdb_title": "String", "virtual_patches": [{"signature": "String", "qid": "String", "device": "String"}], "id": 42, "cve_ids": ["String"], "risk_factor": {"code": 42, "name": "String &lt;one of: Critical, High, Medium, Low, Warning&gt;"}}]
+</codeblock>
+</refsyn>
+</refbody>
+</reference>
